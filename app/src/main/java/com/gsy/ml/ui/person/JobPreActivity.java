@@ -97,7 +97,7 @@ public class JobPreActivity extends BaseActivity implements View.OnClickListener
 
     private void initView() {
         mDataList.clear();
-        for (int i = 1; i <= 31; i++) {
+        for (int i = 1; i <= 41; i++) {
             if (i != 13) {
                 mDataList.add(new OrderTypeModel(DemoUtils.TypeToOccupation(i), i));
             }

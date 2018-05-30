@@ -89,6 +89,7 @@ public class MainFragment1 extends BaseFragment implements View.OnClickListener,
     private ViewPager1 view1;
     private ViewPager1 view2;
     private ViewPager1 view3;
+    private ViewPager1 view4;
     private List<Fragment> fragments = new ArrayList<>();
     private MyPagerAdapter mAdapter;
     private List<ImageView> mCons = new ArrayList<>();//指示器
@@ -289,7 +290,7 @@ public class MainFragment1 extends BaseFragment implements View.OnClickListener,
 
         mTypeOrderPop = new ChoosePopuWindow(aty);
         List<String> data1 = new ArrayList<>();
-        for (int i = 0; i <= 31; i++) {
+        for (int i = 0; i <= 41; i++) {
             if (i != 13) {
                 data1.add(i + "");
             }
@@ -405,9 +406,15 @@ public class MainFragment1 extends BaseFragment implements View.OnClickListener,
         bundle2.putInt("page", 2);
         view3.setArguments(bundle2);
 
+        view4 = new ViewPager1();
+        Bundle bundle3 = new Bundle();
+        bundle3.putInt("page",3);
+        view4.setArguments(bundle3);
+
         fragments.add(view1);
         fragments.add(view2);
         fragments.add(view3);
+        fragments.add(view4);
 
         mBinding.llyContainer.removeAllViews();
         for (int i = 0; i < fragments.size(); i++) {

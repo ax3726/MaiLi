@@ -85,6 +85,17 @@ public class ViewPager1 extends BaseFragment {
             mDataList.add(new OrderTypeModel("上门开锁", 29, R.drawable.work_type27));
             mDataList.add(new OrderTypeModel("下水道疏通", 30, R.drawable.work_type28));
             mDataList.add(new OrderTypeModel("充场", 31, R.drawable.work_type30));
+        } else if (page==3){
+            mDataList.add(new OrderTypeModel("果蔬粮油", 33, R.drawable.home_icon_gsly));
+            mDataList.add(new OrderTypeModel("禽畜水产", 38, R.drawable.home_icon_qxsc));
+            mDataList.add(new OrderTypeModel("茶叶交易", 32, R.drawable.home_icon_cyjy));
+            mDataList.add(new OrderTypeModel("药材交易", 41, R.drawable.home_icon_zycjy));
+            mDataList.add(new OrderTypeModel("花卉苗木", 34, R.drawable.home_icon_hhmm));
+            mDataList.add(new OrderTypeModel("林业产品", 35, R.drawable.home_icon_lycp));
+            mDataList.add(new OrderTypeModel("土地承租", 39, R.drawable.home_icon_tdcd));
+            mDataList.add(new OrderTypeModel("农用物资", 37, R.drawable.home_icon_nywz));
+            mDataList.add(new OrderTypeModel("民宿", 36, R.drawable.home_icon_ms));
+            mDataList.add(new OrderTypeModel("文化艺术", 40, R.drawable.home_iocn_whys));
         }
 
 

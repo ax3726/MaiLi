@@ -440,6 +440,26 @@ public class DemoUtils {
                 return "下水道疏通";
             case 31://普通
                 return "充场";
+            case 32://普通
+                return "茶叶交易";
+            case 33://普通
+                return "果蔬粮油";
+            case 34:
+                return "花卉苗木";
+            case 35:
+                return "林业产品";
+            case 36:
+                return "民宿";
+            case 37:
+                return "农用物资";
+            case 38:
+                return "禽畜水产";
+            case 39:
+                return "土地承租";
+            case 40:
+                return "文化艺术";
+            case 41:
+                return "中药材交易";
         }
         return "职位不限";
     }

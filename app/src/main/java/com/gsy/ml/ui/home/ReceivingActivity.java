@@ -115,7 +115,7 @@ public class ReceivingActivity extends BaseActivity implements View.OnClickListe
 
         mTypeOrderPop = new ChoosePopuWindow(aty);
         List<String> data1 = new ArrayList<>();
-        for (int i = 0; i <= 31; i++) {
+        for (int i = 0; i <= 41; i++) {
             if (i != 13) {
                 data1.add(i + "");
             }
