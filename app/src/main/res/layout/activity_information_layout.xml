@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="stateModel"
+            type="com.gsy.ml.ui.common.StateModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/il_head"
+            layout="@layout/comon_tarbar2_layout" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:id="@+id/lly_body"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/PX20"
+                    android:paddingRight="@dimen/PX20"
+                    android:paddingTop="@dimen/PX40">
+
+                    <FrameLayout
+                        android:layout_width="@dimen/PX152"
+                        android:layout_height="@dimen/PX152"
+                        android:layout_gravity="center_horizontal"
+                        android:scaleType="centerCrop">
+                        <!--ml.gsy.com.library.views.Round-->
+                        <ml.gsy.com.library.views.RoundImageView
+                            android:id="@+id/img_head"
+                            android:layout_width="@dimen/PX152"
+                            android:layout_height="@dimen/PX152"
+                            android:src="@drawable/man_headimg"
+                            app:border_color="@color/colorWhite"
+                            app:border_width="@dimen/PX4" />
+
+                        <ml.gsy.com.library.views.SquareTextView
+                            android:id="@+id/tv_head"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#00000000"
+                            android:gravity="center"
+                            android:text="正在审核中"
+                            android:textColor="@color/colorFF0400"
+                            android:textSize="@dimen/PX22"
+                            android:visibility="gone" />
+
+                    </FrameLayout>
+
+                    <RadioGroup
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/PX30"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/rb_man"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/PX80"
+                            android:layout_weight="1"
+                            android:button="@drawable/selector_rb1"
+                            android:checked="true"
+                            android:drawablePadding="5dp"
+                            android:text="男"
+                            android:textColor="@color/colorffc000"
+                            android:textSize="@dimen/PX40" />
+
+                        <RadioButton
+                            android:id="@+id/rb_women"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/PX80"
+                            android:layout_weight="1"
+                            android:button="@drawable/selector_rb1"
+                            android:drawablePadding="5dp"
+                            android:text="女"
+                            android:textColor="@color/colorffc000"
+                            android:textSize="@dimen/PX40" />
+                    </RadioGroup>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="bottom"
+                        android:orientation="vertical">
+
+                        <EditText
+                            android:id="@+id/et_nick_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/PX40"
+                            android:background="@drawable/shape_border_et"
+                            android:gravity="center_vertical"
+                            android:hint="昵称"
+                            android:maxLength="11"
+                            android:padding="5dp"
+                            android:singleLine="true"
+                            android:textColorHint="@color/editTextColor"
+                            android:textCursorDrawable="@drawable/shape_cursor_et"
+                            android:textSize="@dimen/PX30" />
+
+                        <EditText
+                            android:id="@+id/et_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/PX40"
+                            android:background="@drawable/shape_border_et"
+                            android:gravity="center_vertical"
+                            android:hint="姓名"
+                            android:maxLength="16"
+                            android:padding="5dp"
+                            android:singleLine="true"
+                            android:textColorHint="@color/editTextColor"
+                            android:textCursorDrawable="@drawable/shape_cursor_et"
+                            android:textSize="@dimen/PX30" />
+
+                        <EditText
+                            android:id="@+id/et_man_id"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/PX40"
+                            android:background="@drawable/shape_border_et"
+                            android:digits="1234567890xX"
+                            android:gravity="center_vertical"
+                            android:hint="身份证"
+                            android:inputType="phone"
+                            android:maxLength="18"
+                            android:padding="5dp"
+                            android:singleLine="true"
+                            android:textColorHint="@color/editTextColor"
+                            android:textCursorDrawable="@drawable/shape_cursor_et"
+                            android:textSize="@dimen/PX30" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/PX40"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="身份选择："
+                            android:textColor="@color/color666666"
+                            android:textSize="@dimen/PX32" />
+
+                        <TextView
+                            android:id="@+id/tv_occupation_choose"
+                            android:layout_width="@dimen/PX300"
+                            android:layout_height="@dimen/PX60"
+                            android:background="@color/colorbuttom"
+                            android:gravity="center"
+                            android:text="在校学生"
+                            android:textColor="@color/colorFFFFFF"
+                            android:textSize="@dimen/PX32" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/PX40"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="所在城市："
+                            android:textColor="@color/color666666"
+                            android:textSize="@dimen/PX32" />
+
+                        <TextView
+                            android:id="@+id/tv_city"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawablePadding="5dp"
+                            android:drawableRight="@drawable/loaction_icon"
+                            android:paddingLeft="5dp"
+                            android:text="正在定位"
+                            android:textColor="@color/editTextColor"
+                            android:textSize="@dimen/PX30" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/PX40"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="身份认证："
+                            android:textColor="@color/color666666"
+                            android:textSize="@dimen/PX32" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/PX30"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="@dimen/PX120"
+                                android:layout_weight="1"
+                                android:orientation="horizontal">
+
+
+                                <FrameLayout
+                                    android:layout_width="@dimen/PX120"
+                                    android:layout_height="@dimen/PX120">
+
+                                    <com.gsy.ml.ui.views.SquareImageView
+                                        android:id="@+id/img_zhen"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:src="@drawable/add_photo_icon" />
+
+                                    <ml.gsy.com.library.views.SquareTextView
+                                        android:id="@+id/tv_zhen"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:background="#11000000"
+                                        android:gravity="center"
+                                        android:text="正在审核中"
+                                        android:textColor="@color/colorFF0400"
+                                        android:textSize="@dimen/PX22"
+                                        android:visibility="gone" />
+
+                                </FrameLayout>
+
+                                <View
+                                    android:layout_width="@dimen/PX30"
+                                    android:layout_height="match_parent" />
+
+                                <FrameLayout
+                                    android:layout_width="@dimen/PX120"
+                                    android:layout_height="@dimen/PX120">
+
+                                    <com.gsy.ml.ui.views.SquareImageView
+                                        android:id="@+id/img_fan"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:src="@drawable/add_photo_icon" />
+
+                                    <ml.gsy.com.library.views.SquareTextView
+                                        android:id="@+id/tv_fan"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:background="#11000000"
+                                        android:gravity="center"
+                                        android:text="正在审核中"
+                                        android:textColor="@color/colorFF0400"
+                                        android:textSize="@dimen/PX22"
+                                        android:visibility="gone" />
+                                </FrameLayout>
+
+                                <View
+                                    android:layout_width="@dimen/PX30"
+                                    android:layout_height="match_parent" />
+
+                                <FrameLayout
+                                    android:layout_width="@dimen/PX120"
+                                    android:layout_height="@dimen/PX120">
+
+                                    <com.gsy.ml.ui.views.SquareImageView
+                                        android:id="@+id/img_shou"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:src="@drawable/add_photo_icon" />
+
+                                    <ml.gsy.com.library.views.SquareTextView
+                                        android:id="@+id/tv_shou"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:background="#11000000"
+                                        android:gravity="center"
+                                        android:text="正在审核中"
+                                        android:textColor="@color/colorFF0400"
+                                        android:textSize="@dimen/PX22"
+                                        android:visibility="gone" />
+
+                                </FrameLayout>
+                            </LinearLayout>
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:src="@drawable/add_txt_icon" />
+                        </LinearLayout>
+
+                        <Button
+                            android:id="@+id/btn_completeness"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/PX70"
+                            android:layout_marginBottom="@dimen/PX72"
+                            android:layout_marginLeft="@dimen/PX116"
+                            android:layout_marginRight="@dimen/PX116"
+                            android:layout_marginTop="@dimen/PX80"
+                            android:background="@drawable/shape_style_btn"
+                            android:text="完善成功"
+                            android:textColor="@color/colorFFFFFF"
+                            android:textSize="@dimen/PX40" />
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+
+            <include
+                layout="@layout/widget_layout_empty"
+                app:stateModel="@{stateModel}" />
+        </FrameLayout>
+    </LinearLayout>
+</layout>

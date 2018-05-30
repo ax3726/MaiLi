@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/PX8"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorFFFFFF"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/PX20"
+                    android:layout_marginLeft="@dimen/PX40"
+                    android:layout_marginTop="@dimen/PX20"
+                    android:text="修改订单价格"
+                    android:textColor="@color/colorffc000"
+                    android:textSize="@dimen/PX40" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/PX3"
+                    android:background="@color/colorffc000" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/PX40"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="bottom"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="价格："
+                            android:textColor="@color/color5E5E5E"
+                            android:textSize="@dimen/PX30" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingRight="@dimen/PX20">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="￥"
+                                    android:textColor="@color/color292929" />
+
+                                <EditText
+                                    android:id="@+id/et_number"
+                                    android:layout_width="@dimen/PX120"
+                                    android:layout_height="wrap_content"
+                                    android:background="@null"
+                                    android:inputType="number"
+                                    android:textColor="@color/color292929"
+                                    android:textSize="@dimen/PX40" />
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/PX1"
+                                android:background="@color/colorDDDDDD" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="/人" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/PX14"
+                        android:src="@drawable/xiu_icon" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/PX40"
+                    android:gravity="bottom|center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="订单总金额："
+                        android:textColor="@color/color5E5E5E"
+                        android:textSize="@dimen/PX30" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingRight="@dimen/PX20">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingRight="@dimen/PX30">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="￥"
+                                android:textColor="@color/color292929" />
+
+                            <TextView
+                                android:id="@+id/tv_work_total_cost"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/color292929"
+                                android:textSize="@dimen/PX40" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/PX20"
+                    android:layout_marginLeft="@dimen/PX40"
+                    android:layout_marginRight="@dimen/PX40"
+                    android:layout_marginTop="@dimen/PX40"
+                    app:cardCornerRadius="@dimen/PX5"
+                    app:cardElevation="0dp">
+
+                    <TextView
+                        android:id="@+id/tv_affirm"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorffc000"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:paddingBottom="@dimen/PX20"
+                        android:paddingTop="@dimen/PX20"
+                        android:text="确认修改"
+                        android:textColor="@color/colorFFFFFF"
+                        android:textSize="@dimen/PX34" />
+
+                </android.support.v7.widget.CardView>
+
+                <TextView
+                    android:id="@+id/tv_cancel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/PX40"
+                    android:layout_marginLeft="@dimen/PX40"
+                    android:layout_marginRight="@dimen/PX40"
+                    android:layout_marginTop="@dimen/PX20"
+                    android:background="@drawable/selector_dialog_info_btn"
+                    android:gravity="center"
+                    android:paddingBottom="@dimen/PX20"
+                    android:paddingTop="@dimen/PX20"
+                    android:text="取消"
+                    android:textColor="@color/colorffc000"
+                    android:textSize="@dimen/PX34" />
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+
+
+</layout>

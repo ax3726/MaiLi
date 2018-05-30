@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/il_head"
+            layout="@layout/comon_tarbar_layout" />
+
+        <ml.gsy.com.library.views.PagerSlidingTabStrip
+            android:id="@+id/ps_head"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/PX82"
+            android:layout_gravity="center"
+            android:layout_margin="0dp"
+            android:background="@color/colorWhite"
+            android:padding="0dp"
+            app:pstsDividerColor="@color/colorWhite"
+            app:pstsShouldExpand="true"
+            app:pstsTextAllCaps="false"
+            app:zmsSelectedTabTextColor="@color/color4d4d4d"
+            app:zmsSelectedTabTextSize="@dimen/PX28"
+            app:zmsTabTextColor="@color/color4d4d4d"
+            app:zmsTabTextSize="@dimen/PX28" />
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vp_orders"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+</layout>

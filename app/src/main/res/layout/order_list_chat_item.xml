@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/lly_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:background="@color/colorWhite"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/PX20">
+
+        <ml.gsy.com.library.views.RoundImageView
+            android:id="@+id/img_head"
+            android:layout_width="@dimen/PX88"
+            android:layout_height="@dimen/PX88"
+            android:src="@drawable/heads_icon"
+            app:border_color="@color/colorWhite"
+            app:border_width="@dimen/PX4" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/PX20"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/PX5"
+                    android:drawablePadding="@dimen/PX10"
+                    android:drawableRight="@drawable/man_icon"
+                    android:maxLength="10"
+                    android:text="叫盖世英雄"
+                    android:textColor="@color/color5E5E5E"
+                    android:textSize="@dimen/PX30" />
+
+                <TextView
+                    android:id="@+id/tv_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="@dimen/PX5"
+
+                    android:text="08月09日 16:30"
+                    android:textColor="@color/color5E5E5E"
+                    android:textSize="@dimen/PX30" />
+
+            </RelativeLayout>
+
+
+            <ImageView
+                android:id="@+id/img_star"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/PX10"
+                android:layout_marginTop="@dimen/PX8"
+                android:src="@drawable/stars_five_icon" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/img_chat"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/PX30"
+            android:layout_marginRight="@dimen/PX40"
+            android:src="@drawable/order_message_icon" />
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/colorcccccc"
+        />
+
+</LinearLayout>

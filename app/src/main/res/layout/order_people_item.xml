@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/lly_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/PX20"
+        android:layout_marginTop="@dimen/PX20"
+        android:background="@drawable/selector_part_time_job_details"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/PX20">
+
+        <ml.gsy.com.library.views.RoundImageView
+            android:id="@+id/img_head"
+            android:layout_width="@dimen/PX88"
+            android:layout_height="@dimen/PX88"
+            android:src="@drawable/heads_icon"
+            app:border_color="@color/colorWhite"
+            app:border_width="@dimen/PX4" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/PX20"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/PX5"
+                android:drawablePadding="@dimen/PX10"
+                android:drawableRight="@drawable/man_icon"
+                android:text="叫盖世英雄"
+                android:textColor="@color/color5E5E5E"
+                android:textSize="@dimen/PX30" />
+
+            <ImageView
+                android:id="@+id/img_star"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/PX10"
+                android:layout_marginTop="@dimen/PX5"
+                android:src="@drawable/stars_five_icon" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/img_chat"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="@dimen/PX40"
+            android:src="@drawable/order_message_icon" />
+
+        <ImageView
+            android:id="@+id/img_call"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="@dimen/PX40"
+            android:src="@drawable/phones_icon" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+
+        <variable
+            name="stateModel"
+            type="com.gsy.ml.ui.common.StateModel" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/il_head"
+            layout="@layout/comon_tarbar_layout" />
+
+        <RelativeLayout
+            android:id="@+id/rl_add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorFFFFFF"
+            android:paddingBottom="@dimen/PX22"
+            android:paddingTop="@dimen/PX22">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/PX40"
+                android:drawableLeft="@drawable/adds_icon"
+                android:drawablePadding="@dimen/PX40"
+                android:gravity="center_vertical"
+                android:text="添加外卖平台"
+                android:textColor="@color/colorfedb56"
+                android:textSize="@dimen/PX34" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/PX40"
+                android:src="@drawable/jin_icon" />
+        </RelativeLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/PX40"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/rl_mei"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorFFFFFF"
+                    android:paddingBottom="@dimen/PX20"
+                    android:paddingTop="@dimen/PX20"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/PX60"
+                        android:src="@drawable/meis_icon" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/PX40"
+                        android:drawablePadding="@dimen/PX40"
+                        android:drawableRight="@drawable/jin_icon"
+                        android:text="查看待配送外卖订单" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_e"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/PX20"
+                    android:background="@color/colorFFFFFF"
+                    android:paddingBottom="@dimen/PX20"
+                    android:paddingTop="@dimen/PX20"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/PX60"
+                        android:src="@drawable/es_icon" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/PX40"
+                        android:drawablePadding="@dimen/PX40"
+                        android:drawableRight="@drawable/jin_icon"
+                        android:text="查看待配送外卖订单" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_bai"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/PX20"
+                    android:background="@color/colorFFFFFF"
+                    android:paddingBottom="@dimen/PX20"
+                    android:paddingTop="@dimen/PX20"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/PX60"
+                        android:src="@drawable/bais_icon" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/PX40"
+                        android:drawablePadding="@dimen/PX40"
+                        android:drawableRight="@drawable/jin_icon"
+                        android:text="查看待配送外卖订单" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <include
+                layout="@layout/widget_layout_empty"
+                app:stateModel="@{stateModel}" />
+        </FrameLayout>
+
+    </LinearLayout>
+</layout>
+

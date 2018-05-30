@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="stateModel"
+            type="com.gsy.ml.ui.common.StateModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorFFFFFF"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/lly_search"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/colorFFd249"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/lly_left"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/id_leftBtnImg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/back2_icon" />
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/et_search"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="@dimen/PX30"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/shape_location"
+                android:drawableLeft="@drawable/search_icon"
+                android:drawablePadding="@dimen/PX20"
+                android:gravity="center_vertical"
+                android:hint="搜索职位"
+                android:paddingLeft="@dimen/PX20"
+                android:textColor="@color/color292929"
+                android:textSize="@dimen/PX28" />
+
+            <TextView
+                android:id="@+id/tv_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/PX20"
+                android:text="搜索"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/PX30" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lly_head"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/PX20"
+            android:paddingTop="@dimen/PX20">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_city"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawablePadding="@dimen/PX8"
+                    android:drawableRight="@drawable/choose_add_down_icon"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="地区不限"
+                    android:textColor="@color/color292929"
+                    android:textSize="@dimen/PX28" />
+
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="@dimen/PX3"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:background="@color/colorcccccc" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_order_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawablePadding="@dimen/PX8"
+                    android:drawableRight="@drawable/choose_add_down_icon"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="职位类型"
+                    android:textColor="@color/color292929"
+                    android:textSize="@dimen/PX28" />
+
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="@dimen/PX3"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:background="@color/colorcccccc" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_sort"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawablePadding="@dimen/PX8"
+                    android:drawableRight="@drawable/choose_add_down_icon"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="推荐排序"
+                    android:textColor="@color/color292929"
+                    android:textSize="@dimen/PX28" />
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/colorafafaf" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <com.lm.material_refresh_lib.MaterialRefreshLayout
+                android:id="@+id/mrl_body"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:orientation="vertical">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_receiving"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+
+            </com.lm.material_refresh_lib.MaterialRefreshLayout>
+
+            <include
+                layout="@layout/widget_layout_empty"
+                app:stateModel="@{stateModel}" />
+        </FrameLayout>
+    </LinearLayout>
+
+
+</layout>

@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/il_head"
+            layout="@layout/comon_tarbar_layout" />
+
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorFFFFFF"
+                    android:orientation="vertical"
+                    android:padding="@dimen/PX20">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:lineSpacingExtra="@dimen/PX8"
+                        android:text="\t\t蚂蚁快服一键发单平台是为了帮助商家更方便的把未送的订单发送到蚂蚁快服平台，解决高峰爆单时跨平台运力分流，更好的服务客户。\n\t\t目前我们支持美团、饿了么两大平台。绑定后，登录已入驻的外卖平台，即可查看当前未配送的订单，然后使用一键发单功能即可完成下单。"
+                        android:textColor="@color/color4d4d4d"
+                        android:textSize="@dimen/PX28" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/PX10"
+                        android:text="如有疑问，请咨询：0571-5670-6883"
+                        android:textColor="@color/colorFFAE00"
+                        android:textSize="@dimen/PX30" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/PX20"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/fa_icon" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/PX20"
+                    android:layout_marginLeft="@dimen/PX20"
+                    android:layout_marginRight="@dimen/PX20"
+                    android:layout_marginTop="@dimen/PX40"
+                    android:background="@color/colorWhite"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/eleme_icon" />
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/PX60"
+                        app:cardCornerRadius="@dimen/PX10">
+
+                        <TextView
+                            android:id="@+id/tv_eleme"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@color/colorFFd249"
+                            android:paddingBottom="@dimen/PX10"
+                            android:paddingLeft="@dimen/PX20"
+                            android:paddingRight="@dimen/PX20"
+                            android:paddingTop="@dimen/PX10"
+                            android:text="去绑定"
+                            android:textColor="@color/colorFFFFFF"
+                            android:textSize="@dimen/PX34" />
+                    </android.support.v7.widget.CardView>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/PX20"
+                    android:background="@color/colorWhite"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/meituan_icon" />
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/PX60"
+                        app:cardCornerRadius="@dimen/PX10">
+
+                        <TextView
+                            android:id="@+id/tv_meituan"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@color/colorFFd249"
+                            android:paddingBottom="@dimen/PX10"
+                            android:paddingLeft="@dimen/PX20"
+                            android:paddingRight="@dimen/PX20"
+                            android:paddingTop="@dimen/PX10"
+                            android:text="去绑定"
+                            android:textColor="@color/colorFFFFFF"
+                            android:textSize="@dimen/PX34" />
+                    </android.support.v7.widget.CardView>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/PX40"
+                    android:layout_marginLeft="@dimen/PX20"
+                    android:layout_marginRight="@dimen/PX20"
+                    android:layout_marginTop="@dimen/PX20"
+                    android:background="@color/colorWhite"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:src="@drawable/baidu_take_out_icon" />
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="31dp"
+                        app:cardCornerRadius="@dimen/PX10">
+
+                        <TextView
+                            android:id="@+id/tv_baidu"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@color/colorFFd249"
+                            android:paddingBottom="@dimen/PX10"
+                            android:paddingLeft="@dimen/PX20"
+                            android:paddingRight="@dimen/PX20"
+                            android:paddingTop="@dimen/PX10"
+                            android:text="去绑定"
+                            android:textColor="@color/colorFFFFFF"
+                            android:textSize="@dimen/PX34" />
+                    </android.support.v7.widget.CardView>
+
+                </RelativeLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>

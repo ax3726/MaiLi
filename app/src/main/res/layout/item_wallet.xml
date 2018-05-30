@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorFFFFFF"
+    android:orientation="horizontal"
+    android:padding="@dimen/PX18">
+
+    <TextView
+        android:id="@+id/aa"
+        android:layout_width="@dimen/PX366"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:layout_gravity="center_vertical"
+        android:singleLine="true"
+        android:text="白马湖车展礼仪asdasdffas"
+        android:textColor="@color/color292929"
+        android:textSize="@dimen/PX30" />
+
+    <TextView
+        android:id="@+id/bb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="4月27日"
+        android:textColor="@color/color292929"
+        android:textSize="@dimen/PX30" />
+
+    <TextView
+        android:id="@+id/cc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|center_vertical"
+        android:text="+300.0"
+        android:textColor="@color/color000000"
+        android:textSize="@dimen/PX30"
+        android:textStyle="bold" />
+</LinearLayout>

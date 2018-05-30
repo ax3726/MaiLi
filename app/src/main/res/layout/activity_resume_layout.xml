@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/il_head"
+            layout="@layout/comon_tarbar_layout" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorF6F3E9"
+            android:scrollbars="none">
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorFFFFFF"
+                    android:orientation="vertical"
+                    android:padding="@dimen/PX20">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="个人评价："
+                        android:textColor="@color/color292929"
+                        android:textSize="@dimen/PX30" />
+
+                    <EditText
+                        android:id="@+id/et_evaluate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/PX20"
+                        android:background="@null"
+                        android:gravity="top"
+                        android:hint="添加自我评价"
+                        android:lineSpacingExtra="@dimen/PX8"
+                        android:minHeight="@dimen/PX130"
+                        android:maxLength="100"
+                        android:scrollbars="vertical"
+                        android:textColor="@color/color292929"
+                        android:textCursorDrawable="@drawable/shape_cursor_et"
+                        android:textSize="@dimen/PX24" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/PX20"
+                    android:background="@color/colorFFFFFF"
+                    android:orientation="vertical"
+                    android:padding="@dimen/PX20">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="个人爱好"
+                            android:textColor="@color/color292929"
+                            android:textSize="@dimen/PX30" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="(选填)："
+                            android:textColor="@color/colorafafaf"
+                            android:textSize="@dimen/PX28" />
+                    </LinearLayout>
+
+                    <EditText
+                        android:id="@+id/et_hoppy"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/PX20"
+                        android:background="@null"
+                        android:gravity="top"
+                        android:maxLength="100"
+                        android:hint="添加个人爱好"
+                        android:lineSpacingExtra="@dimen/PX8"
+                        android:minHeight="@dimen/PX130"
+                        android:scrollbars="vertical"
+                        android:textColor="@color/color292929"
+                        android:textCursorDrawable="@drawable/shape_cursor_et"
+                        android:textSize="@dimen/PX24" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/PX20"
+                    android:background="@color/colorFFFFFF"
+                    android:orientation="vertical"
+                    android:padding="@dimen/PX20">
+
+                    <TextView
+                        android:id="@+id/textView20"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="教育经历："
+                        android:textColor="@color/color292929"
+                        android:textSize="@dimen/PX30" />
+
+                    <TextView
+                        android:id="@+id/tv_education"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/PX16"
+                        android:lineSpacingExtra="@dimen/PX8"
+                        android:textColor="@color/color292929"
+                        android:textSize="@dimen/PX28"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/tv_add_education"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/addition_icon"
+                        android:gravity="center_vertical"
+                        android:paddingTop="@dimen/PX10"
+                        android:text="添加教育经历"
+                        android:textColor="#ffc000"
+                        android:textSize="@dimen/PX24" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/PX20"
+                    android:background="@color/colorFFFFFF"
+                    android:orientation="vertical"
+                    android:padding="@dimen/PX20">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="资格证书"
+                            android:textColor="@color/color292929"
+                            android:textSize="@dimen/PX30" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="(选填)："
+                            android:textColor="@color/colorafafaf"
+                            android:textSize="@dimen/PX28" />
+                    </LinearLayout>
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rc_img"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/PX20"
+                        android:layout_marginTop="@dimen/PX10" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/PX60"
+                    android:layout_marginTop="@dimen/PX20"
+                    android:background="@color/colorFFFFFF"
+                    android:orientation="vertical"
+                    android:padding="@dimen/PX20">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="工作经历"
+                            android:textColor="@color/color292929"
+                            android:textSize="@dimen/PX30" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="(选填)："
+                            android:textColor="@color/colorafafaf"
+                            android:textSize="@dimen/PX28" />
+                    </LinearLayout>
+
+                    <EditText
+                        android:id="@+id/et_work_ex"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/PX20"
+                        android:background="@null"
+                        android:gravity="top"
+                        android:hint="添加工作经历"
+                        android:lineSpacingExtra="@dimen/PX8"
+                        android:maxLength="200"
+                        android:minHeight="@dimen/PX130"
+                        android:scrollbars="vertical"
+                        android:textColor="@color/color292929"
+                        android:textCursorDrawable="@drawable/shape_cursor_et"
+                        android:textSize="@dimen/PX26" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>

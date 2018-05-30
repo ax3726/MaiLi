@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorF5F5F9"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/in_head"
+            layout="@layout/comon_tarbar_layout" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/PX20"
+            android:layout_marginLeft="@dimen/PX30"
+            android:layout_marginTop="@dimen/PX20"
+            android:text="请输入您的真实信息，通过后不能更改"
+            android:textColor="@color/colortextnomal"
+            android:textSize="@dimen/PX30" />
+
+        <View
+
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/colorcccccc" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/PX60"
+            android:background="@color/colorWhite"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/PX30"
+            android:paddingRight="@dimen/PX30">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/PX30"
+                android:paddingTop="@dimen/PX30">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/PX30"
+                    android:text="真实姓名"
+                    android:textColor="@color/color292929"
+                    android:textSize="@dimen/PX34" />
+
+                <EditText
+                    android:id="@+id/et_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/colorWhite"
+                    android:hint="请输入真实姓名"
+                    android:inputType="text"
+                    android:textSize="@dimen/PX34" />
+            </LinearLayout>
+
+            <View
+
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/colorcccccc" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/PX30"
+                android:paddingTop="@dimen/PX30">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/PX30"
+                    android:text="身份证号"
+                    android:textColor="@color/color292929"
+                    android:textSize="@dimen/PX34" />
+
+                <EditText
+                    android:id="@+id/et_id"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/colorWhite"
+                    android:hint="请输入身份证号"
+                    android:inputType="text"
+                    android:textSize="@dimen/PX34" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/tv_re_start"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/PX20"
+            android:layout_marginRight="@dimen/PX20"
+            android:background="@drawable/selector_common_btn"
+            android:gravity="center"
+            android:paddingBottom="@dimen/PX30"
+            android:paddingTop="@dimen/PX30"
+            android:text="重新识别"
+            android:textColor="@color/color292929"
+            android:textSize="@dimen/PX30"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_turn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/PX20"
+            android:layout_marginRight="@dimen/PX20"
+            android:layout_marginTop="@dimen/PX30"
+            android:background="@drawable/selector_common_btn"
+            android:gravity="center"
+            android:paddingBottom="@dimen/PX30"
+            android:paddingTop="@dimen/PX30"
+            android:text="下一步"
+            android:textColor="@color/color_common_btn"
+            android:textSize="@dimen/PX30"
+
+            />
+
+
+    </LinearLayout>
+
+
+</layout>

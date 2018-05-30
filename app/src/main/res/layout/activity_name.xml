@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+<!---->
+        <include
+            android:id="@+id/il_head"
+            layout="@layout/comon_tarbar2_layout" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/PX100"
+            android:layout_marginTop="@dimen/PX40"
+            android:background="@color/colorFFFFFF"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/PX40"
+                android:gravity="center"
+                android:text="昵称"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/PX34" />
+
+            <EditText
+                android:id="@+id/et_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/PX40"
+                android:layout_weight="1"
+                android:background="@null"
+                android:hint="请输入您的名称"
+                android:singleLine="true"
+                android:textColorHint="@color/colorafafaf"
+                android:textSize="@dimen/PX28" />
+
+            <ImageView
+                android:id="@+id/img_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/PX40"
+                android:layout_marginRight="@dimen/PX40"
+                android:src="@drawable/close1_icon" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

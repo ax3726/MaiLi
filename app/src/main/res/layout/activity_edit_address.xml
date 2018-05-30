@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorf2f2f2"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@color/colorWhite"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/PX16"
+            android:paddingTop="@dimen/PX16">
+
+
+            <TextView
+                android:id="@+id/tv_city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/PX16"
+                android:drawablePadding="@dimen/PX10"
+                android:drawableRight="@drawable/choose_add_down_icon"
+                android:maxLength="5"
+                android:text="杭州"
+                android:textColor="@color/color292929"
+                android:textSize="@dimen/PX28" />
+
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/PX16"
+
+                android:background="@color/colorafafaf" />
+
+            <EditText
+                android:id="@+id/et_search"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="@color/colorWhite"
+
+                android:drawablePadding="@dimen/PX20"
+                android:hint="小区名/大厦名"
+                android:paddingLeft="@dimen/PX20"
+                android:textColor="@color/color292929"
+                android:textSize="@dimen/PX28" />
+
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/PX16"
+
+                android:background="@color/colorafafaf" />
+
+            <TextView
+                android:id="@+id/tv_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/PX16"
+                android:layout_marginRight="@dimen/PX16"
+                android:text="取消"
+                android:textColor="@color/colortextnomal"
+                android:textSize="@dimen/PX28" />
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rc_content"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+
+        <LinearLayout
+            android:id="@+id/fly_citys"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+
+            <ListView
+                android:id="@+id/lv_city"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+            </ListView>
+
+            <com.gsy.ml.ui.views.QuicLocationBar
+                android:id="@+id/city_loactionbar"
+                android:layout_width="30.0dip"
+                android:layout_height="fill_parent"
+
+                android:paddingBottom="2dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</layout>
+

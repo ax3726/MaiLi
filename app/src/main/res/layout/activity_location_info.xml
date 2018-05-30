@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="stateModel"
+            type="com.gsy.ml.ui.common.StateModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/in_head"
+            layout="@layout/comon_tarbar2_layout" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.amap.api.maps.TextureMapView
+                android:id="@+id/mv_loaction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhite" />
+
+            <include
+                layout="@layout/widget_layout_empty"
+                android:visibility="gone"
+                app:stateModel="@{stateModel}" />
+        </FrameLayout>
+
+
+    </LinearLayout>
+
+</layout>
+

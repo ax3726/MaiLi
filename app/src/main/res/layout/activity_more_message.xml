@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/in_head"
+            layout="@layout/comon_tarbar_layout" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorf2f2f2"
+
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_location"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/PX40"
+                    android:background="@color/colorWhite"
+                    android:drawableLeft="@drawable/site_icon"
+                    android:drawablePadding="@dimen/PX20"
+                    android:drawableRight="@drawable/enter_icon"
+                    android:gravity="center_vertical"
+                    android:paddingBottom="@dimen/PX30"
+                    android:paddingLeft="@dimen/PX20"
+
+                    android:paddingRight="@dimen/PX20"
+                    android:paddingTop="@dimen/PX30"
+                    android:text="常用地址"
+                    android:textColor="@color/color000000"
+                    android:textSize="@dimen/PX32" />
+
+                <TextView
+
+                    android:id="@+id/tv_work_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/PX40"
+                    android:background="@color/colorWhite"
+                    android:drawableLeft="@drawable/work_address_icon"
+                    android:drawablePadding="@dimen/PX20"
+                    android:drawableRight="@drawable/enter_icon"
+                    android:gravity="center_vertical"
+                    android:paddingBottom="@dimen/PX30"
+                    android:paddingLeft="@dimen/PX20"
+                    android:paddingRight="@dimen/PX20"
+                    android:paddingTop="@dimen/PX30"
+                    android:text="做工区域预选"
+
+                    android:textColor="@color/color000000"
+                    android:textSize="@dimen/PX32" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="@dimen/PX20"
+                    android:layout_marginRight="@dimen/PX20"
+                    android:background="@color/colorf2f2f2" />
+
+                <TextView
+                    android:id="@+id/tv_work_pre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorWhite"
+                    android:drawableLeft="@drawable/work_pre_icon"
+                    android:drawablePadding="@dimen/PX20"
+                    android:drawableRight="@drawable/enter_icon"
+                    android:gravity="center_vertical"
+                    android:paddingBottom="@dimen/PX30"
+                    android:paddingLeft="@dimen/PX20"
+                    android:paddingRight="@dimen/PX20"
+                    android:paddingTop="@dimen/PX30"
+                    android:text="做工职位预选"
+
+                    android:textColor="@color/color000000"
+                    android:textSize="@dimen/PX32" />
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+
+</layout>
+

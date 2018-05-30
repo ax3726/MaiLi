@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <include android:id="@+id/in_head" layout="@layout/comon_tarbar2_layout" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="bottom|center_horizontal"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:id="@+id/imageView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/order_successicon" />
+
+            <TextView
+                android:id="@+id/tv_hint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/PX30"
+                android:text="恭喜发单成功"
+                android:textColor="@color/color707070"
+                android:textSize="@dimen/PX34" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="@dimen/PX30"
+                android:layout_marginRight="@dimen/PX30"
+                android:layout_marginTop="@dimen/PX20"
+                android:background="@color/colorcccccc" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/PX50"
+                android:background="@drawable/shape_common_white"
+                android:gravity="center"
+
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/PX80"
+                android:paddingRight="@dimen/PX80">
+
+                <TextView
+                    android:id="@+id/tv_my_order"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/PX90"
+                    android:layout_marginRight="@dimen/PX40"
+                    android:layout_weight="1"
+                    android:background="@drawable/selector_dialog_info_btn"
+
+                    android:gravity="center"
+                    android:text="我的发单"
+                    android:textColor="@color/colorffc000"
+                    android:textSize="@dimen/PX34" />
+
+
+                <TextView
+                    android:id="@+id/tv_again_order"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/PX90"
+                    android:layout_marginLeft="@dimen/PX40"
+                    android:layout_weight="1"
+
+                    android:background="@drawable/selector_dialog_info_btn1"
+                    android:gravity="center"
+                    android:text="继续发单"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/PX34" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</layout>

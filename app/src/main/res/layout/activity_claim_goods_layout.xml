@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/il_head"
+            layout="@layout/comon_tarbar_layout" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorFFFFFF"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/PX15"
+                    android:paddingTop="@dimen/PX15"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_time"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/PX20"
+                        android:text="取货倒计时:"
+                        android:textColor="@color/colorFF0000"
+                        android:textSize="@dimen/PX28" />
+
+
+                    <TextView
+                        android:id="@+id/tv_Arrive"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/selector_city_buttom"
+                        android:text="我已到达"
+                        android:paddingLeft="@dimen/PX20"
+                        android:paddingRight="@dimen/PX20"
+                        android:paddingTop="@dimen/PX12"
+                        android:layout_marginRight="@dimen/PX20"
+                        android:paddingBottom="@dimen/PX12"
+                        android:textColor="@color/color_city_buttom"
+                        android:textSize="@dimen/PX28"
+
+                        />
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="@dimen/PX20"
+                    android:layout_marginRight="@dimen/PX20"
+                    android:background="@color/colorE7E7E7" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/PX20">
+
+                    <TextView
+                        android:id="@+id/textView7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="取货地点："
+                        android:textColor="@color/color292929"
+                        android:textSize="@dimen/PX28" />
+
+                    <TextView
+                        android:id="@+id/tv_address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="@color/color292929"
+                        android:textSize="@dimen/PX28" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="@dimen/PX20"
+                    android:layout_marginRight="@dimen/PX20"
+                    android:background="@color/colorE7E7E7" />
+
+
+                <LinearLayout
+                    android:id="@+id/lly_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/PX20">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="联系人："
+                            android:textColor="@color/color292929"
+                            android:textSize="@dimen/PX28" />
+
+                        <TextView
+                            android:id="@+id/tv_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:singleLine="true"
+                            android:textColor="@color/color292929"
+                            android:textSize="@dimen/PX28" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="@dimen/PX1"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/PX10"
+                        android:layout_marginRight="@dimen/PX10"
+                        android:background="@color/colora5a5a5" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="联系电话："
+                            android:textColor="@color/color292929" />
+
+                        <TextView
+                            android:id="@+id/tv_phone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/color292929"
+                            android:textSize="@dimen/PX28" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <com.gsy.ml.ui.views.MyRecycleView
+                    android:id="@+id/rv_claim"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="@dimen/PX30"
+                    android:layout_marginRight="@dimen/PX30"
+                    android:layout_marginTop="@dimen/PX40"
+                    android:background="@color/colorE7E7E7" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/PX40"
+                    android:layout_marginLeft="@dimen/PX40"
+                    android:layout_marginRight="@dimen/PX40"
+                    android:layout_marginTop="@dimen/PX20"
+                    android:background="@color/colorE7E7E7"
+                    android:padding="@dimen/PX20"
+                    android:text="温馨提示：添加图片后，我们将给收件人发送验证码，您必须通过验证码才能玩成本次订单"
+                    android:textColor="@color/color292929"
+                    android:textSize="@dimen/PX28" />
+
+                <TextView
+                    android:id="@+id/btn_ok"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/PX88"
+                    android:layout_marginBottom="@dimen/PX40"
+                    android:layout_marginLeft="@dimen/PX15"
+                    android:layout_marginRight="@dimen/PX15"
+                    android:layout_marginTop="@dimen/PX40"
+                    android:background="@drawable/selector_dialog_info_btn1"
+                    android:gravity="center"
+                    android:text="确定"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/PX30" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#33000000"
+                android:paddingBottom="@dimen/PX20"
+                android:paddingLeft="@dimen/PX32"
+                android:paddingRight="@dimen/PX32"
+                android:paddingTop="@dimen/PX20">
+
+                <TextView
+                    android:id="@+id/tv_cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="取消"
+                    android:textColor="@color/color292929"
+                    android:textSize="@dimen/PX28" />
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="选择城市"
+                    android:textColor="@color/color292929"
+                    android:textSize="@dimen/PX32" />
+
+                <TextView
+                    android:id="@+id/tv_ok"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="确认"
+                    android:textColor="@color/color292929"
+                    android:textSize="@dimen/PX28" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_province"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+                <!--                <com.gsy.ml.ui.views.WheelView
+                                    android:id="@+id/wv_choose1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1" />
+
+                                <com.gsy.ml.ui.views.WheelView
+                                    android:id="@+id/wv_choose2"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1" />
+
+                                <com.gsy.ml.ui.views.WheelView
+                                    android:id="@+id/wv_choose3"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1" />-->
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFd249"
+                android:gravity="center"
+                android:paddingBottom="15px"
+                android:paddingTop="15px"
+                android:text="常用语"
+                android:textColor="#ffffff"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:id="@+id/img_shut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="30px"
+                android:src="@drawable/common_language_del" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="25px"
+            android:paddingLeft="40px"
+            android:paddingRight="40px"
+            android:paddingTop="40px">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                app:cardCornerRadius="5px"
+                app:cardElevation="0px">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#a5a5a5"
+                    android:padding="1px">
+
+                    <EditText
+                        android:id="@+id/et_useful_expressions"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#F5F5F9"
+                        android:gravity="top"
+                        android:hint="输入您的常用回复，请不要填写QQ、微信等联系方式或广告信息，否则系统将封禁您的账号"
+                        android:padding="10px"
+                        android:textColorHint="#afafaf"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:orientation="horizontal"
+            android:paddingRight="30px">
+
+            <TextView
+                android:id="@+id/tv_quantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="#FFd249"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="/200"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40px"
+            android:layout_marginTop="25px"
+            android:orientation="horizontal">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30px"
+                android:layout_marginRight="30px"
+                android:layout_weight="1"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="0px">
+
+                <TextView
+                    android:id="@+id/tv_preserve"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#FFd249"
+                    android:gravity="center"
+                    android:paddingBottom="25px"
+                    android:paddingTop="25px"
+                    android:text="保存"
+                    android:textColor="#ffffff" />
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30px"
+                android:layout_marginRight="30px"
+                android:layout_weight="1"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="0px">
+
+                <TextView
+                    android:id="@+id/tv_send"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#FFd249"
+                    android:gravity="center"
+                    android:paddingBottom="25px"
+                    android:paddingTop="25px"
+                    android:text="发送"
+                    android:textColor="#ffffff" />
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

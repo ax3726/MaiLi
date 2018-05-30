@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/il_head"
+            layout="@layout/comon_tarbar2_layout" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/PX20"
+                android:paddingRight="@dimen/PX20"
+                android:paddingTop="@dimen/PX20"
+                android:lineSpacingExtra="@dimen/PX8"
+                android:text="请绑定持卡人本人的银行卡\n注:暂只支持招商银行的银行卡"
+                android:textColor="@color/editTextColor" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/PX20"
+                android:background="@drawable/white_background_icon"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="@dimen/PX142"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/PX20"
+                        android:paddingRight="@dimen/PX20"
+                        android:text="持卡人"
+                        android:textColor="@color/color292929"
+                        android:textSize="@dimen/PX30" />
+
+                    <EditText
+                        android:id="@+id/et_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:enabled="false"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
+                        android:textColorHint="@color/color5E5E5E"
+                        android:textSize="@dimen/PX30" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:layout_marginLeft="@dimen/PX20"
+                    android:layout_marginRight="@dimen/PX20"
+                    android:background="@color/colorafafaf" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="@dimen/PX142"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/PX20"
+                        android:paddingRight="@dimen/PX20"
+                        android:text="卡号"
+                        android:textColor="@color/color292929"
+                        android:textSize="@dimen/PX30" />
+
+                    <com.gsy.ml.ui.views.ContentWithSpaceEditText
+                        android:id="@+id/et_bank"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:hint="银行卡号"
+                        android:inputType="phone"
+                        android:singleLine="true"
+                        android:textColorHint="@color/colorafafaf"
+                        android:textSize="@dimen/PX30"
+                        app:epaysdk_type="card" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/btn_ok"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/PX88"
+                android:layout_marginLeft="@dimen/PX60"
+                android:layout_marginRight="@dimen/PX60"
+                android:layout_marginTop="@dimen/PX80"
+                android:background="@drawable/selector_dialog_info_btn1"
+                android:gravity="center"
+                android:text="下一步"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/PX32" />
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorFFFFFF"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/il_head"
+
+            layout="@layout/comon_tarbar2_layout" />
+
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:paddingTop="@dimen/PX60">
+
+                    <ImageView
+                        android:layout_width="@dimen/PX210"
+                        android:layout_height="@dimen/PX210"
+                        android:src="@drawable/about_icon" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/PX20"
+                        android:text="专职服务\t\t兼顾你我"
+                        android:textColor="@color/colorFFd249"
+                        android:textSize="@dimen/PX34" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/PX30"
+                        android:lineSpacingExtra="@dimen/PX2"
+                        android:text="\t\t蚂蚁快服是一款提供同城真实兼职信息服务的平台，包含了同城配送，家教培训，家政服务，临时用工等二十多种工种的兼职信息。发单人可以随时随地的在蚂蚁快服同城发布兼职需求，接单人可以随时随地的提供兼职服务赚钱。我们的目的就是：方便发单者的生活，充实接单者的钱包！"
+                        android:textColor="@color/color666666"
+                        android:textSize="@dimen/PX30" />
+
+                    <TextView
+                        android:id="@+id/tv_versions"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="v.1.10" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/PX30"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@color/colorf2f2f2" />
+
+                    <TextView
+                        android:id="@+id/tv_mianze"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorFFFFFF"
+                        android:drawableRight="@drawable/enter_icon"
+                        android:gravity="center_vertical"
+                        android:paddingBottom="@dimen/PX20"
+                        android:paddingLeft="@dimen/PX30"
+                        android:paddingRight="@dimen/PX44"
+                        android:paddingTop="@dimen/PX20"
+                        android:text="注册协议"
+                        android:textColor="@color/color292929"
+                        android:textSize="@dimen/PX30" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@color/colorf2f2f2" />
+
+                    <TextView
+                        android:id="@+id/tv_fadan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorFFFFFF"
+                        android:drawableRight="@drawable/enter_icon"
+                        android:gravity="center_vertical"
+                        android:paddingBottom="@dimen/PX20"
+                        android:paddingLeft="@dimen/PX30"
+                        android:paddingRight="@dimen/PX44"
+                        android:paddingTop="@dimen/PX20"
+
+                        android:text="发单协议"
+                        android:textColor="@color/color292929"
+                        android:textSize="@dimen/PX30" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@color/colorf2f2f2" />
+                    <TextView
+                        android:id="@+id/tv_jiedan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorFFFFFF"
+                        android:drawableRight="@drawable/enter_icon"
+                        android:gravity="center_vertical"
+                        android:paddingBottom="@dimen/PX20"
+                        android:paddingLeft="@dimen/PX30"
+                        android:paddingRight="@dimen/PX44"
+                        android:paddingTop="@dimen/PX20"
+                        android:text="接单协议"
+                        android:textColor="@color/color292929"
+                        android:textSize="@dimen/PX30" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@color/colorf2f2f2" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="bottom|center_horizontal"
+                    android:paddingBottom="@dimen/PX20"
+                    android:text="\@浙江杭州格尚亿网络科技有限公司版权所有"
+                    android:textColor="@color/colora5a5a5"
+                    android:textSize="@dimen/PX26" />
+
+            </LinearLayout>
+
+</layout>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="stateModel"
+            type="com.gsy.ml.ui.common.StateModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:background="@color/colorE7E7E7"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/il_head"
+            layout="@layout/comon_tarbar2_layout" />
+
+        <com.lm.material_refresh_lib.MaterialRefreshLayout
+            android:id="@+id/mrl_body"
+            app:overlay="true"
+            app:wave_color="#00ffffff"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rc_body"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <include
+                layout="@layout/widget_layout_empty"
+                app:stateModel="@{stateModel}" />
+        </com.lm.material_refresh_lib.MaterialRefreshLayout>
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="stateModel"
+            type="com.gsy.ml.ui.common.StateModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/il_head"
+
+            layout="@layout/comon_tarbar2_layout" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/PX20">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/illustration_icon"
+                        android:orientation="horizontal">
+
+                        <ml.gsy.com.library.views.RoundImageView
+                            android:id="@+id/img_home_head"
+                            android:layout_width="@dimen/PX144"
+                            android:layout_height="@dimen/PX144"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/PX40"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/head_icon"
+                            app:border_color="@color/colorWhite"
+                            app:border_width="@dimen/PX10" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/PX20"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tv_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/color292929"
+                                android:textSize="@dimen/PX32" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tv_sex"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginBottom="@dimen/PX8"
+                                    android:layout_marginRight="@dimen/PX50"
+                                    android:layout_marginTop="@dimen/PX8"
+                                    android:textColor="@color/color292929"
+                                    android:textSize="@dimen/PX30" />
+
+                                <TextView
+                                    android:id="@+id/tv_phone"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginBottom="@dimen/PX8"
+                                    android:layout_marginTop="@dimen/PX8"
+                                    android:textColor="@color/colorFF911B"
+                                    android:textColorLink="@color/colorFF911B"
+                                    android:textSize="@dimen/PX34" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="@dimen/PX30"
+                                    android:text="星级"
+                                    android:textSize="@dimen/PX26" />
+
+                                <ImageView
+                                    android:id="@+id/img_star"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent" />
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/PX20"
+                        android:elevation="10dp">
+
+
+                        <LinearLayout
+                            android:id="@+id/lly_occupation"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:background="@color/colorFFFFFF"
+                            android:orientation="vertical"
+                            android:visibility="visible">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:drawableLeft="@drawable/necktie_icon"
+                                android:drawablePadding="@dimen/PX10"
+                                android:gravity="center_vertical"
+                                android:padding="@dimen/PX10"
+                                android:text="职位标签"
+                                android:textSize="@dimen/PX30" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0.5dp"
+                                android:background="@color/colorE7E7E7" />
+
+                            <com.gsy.ml.ui.views.FluidLayout
+                                android:id="@+id/fly_type"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/PX20"
+                        android:elevation="10dp">
+
+                        <LinearLayout
+                            android:id="@+id/lly_work_ex"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:background="@color/colorFFFFFF"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:drawableLeft="@drawable/pen_icon"
+                                android:drawablePadding="@dimen/PX10"
+                                android:gravity="center_vertical"
+                                android:padding="@dimen/PX10"
+                                android:text="工作经历"
+                                android:textSize="@dimen/PX30" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0.5dp"
+                                android:background="@color/colorE7E7E7" />
+
+                            <TextView
+                                android:id="@+id/tv_work_ex"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/PX20"
+                                android:text="好看的法轮大法甩啦甩啦"
+                                android:textSize="@dimen/PX26" />
+                        </LinearLayout>
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/PX20"
+
+                        android:elevation="10dp">
+
+                        <LinearLayout
+                            android:id="@+id/lly_educate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:background="@color/colorFFFFFF"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:drawableLeft="@drawable/ruler_icon"
+                                android:drawablePadding="@dimen/PX10"
+                                android:gravity="center_vertical"
+                                android:padding="@dimen/PX10"
+                                android:text="教育经历"
+                                android:textSize="@dimen/PX30" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0.5dp"
+                                android:background="@color/colorE7E7E7" />
+
+                            <TextView
+                                android:id="@+id/tv_educate"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/PX20"
+                                android:text="好看的法轮大法甩啦甩啦"
+                                android:textSize="@dimen/PX26" />
+                        </LinearLayout>
+                    </android.support.v7.widget.CardView>
+
+                    <LinearLayout
+                        android:id="@+id/lly_buttom"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/PX106"
+                        android:layout_marginTop="@dimen/PX60"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_ok"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/PX68"
+                            android:layout_marginRight="@dimen/PX30"
+                            android:background="@color/colorffc000"
+                            android:gravity="center"
+                            android:paddingLeft="@dimen/PX80"
+                            android:paddingRight="@dimen/PX80"
+                            android:text="确定录用"
+                            android:textColor="@color/colorFFFFFF"
+                            android:textSize="@dimen/PX28" />
+
+
+                        <TextView
+                            android:id="@+id/tv_cancel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/PX68"
+                            android:layout_marginLeft="@dimen/PX30"
+                            android:background="@color/colorpopu"
+                            android:gravity="center"
+                            android:paddingLeft="@dimen/PX80"
+                            android:paddingRight="@dimen/PX80"
+                            android:text="取消重选"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="@dimen/PX28" />
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+
+            <include
+
+                layout="@layout/widget_layout_empty"
+                app:stateModel="@{stateModel}" />
+
+        </FrameLayout>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/PX16"
+        android:paddingLeft="@dimen/PX16"
+        android:paddingRight="@dimen/PX16"
+        android:paddingTop="@dimen/PX16"
+        android:text="推荐排序"
+        android:textColor="@color/color_choose_city"
+        android:textSize="@dimen/PX30" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/colorafafaf" />
+
+</LinearLayout>

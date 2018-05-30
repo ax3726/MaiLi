@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="stateModel"
+            type="com.gsy.ml.ui.common.StateModel" />
+    </data>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/il_head"
+            layout="@layout/comon_tarbar_layout" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_cancel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:paddingBottom="@dimen/PX20"
+                        android:paddingLeft="@dimen/PX40"
+                        android:paddingRight="@dimen/PX20"
+                        android:paddingTop="@dimen/PX20"
+                        android:text="取消"
+                        android:textColor="@color/colorfedb56"
+                        android:textSize="@dimen/PX36"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/tv_multiple_choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:paddingBottom="@dimen/PX20"
+                        android:paddingLeft="@dimen/PX20"
+                        android:paddingRight="@dimen/PX40"
+                        android:paddingTop="@dimen/PX20"
+                        android:text="多选"
+                        android:textColor="@color/colorfedb56"
+                        android:textSize="@dimen/PX36" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/colorcccccc" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <com.lm.material_refresh_lib.MaterialRefreshLayout
+                        android:id="@+id/mrl_body"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1">
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/rv_message"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                        </android.support.v7.widget.RecyclerView>
+                    </com.lm.material_refresh_lib.MaterialRefreshLayout>
+
+                    <TextView
+                        android:id="@+id/tv_fabu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/colorfbc700"
+                        android:gravity="center"
+                        android:padding="@dimen/PX26"
+                        android:text="一键发布(0)"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/PX30"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <include
+                layout="@layout/widget_layout_empty"
+                app:stateModel="@{stateModel}" />
+        </FrameLayout>
+
+    </LinearLayout>
+</layout>

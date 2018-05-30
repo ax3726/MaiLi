@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/lly_body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/PX20"
+        android:paddingBottom="@dimen/PX20"
+        android:paddingLeft="@dimen/PX10"
+        android:paddingRight="@dimen/PX10"
+       >
+
+        <ImageView
+            android:id="@+id/img_type"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:padding="@dimen/PX16"
+            android:scaleType="centerCrop"
+            android:src="@drawable/fuwuyuan_icon" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/PX10"
+                android:singleLine="true"
+                android:text="翠苑三区英语家教老师"
+                android:textColor="@color/color000000"
+                android:textSize="@dimen/PX30"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@id/tv_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/PX28"
+                    android:drawableLeft="@drawable/location_icon"
+                    android:drawablePadding="@dimen/PX10" />
+
+                <TextView
+                    android:id="@+id/tv_grade"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/PX20"
+                    android:textSize="@dimen/PX28"
+                    android:drawableLeft="@drawable/crown_icon"
+                    android:drawablePadding="@dimen/PX10" />
+                <ImageView
+                    android:id="@+id/img_yuyue"
+                    android:layout_width="wrap_content"
+                    android:src="@drawable/pre_order_icon"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/PX10"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_money"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/PX6"
+                    android:textColor="@color/colorFF911B"
+                    android:textSize="@dimen/PX36"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_danwei"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="元"
+                    android:textSize="@dimen/PX20" />
+
+
+                <TextView
+                    android:id="@+id/tv_time"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/PX30"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/PX20" />
+
+
+                <TextView
+                    android:id="@+id/tv_distance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/PX16"
+                    android:textColor="@color/colorFF911B"
+                    android:textSize="@dimen/PX36"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/colorafafaf" />
+</LinearLayout>

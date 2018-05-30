@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/colorf2f2f2" />
+
+        <LinearLayout
+            android:id="@+id/lly_to_add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/PX4"
+            android:weightSum="4"
+            android:gravity="center_vertical"
+            android:background="@color/colorFFFFFF"
+            android:orientation="horizontal"
+            android:padding="@dimen/PX16">
+
+            <TextView
+                android:id="@+id/tv_add_title"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/PX20"
+                android:layout_marginTop="@dimen/PX20"
+                android:text="送达地点2"
+                android:textColor="@color/color292929"
+                android:textSize="@dimen/PX28" />
+
+
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/PX12"
+
+                android:background="@color/colorafafaf" />
+
+            <TextView
+                android:id="@+id/tv_to_add"
+                android:layout_weight="3"
+                android:layout_width="0dp"
+                android:hint="物品送到哪里去"
+                android:gravity="center_vertical"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/PX20"
+                android:textColor="@color/color292929"
+                android:textSize="@dimen/PX28" />
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

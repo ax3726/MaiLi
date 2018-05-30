@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:id="@+id/lly_head"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorDFDFDF"
+        android:orientation="horizontal">
+<TextView
+    android:layout_width="match_parent"
+    android:textColor="@color/color292929"
+    android:text="不使用优惠劵"
+    android:gravity="center_vertical"
+    android:paddingTop="@dimen/PX20"
+    android:paddingLeft="@dimen/PX80"
+    android:paddingRight="@dimen/PX80"
+    android:textSize="@dimen/PX32"
+    android:paddingBottom="@dimen/PX20"
+    android:drawableRight="@drawable/pitch_on_icon"
+    android:layout_height="wrap_content" />
+
+
+
+
+    </LinearLayout>
+
+</layout>

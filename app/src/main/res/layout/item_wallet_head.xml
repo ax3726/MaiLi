@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorafafaf"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/PX400"
+                android:background="@color/colorFFFFFF"
+                android:padding="@dimen/PX20">
+
+                <LinearLayout
+                    android:id="@+id/linearLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="做工工资"
+                        android:textColor="@color/color292929"
+                        android:textSize="@dimen/PX30" />
+
+                    <TextView
+                        android:id="@+id/tv_work"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/PX10"
+                        android:maxLength="6"
+                        android:text="500.0"
+                        android:textColor="@color/color000000"
+                        android:textSize="@dimen/PX30"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="团队奖金"
+                        android:textColor="@color/color292929"
+                        android:textSize="@dimen/PX30" />
+
+                    <TextView
+                        android:id="@+id/tv_team"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/PX10"
+                        android:maxLength="6"
+                        android:text="166.6"
+                        android:textColor="@color/color000000"
+                        android:textSize="@dimen/PX30"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/circle_match_icon">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:text="余额"
+                            android:textColor="@color/colorFFFFFF"
+                            android:textSize="@dimen/PX40" />
+
+                        <TextView
+                            android:id="@+id/tv_total"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="@dimen/PX5"
+                            android:maxLength="9"
+                            android:text="666441"
+                            android:textColor="@color/colorFFFFFF"
+                            android:textSize="@dimen/PX40"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayout2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="做工工资"
+                        android:textColor="@color/color292929"
+                        android:textSize="@dimen/PX30" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/PX10"
+                        android:text="(可提现)"
+                        android:textSize="@dimen/PX30" />
+
+                    <TextView
+                        android:id="@+id/tv_deposit1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/PX10"
+                        android:text="500.0"
+                        android:textColor="@color/color000000"
+                        android:textSize="@dimen/PX30"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/PX10"
+                        android:background="@color/colorFF911B"
+                        android:paddingBottom="@dimen/PX5"
+                        android:paddingLeft="@dimen/PX30"
+                        android:paddingRight="@dimen/PX30"
+                        android:paddingTop="@dimen/PX5"
+                        android:text="提现"
+                        android:textColor="@color/colorFFFFFF"
+                        android:textSize="@dimen/PX30" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="团队奖金"
+                        android:textColor="@color/color292929"
+                        android:textSize="@dimen/PX30" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/PX10"
+                        android:text="(可提现)"
+                        android:textSize="@dimen/PX30" />
+
+                    <TextView
+                        android:id="@+id/tv_deposit2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/PX10"
+                        android:text="500.0"
+                        android:textColor="@color/color000000"
+                        android:textSize="@dimen/PX30"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/PX10"
+                        android:background="@color/colorFF911B"
+                        android:paddingBottom="@dimen/PX5"
+                        android:paddingLeft="@dimen/PX30"
+                        android:paddingRight="@dimen/PX30"
+                        android:paddingTop="@dimen/PX5"
+                        android:text="提现"
+                        android:textColor="@color/colorFFFFFF"
+                        android:textSize="@dimen/PX30" />
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/PX5"
+                android:background="@color/colorFFFFFF"
+                android:orientation="horizontal"
+                android:padding="@dimen/PX20"
+                android:paddingBottom="@dimen/PX28"
+                android:paddingTop="@dimen/PX28">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="金额明细"
+                    android:textColor="@color/color333333"
+                    android:textSize="@dimen/PX36"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/black_icon"
+                        android:drawablePadding="@dimen/PX20"
+                        android:text="做工工资"
+                        android:textColor="@color/color4d4d4d"
+                        android:textSize="@dimen/PX24" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/PX26"
+                        android:drawableLeft="@drawable/orange_icon"
+                        android:drawablePadding="@dimen/PX20"
+                        android:text="团队奖金"
+                        android:textColor="@color/colorFF911B"
+                        android:textSize="@dimen/PX24" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="更多"
+                    android:textColor="@color/color333333"
+                    android:textSize="@dimen/PX36"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</layout>

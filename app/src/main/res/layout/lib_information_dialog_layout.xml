@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_common_white">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/shape_common_white"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/PX40"
+            android:layout_marginRight="@dimen/PX40"
+            android:layout_marginTop="@dimen/PX42"
+            android:text="提示"
+            android:textColor="#020202"
+            android:textSize="@dimen/PX36" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginLeft="@dimen/PX40"
+            android:layout_marginRight="@dimen/PX40"
+            android:layout_marginTop="@dimen/PX26"
+
+            android:background="#BCBAB8" />
+
+
+        <TextView
+            android:id="@id/tv_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/PX40"
+            android:layout_marginRight="@dimen/PX40"
+            android:layout_marginTop="@dimen/PX21"
+            android:lineSpacingExtra="@dimen/PX4"
+            android:text="完成订单以后完成订单以后完成订单以后完成订单以后完成订单以后完成订单以后"
+            android:textColor="@color/colorffc000"
+            android:textSize="@dimen/PX26"
+            android:visibility="gone" />
+
+
+        <TextView
+            android:id="@+id/tv_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginBottom="@dimen/PX20"
+            android:layout_marginLeft="@dimen/PX40"
+            android:layout_marginRight="@dimen/PX40"
+            android:layout_marginTop="@dimen/PX18"
+            android:lineSpacingExtra="@dimen/PX8"
+            android:text="messagessssssssssssssssssssssssssssssssssssssssssssss"
+            android:textColor="@color/color292929"
+            android:textSize="@dimen/PX28" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/PX68"
+            android:layout_marginBottom="@dimen/PX20"
+            android:background="@drawable/shape_common_white"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/PX40"
+            android:paddingRight="@dimen/PX40">
+
+            <TextView
+                android:id="@+id/tv_negative"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/PX68"
+                android:layout_marginRight="@dimen/PX60"
+                android:layout_weight="1"
+                android:background="@drawable/selector_dialog_info_btn"
+
+                android:gravity="center"
+                android:text="取消"
+                android:textColor="@color/colorffc000"
+                android:textSize="@dimen/PX28" />
+
+
+            <TextView
+                android:id="@+id/tv_positive"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/PX68"
+                android:layout_marginLeft="@dimen/PX60"
+                android:layout_weight="1"
+
+                android:background="@drawable/selector_dialog_info_btn1"
+                android:gravity="center"
+                android:text="确定"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/PX28" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

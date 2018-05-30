@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="@dimen/PX10">
+
+    <TextView
+        android:id="@+id/tv_chuandan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:text="传单派发" />
+
+    <TextView
+        android:id="@+id/tv_responsible"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_marginLeft="@dimen/PX5"
+        android:layout_marginRight="@dimen/PX6"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="负责西溪印象城传单派发" />
+
+    <TextView
+        android:id="@+id/tv_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:text="西湖区" />
+</LinearLayout>

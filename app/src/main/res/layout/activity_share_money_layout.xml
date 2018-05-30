@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="stateModel"
+            type="com.gsy.ml.ui.common.StateModel" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/il_head"
+            layout="@layout/comon_tarbar2_layout" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/yellow_board_icon"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingBottom="@dimen/PX20">
+
+                            <com.gsy.ml.ui.views.AutofitTextView
+                                android:id="@+id/tv_earnings"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:singleLine="true"
+                                android:text="0"
+                                android:textColor="@color/colorFFFFFF"
+                                android:textSize="@dimen/PX102" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_horizontal"
+                                android:text="分享佣金(元)"
+                                android:textColor="@color/colorFFFFFF"
+                                android:textSize="@dimen/PX30" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingBottom="@dimen/PX20"
+                            android:paddingTop="@dimen/PX20">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="人数"
+                                    android:textColor="@color/colorFFFFFF" />
+
+                                <com.gsy.ml.ui.views.AutofitTextView
+                                    android:id="@+id/tv_total_money"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:singleLine="true"
+                                    android:text="0"
+                                    android:textColor="@color/colorFFFFFF"
+                                    android:textSize="@dimen/PX50" />
+                            </LinearLayout>
+
+
+                            <TextView
+                                android:id="@+id/tv_withdraw_deposit"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="佣金提现"
+                                android:textColor="@color/colorFFFFFF"
+                                android:textSize="@dimen/PX40" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/PX60"
+                        android:layout_marginLeft="@dimen/PX20"
+
+                        android:layout_marginTop="@dimen/PX100"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/PX20"
+                            android:text="佣金说明："
+                            android:textColor="@color/color707070"
+                            android:textSize="@dimen/PX30" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/PX30"
+                            android:lineSpacingExtra="@dimen/PX10"
+                            android:text="1：账户保证金不存在或者保证金不足时,佣金将无法提现。\n2：当保证金被强制提走时,共享佣金将不再增长。\n3：蚂蚁快服每月初1至7日处理佣金提现。\n4：只要成功接单就会产生保证金哦!"
+                            android:textColor="@color/color999999" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </ScrollView>
+
+            <include
+                layout="@layout/widget_layout_empty"
+                app:stateModel="@{stateModel}" />
+        </FrameLayout>
+
+
+    </LinearLayout>
+</layout>

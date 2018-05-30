@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/PX10"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/PX20"
+                    android:layout_marginLeft="@dimen/PX40"
+                    android:layout_marginTop="@dimen/PX20"
+                    android:text="啊哈"
+                    android:textColor="@color/colorffc000"
+                    android:textSize="@dimen/PX34" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/PX3"
+                    android:background="@color/colorffc000" />
+
+                <TextView
+                    android:id="@+id/tv_stick"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:paddingBottom="@dimen/PX20"
+                    android:paddingLeft="@dimen/PX40"
+                    android:paddingTop="@dimen/PX20"
+                    android:text="置顶"
+                    android:textColor="@color/color4d4d4d"
+                    android:textSize="@dimen/PX30" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1px"
+                    android:background="@color/colorcccccc" />
+
+                <TextView
+                    android:id="@+id/tv_delete"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:paddingBottom="@dimen/PX20"
+                    android:paddingLeft="@dimen/PX40"
+                    android:paddingTop="@dimen/PX20"
+                    android:text="删除"
+                    android:textColor="@color/color4d4d4d"
+                    android:textSize="@dimen/PX30" />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+</layout>

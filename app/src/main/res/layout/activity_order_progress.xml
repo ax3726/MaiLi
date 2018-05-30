@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="stateModel"
+            type="com.gsy.ml.ui.common.StateModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorf2f2f2"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/in_head"
+            layout="@layout/comon_tarbar2_layout" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorWhite"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/PX30"
+                    android:paddingTop="@dimen/PX30">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/PX30"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ml.gsy.com.library.views.RoundImageView
+                            android:id="@+id/img_head"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/progress_pic"
+                            app:border_color="@color/colorWhite"
+                            app:border_width="@dimen/PX4" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="蚂蚁快服专员"
+                            android:textColor="@color/colortextnomal"
+                            android:textSize="@dimen/PX27"
+
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/PX30"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="bottom"
+                                android:text=""
+                                android:textColor="@color/color292929"
+                                android:textSize="@dimen/PX32"
+
+                                />
+
+                            <TextView
+                                android:id="@+id/tv_star"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/PX30"
+                                android:drawablePadding="@dimen/PX10"
+                                android:drawableRight="@drawable/stars_one_icon"
+                                android:gravity="bottom"
+                                android:text="星级"
+                                android:textColor="@color/color292929"
+                                android:textSize="@dimen/PX26"
+
+                                />
+
+
+                        </LinearLayout>
+
+
+                        <TextView
+                            android:id="@+id/tv_phone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/PX10"
+                            android:gravity="bottom"
+                            android:text=""
+                            android:textColor="@color/color292929"
+                            android:textSize="@dimen/PX32"
+
+                            />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tv_resume"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="@dimen/PX30"
+                        android:drawablePadding="@dimen/PX15"
+                        android:drawableRight="@drawable/progress_left_icon"
+                        android:text="查看简历"
+                        android:textColor="@color/colorffe187"
+                        android:textSize="@dimen/PX32" />
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/lly_body"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/PX10"
+                    android:background="@color/colorWhite"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/PX40"
+                    android:paddingTop="@dimen/PX30">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingLeft="@dimen/PX20"
+                        android:paddingRight="@dimen/PX20">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="@dimen/PX20"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/img_state"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/progress_sucess_icon" />
+
+                            <com.gsy.ml.ui.views.DashedLineView
+                                android:layout_width="2dp"
+                                android:layout_height="match_parent" />
+                        </LinearLayout>
+
+
+                        <TextView
+                            android:id="@+id/tv_txt1"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="@dimen/PX10"
+                            android:layout_weight="1"
+                            android:singleLine="true"
+                            android:text="支付成功,正在配送中"
+                            android:textColor="@color/color292929"
+                            android:textSize="@dimen/PX28" />
+
+                        <TextView
+
+                            android:id="@+id/tv_time1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/PX10"
+                            android:text="15:50"
+                            android:textColor="@color/colortextnomal"
+                            android:textSize="@dimen/PX28" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingLeft="@dimen/PX20"
+                        android:paddingRight="@dimen/PX20">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="@dimen/PX20"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/progress_sucess_icon" />
+
+                            <com.gsy.ml.ui.views.DashedLineView
+                                android:layout_width="2dp"
+                                android:layout_height="match_parent" />
+                        </LinearLayout>
+
+
+                        <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="@dimen/PX10"
+                            android:layout_weight="1"
+                            android:singleLine="true"
+
+                            android:text="下单成功,等待接单!"
+                            android:textColor="@color/color292929"
+                            android:textSize="@dimen/PX28" />
+
+                        <TextView
+                            android:id="@+id/tv_time2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/PX10"
+                            android:text="15:50"
+                            android:textColor="@color/colortextnomal"
+                            android:textSize="@dimen/PX28" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingLeft="@dimen/PX20"
+                        android:paddingRight="@dimen/PX20">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="@dimen/PX20"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/progress_sucess_icon" />
+
+                            <com.gsy.ml.ui.views.DashedLineView
+                                android:layout_width="2dp"
+                                android:layout_height="match_parent" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/PX10"
+
+                                android:singleLine="true"
+
+                                android:text="接单成功,蚂蚁快服专员上门中"
+                                android:textColor="@color/color292929"
+                                android:textSize="@dimen/PX28" />
+
+                            <TextView
+                                android:id="@+id/tv_pick_time"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/PX10"
+                                android:text=""
+                                android:textColor="@color/colorffe187"
+                                android:textSize="@dimen/PX28" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_time3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/PX10"
+                            android:text="15:50"
+                            android:textColor="@color/colortextnomal"
+                            android:textSize="@dimen/PX28" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lly_qu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingLeft="@dimen/PX20"
+                        android:paddingRight="@dimen/PX20">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="@dimen/PX20"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/progress_sucess_icon" />
+
+                            <com.gsy.ml.ui.views.DashedLineView
+                                android:layout_width="2dp"
+                                android:layout_height="match_parent" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:minHeight="50dp"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/PX10"
+                                    android:layout_weight="1"
+                                    android:singleLine="true"
+                                    android:text="取件成功，蚂蚁快服专员正在火速配送中"
+                                    android:textColor="@color/color292929"
+                                    android:textSize="@dimen/PX28" />
+
+
+                                <TextView
+                                    android:id="@+id/tv_time4"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/PX10"
+                                    android:text="15:50"
+                                    android:textColor="@color/colortextnomal"
+                                    android:textSize="@dimen/PX28" />
+
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/tv_qu_content"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/PX20"
+                                android:layout_marginTop="@dimen/PX10"
+                                android:text=""
+                                android:textColor="@color/color292929"
+                                android:textSize="@dimen/PX28" />
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lly_finish"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingLeft="@dimen/PX20"
+                        android:paddingRight="@dimen/PX20">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/PX20"
+                            android:src="@drawable/progress_sucess_icon" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/PX10"
+                            android:layout_weight="1"
+
+                            android:singleLine="true"
+                            android:text="订单完成"
+                            android:textColor="@color/color292929"
+                            android:textSize="@dimen/PX28" />
+
+                        <TextView
+                            android:id="@+id/tv_time5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/PX10"
+                            android:text="15:50"
+                            android:textColor="@color/colortextnomal"
+                            android:textSize="@dimen/PX28" />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lly_location_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/PX20"
+                    android:background="@color/colorWhite"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/PX26"
+                    android:paddingLeft="@dimen/PX30"
+                    android:paddingRight="@dimen/PX30"
+                    android:paddingTop="@dimen/PX26">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/process_location_icon" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/PX20"
+                        android:layout_weight="1"
+                        android:text="查看配送员"
+                        android:textColor="@color/color292929"
+
+                        />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/enter_icon" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <include
+                layout="@layout/widget_layout_empty"
+                android:visibility="gone"
+                app:stateModel="@{stateModel}" />
+
+        </FrameLayout>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorF6F3E9"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorWhite"
+                android:orientation="vertical"
+                android:padding="@dimen/PX20">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/PX10"
+                    android:text="音乐"
+                    android:textColor="@color/color292929"
+                    android:textSize="@dimen/PX30" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/selector_dialog_info_btn"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:onClick="sortClick"
+                        android:paddingLeft="@dimen/PX20"
+                        android:paddingRight="@dimen/PX20"
+                        android:text="钢琴"
+                        android:textColor="@color/colorffc000" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/PX10"
+                        android:layout_weight="1"
+                        android:background="@drawable/selector_dialog_info_btn"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:onClick="sortClick"
+                        android:paddingLeft="@dimen/PX20"
+                        android:paddingRight="@dimen/PX20"
+                        android:text="吉他"
+                        android:textColor="@color/colorffc000" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/PX10"
+                        android:layout_weight="1"
+                        android:background="@drawable/selector_dialog_info_btn"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:onClick="sortClick"
+                        android:paddingLeft="@dimen/PX20"
+                        android:paddingRight="@dimen/PX20"
+                        android:text="葫芦丝 "
+                        android:textColor="@color/colorffc000" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/PX10"
+                        android:layout_weight="1"
+                        android:background="@drawable/selector_dialog_info_btn"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:onClick="sortClick"
+                        android:paddingLeft="@dimen/PX20"
+                        android:paddingRight="@dimen/PX20"
+                        android:text="竹笛"
+                        android:textColor="@color/colorffc000" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/PX10"
+                        android:layout_weight="1"
+                        android:background="@drawable/selector_dialog_info_btn"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:onClick="sortClick"
+                        android:paddingLeft="@dimen/PX20"
+                        android:paddingRight="@dimen/PX20"
+                        android:text="二胡"
+                        android:textColor="@color/colorffc000" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/PX20"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/selector_dialog_info_btn"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:onClick="sortClick"
+                        android:paddingLeft="@dimen/PX20"
+                        android:paddingRight="@dimen/PX20"
+                        android:text="萨克斯"
+                        android:textColor="@color/colorffc000" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/PX10"
+                        android:layout_weight="1"
+                        android:background="@drawable/selector_dialog_info_btn"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:onClick="sortClick"
+                        android:paddingLeft="@dimen/PX20"
+                        android:paddingRight="@dimen/PX20"
+                        android:text="古筝"
+                        android:textColor="@color/colorffc000" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/PX10"
+                        android:layout_weight="1"
+                        android:background="@drawable/selector_dialog_info_btn"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:onClick="sortClick"
+                        android:paddingLeft="@dimen/PX20"
+                        android:paddingRight="@dimen/PX20"
+                        android:text="架子鼓"
+                        android:textColor="@color/colorffc000" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/PX10"
+                        android:layout_weight="1"
+                        android:background="@drawable/selector_dialog_info_btn"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:onClick="sortClick"
+                        android:paddingLeft="@dimen/PX20"
+                        android:paddingRight="@dimen/PX20"
+                        android:text="乐理"
+                        android:textColor="@color/colorffc000" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/PX10"
+                        android:layout_weight="1"
+                        android:background="@drawable/selector_dialog_info_btn"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:onClick="sortClick"
+                        android:paddingLeft="@dimen/PX20"
+                        android:paddingRight="@dimen/PX20"
+                        android:text="音乐素养"
+                        android:textColor="@color/colorffc000" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/PX3"
+                android:background="@color/colorWhite"
+                android:orientation="vertical"
+                android:padding="@dimen/PX20">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/PX10"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:text="画画"
+                    android:textColor="@color/color292929"
+                    android:textSize="@dimen/PX30" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/selector_dialog_info_btn"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:onClick="sortClick"
+                        android:paddingLeft="@dimen/PX20"
+                        android:paddingRight="@dimen/PX20"
+                        android:text="国画"
+                        android:textColor="@color/colorffc000" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/PX10"
+                        android:layout_weight="1"
+                        android:background="@drawable/selector_dialog_info_btn"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:onClick="sortClick"
+                        android:paddingLeft="@dimen/PX20"
+                        android:paddingRight="@dimen/PX20"
+                        android:text="西洋画"
+                        android:textColor="@color/colorffc000" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/PX10"
+                        android:layout_weight="1"
+                        android:background="@drawable/selector_dialog_info_btn"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:onClick="sortClick"
+                        android:paddingLeft="@dimen/PX20"
+                        android:paddingRight="@dimen/PX20"
+                        android:text="素描 "
+                        android:textColor="@color/colorffc000" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/PX10"
+                        android:layout_weight="1"
+                        android:background="@drawable/selector_dialog_info_btn"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:onClick="sortClick"
+                        android:paddingLeft="@dimen/PX20"
+                        android:paddingRight="@dimen/PX20"
+                        android:text="速写"
+                        android:textColor="@color/colorffc000" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/PX10"
+                        android:layout_weight="1"
+                        android:background="@drawable/selector_dialog_info_btn"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:onClick="sortClick"
+                        android:paddingLeft="@dimen/PX20"
+                        android:paddingRight="@dimen/PX20"
+                        android:text="创意画"
+                        android:textColor="@color/colorffc000" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/PX20"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/selector_dialog_info_btn"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:onClick="sortClick"
+                        android:paddingLeft="@dimen/PX20"
+                        android:paddingRight="@dimen/PX20"
+                        android:text="卡通画"
+                        android:textColor="@color/colorffc000" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/PX10"
+                        android:layout_weight="1"
+                        android:background="@drawable/selector_dialog_info_btn"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:onClick="sortClick"
+                        android:paddingLeft="@dimen/PX20"
+                        android:paddingRight="@dimen/PX20"
+                        android:text="简笔画"
+                        android:textColor="@color/colorffc000" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/PX10"
+                        android:layout_weight="1"
+                        android:background="@drawable/selector_dialog_info_btn"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:onClick="sortClick"
+                        android:paddingLeft="@dimen/PX20"
+                        android:paddingRight="@dimen/PX20"
+                        android:text="漫画 "
+                        android:textColor="@color/colorffc000" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/PX10"
+                        android:layout_weight="1"
+                        android:background="@drawable/selector_dialog_info_btn"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:onClick="sortClick"
+                        android:paddingLeft="@dimen/PX20"
+                        android:paddingRight="@dimen/PX20"
+                        android:text="油画"
+                        android:textColor="@color/colorffc000" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/PX10"
+                        android:layout_weight="1"
+                        android:background="@drawable/selector_dialog_info_btn"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:onClick="sortClick"
+                        android:paddingLeft="@dimen/PX20"
+                        android:paddingRight="@dimen/PX20"
+                        android:text="水彩画"
+                        android:textColor="@color/colorffc000" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/PX20"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/selector_dialog_info_btn"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:onClick="sortClick"
+                        android:paddingLeft="@dimen/PX20"
+                        android:paddingRight="@dimen/PX20"
+                        android:text="水粉画"
+                        android:textColor="@color/colorffc000" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/PX10"
+                        android:background="@drawable/selector_dialog_info_btn"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:onClick="sortClick"
+                        android:paddingLeft="@dimen/PX20"
+                        android:paddingRight="@dimen/PX20"
+                        android:text="插画"
+                        android:textColor="@color/colorffc000" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/PX3"
+                android:background="@color/colorWhite"
+                android:orientation="vertical"
+                android:padding="@dimen/PX20">
+
+                <TextView
+                    android:id="@+id/textView26"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/PX10"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:text="书法"
+                    android:textColor="@color/color292929"
+                    android:textSize="@dimen/PX30" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/selector_dialog_info_btn"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:onClick="sortClick"
+                        android:paddingLeft="@dimen/PX20"
+                        android:paddingRight="@dimen/PX20"
+                        android:text="硬笔书法"
+                        android:textColor="@color/colorffc000" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/PX10"
+                        android:background="@drawable/selector_dialog_info_btn"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:onClick="sortClick"
+                        android:paddingLeft="@dimen/PX20"
+                        android:paddingRight="@dimen/PX20"
+                        android:text="钢笔书法"
+                        android:textColor="@color/colorffc000" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/PX10"
+                        android:background="@drawable/selector_dialog_info_btn"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:onClick="sortClick"
+                        android:paddingLeft="@dimen/PX20"
+                        android:paddingRight="@dimen/PX20"
+                        android:text="毛笔书法 "
+                        android:textColor="@color/colorffc000" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/PX3"
+                android:background="@color/colorWhite"
+                android:orientation="vertical"
+                android:padding="@dimen/PX20">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/PX10"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:text="棋类"
+                    android:textColor="@color/color292929"
+                    android:textSize="@dimen/PX30" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/selector_dialog_info_btn"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:onClick="sortClick"
+                        android:paddingLeft="@dimen/PX20"
+                        android:paddingRight="@dimen/PX20"
+                        android:text="围棋"
+                        android:textColor="@color/colorffc000" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/PX10"
+                        android:background="@drawable/selector_dialog_info_btn"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:onClick="sortClick"
+                        android:paddingLeft="@dimen/PX20"
+                        android:paddingRight="@dimen/PX20"
+                        android:text="象棋"
+                        android:textColor="@color/colorffc000" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/PX10"
+                        android:background="@drawable/selector_dialog_info_btn"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:onClick="sortClick"
+                        android:paddingLeft="@dimen/PX20"
+                        android:paddingRight="@dimen/PX20"
+                        android:text="国际象棋 "
+                        android:textColor="@color/colorffc000" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</layout>

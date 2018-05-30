@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@color/colorFFd249"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/PX244"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/lly_stu"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/selector_occupation"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/PX12"
+                android:paddingTop="@dimen/PX12">
+
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/occupation_stu_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/PX12"
+                    android:text="在校学生"
+                    android:textColor="@color/colorFFFFFF"
+                    android:textSize="@dimen/PX26" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/lly_woman"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/selector_occupation"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/PX12"
+                android:paddingTop="@dimen/PX12">
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/occupation_woman" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/PX12"
+                    android:text="家庭主妇"
+                    android:textColor="@color/colorFFFFFF"
+                    android:textSize="@dimen/PX26" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/PX244"
+            android:orientation="horizontal">
+
+
+            <LinearLayout
+                android:id="@+id/lly_going"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/selector_occupation"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/PX12"
+                android:paddingTop="@dimen/PX12">
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/occupation_going_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/PX12"
+                    android:text="上班族"
+                    android:textColor="@color/colorFFFFFF"
+                    android:textSize="@dimen/PX26" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lly_free"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/selector_occupation"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/PX12"
+                android:paddingTop="@dimen/PX12">
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/occupation_free_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/PX12"
+                    android:text="自由职业"
+                    android:textColor="@color/colorFFFFFF"
+                    android:textSize="@dimen/PX26" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/PX26"
+            android:layout_marginTop="@dimen/PX26"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_cancel"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/PX52"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/shape_common_white"
+                android:text="取消"
+                android:textColor="@color/colortext"
+                android:textSize="@dimen/PX28" />
+
+            <Button
+                android:id="@+id/btn_ok"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/PX52"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/shape_common_theme"
+                android:text="确定"
+                android:textColor="@color/colortext"
+                android:textSize="@dimen/PX28" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</layout>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/PX82"
+                android:layout_marginRight="@dimen/PX82"
+                android:layout_marginTop="@dimen/PX28"
+                android:background="@drawable/successful" />
+
+            <TextView
+                android:id="@+id/tv_jump"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/PX15"
+                android:layout_marginTop="@dimen/PX18"
+                android:text="跳过"
+                android:textColor="@color/color999999"
+                android:textSize="@dimen/PX36" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/PX82"
+            android:layout_marginRight="@dimen/PX82"
+            android:layout_marginTop="@dimen/PX40"
+            android:layout_weight="0.6"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/bt_perfect"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/PX68"
+                android:background="@drawable/shape_style_btn"
+                android:text="完善个人资料"
+                android:textColor="@color/colorFFFFFF"
+                android:textSize="@dimen/PX40" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/PX12"
+                android:text="注：只有完善个人资料才能享受更多便捷功能"
+                android:textColor="@color/colortext"
+                android:textSize="@dimen/PX18" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:background="#f2f0eb"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/in_head"
+            layout="@layout/comon_tarbar2_layout" />
+
+        <LinearLayout
+            android:id="@+id/lly_head"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/lly_guanggao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/PX10"
+                android:layout_marginRight="@dimen/PX10"
+                android:background="@drawable/message_guanggao_bg"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/img_del"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/PX30"
+                    android:layout_marginRight="@dimen/PX20"
+                    android:src="@drawable/message_guanggao_del"
+
+                    />
+
+
+                <ml.gsy.com.library.views.MarqueeView
+                    android:id="@+id/mv_bar1"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    app:mvAnimDuration="1000"
+                    app:mvInterval="3000"
+                    app:mvTextColor="@color/color707070"
+                    app:mvTextSize="14sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/PX20"
+                    android:layout_marginRight="@dimen/PX30"
+                    android:src="@drawable/message_guanggao_right"
+
+                    />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/lly_order"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhite"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/PX20"
+                android:paddingLeft="@dimen/PX20"
+                android:paddingTop="@dimen/PX10"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_worktype"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:textColor="@color/color292929"
+                        android:textSize="@dimen/PX32" />
+
+                    <TextView
+                        android:id="@+id/tv_address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/PX16"
+                        android:drawableLeft="@drawable/message_add_icon"
+                        android:drawablePadding="@dimen/PX10"
+
+                        android:textColor="@color/color292929"
+                        android:textSize="@dimen/PX28" />
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_xianshang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/PX20"
+                    android:background="@drawable/shape_message_btn"
+                    android:paddingBottom="@dimen/PX20"
+                    android:paddingLeft="@dimen/PX30"
+                    android:paddingRight="@dimen/PX30"
+                    android:textColor="@color/color707070"
+                    android:paddingTop="@dimen/PX20"
+                    android:text="线上交易" />
+
+                <LinearLayout
+                    android:id="@+id/lly_money"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/message_price_bg"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <LinearLayout
+
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/PX20"
+                        android:orientation="horizontal">
+
+                        <com.gsy.ml.ui.views.AutofitTextView
+                            android:id="@+id/tv_moneys"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:textColor="@color/colorFFFFFF"
+                            android:textSize="@dimen/PX34" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <com.hyphenate.easeui.widget.EaseChatMessageList
+                android:id="@+id/message_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true" />
+
+            <com.hyphenate.easeui.widget.EaseVoiceRecorderView
+                android:id="@+id/voice_recorder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="invisible" />
+        </RelativeLayout>
+
+        <com.hyphenate.easeui.widget.EaseChatInputMenu
+            android:id="@+id/input_menu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true" />
+
+    </LinearLayout>
+
+</layout>

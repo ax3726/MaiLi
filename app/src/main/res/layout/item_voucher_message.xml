@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/PX20"
+        android:layout_marginLeft="@dimen/PX15"
+        android:layout_marginRight="@dimen/PX15"
+        android:layout_marginTop="@dimen/PX20"
+        app:cardCornerRadius="@dimen/PX16"
+        app:cardElevation="@dimen/PX10">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/PX40"
+            android:paddingTop="@dimen/PX40">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_face_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="¥ 10"
+                    android:textColor="@color/colorFF0000"
+                    android:textSize="@dimen/PX40" />
+
+                <TextView
+                    android:id="@+id/tv_maney"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/PX10"
+                    android:text="满18元使用"
+                    android:textColor="@color/colora5a5a5"
+                    android:textSize="@dimen/PX28" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.8"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_gold_securities"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="同城配送通用劵"
+                    android:textColor="@color/color292929"
+                    android:textSize="@dimen/PX32" />
+
+                <TextView
+                    android:id="@+id/tv_data"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="@dimen/PX10"
+                    android:layout_marginTop="@dimen/PX20"
+                    android:text="使用日期从2017-6-2\n至2017-6-10"
+                    android:textColor="@color/colora5a5a5"
+                    android:textSize="@dimen/PX28" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_employ"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="立即使用"
+
+                    android:textColor="@color/colorFF0000"
+                    android:textSize="@dimen/PX30" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </android.support.v7.widget.CardView>
+</LinearLayout>

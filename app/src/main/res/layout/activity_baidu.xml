@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/il_head"
+            layout="@layout/comon_tarbar_layout" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/textView30"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/PX70"
+                    android:layout_marginTop="@dimen/PX60"
+                    android:drawablePadding="@dimen/PX24"
+                    android:drawableTop="@drawable/bai_icon"
+                    android:gravity="center"
+                    android:text="百度外卖"
+                    android:textColor="@color/colorFF0400"
+                    android:textSize="@dimen/PX38" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/PX40"
+                android:orientation="vertical">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/selector_take_out"
+                    android:hint="请输入百度外卖登录号码"
+                    android:inputType="phone"
+                    android:maxLength="11"
+                    android:paddingBottom="@dimen/PX30"
+                    android:paddingLeft="@dimen/PX40"
+                    android:paddingTop="@dimen/PX30"
+                    android:textColorHint="@color/editTextColor"
+                    android:textSize="@dimen/PX30" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/PX40"
+                    android:background="@drawable/selector_take_out"
+                    android:hint="请输入登录密码"
+                    android:inputType="textPassword"
+                    android:paddingBottom="@dimen/PX30"
+                    android:paddingLeft="@dimen/PX40"
+                    android:paddingTop="@dimen/PX30"
+                    android:textColorHint="@color/editTextColor"
+                    android:textSize="@dimen/PX30" />
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/PX50"
+                    app:cardCornerRadius="@dimen/PX10"
+                    app:cardElevation="0px">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorfbc700"
+                        android:gravity="center"
+                        android:paddingBottom="@dimen/PX20"
+                        android:paddingTop="@dimen/PX20"
+                        android:text="绑定账户"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/PX30" />
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

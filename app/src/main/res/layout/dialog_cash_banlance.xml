@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <ImageView
+                    android:id="@+id/img_cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:src="@drawable/down_order_cancel" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:background="@drawable/down_order_headbg_icon"
+                    android:gravity="center_horizontal|bottom"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_banlance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="你当前提现金额为450元"
+                        android:textColor="@color/color707070"
+                        android:textSize="@dimen/PX34" />
+
+                    <TextView
+                        android:id="@+id/tv_hint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/PX30"
+                        android:layout_marginTop="@dimen/PX30"
+                        android:text="温馨提示:提现金额包含保证金300元，若要提现\n保证金必须全部提现，且提现保证金后不能再继续\n接单了！"
+                        android:textColor="@color/color707070"
+                        android:textSize="@dimen/PX24" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/img_head"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/cash_car_icon" />
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_down_order_buttom"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/PX30"
+
+            android:paddingLeft="@dimen/PX40"
+            android:paddingRight="@dimen/PX40"
+            android:paddingTop="@dimen/PX30">
+
+
+            <Button
+                android:id="@+id/btn_ok"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_marginLeft="@dimen/PX40"
+                android:layout_marginRight="@dimen/PX30"
+                android:layout_height="@dimen/PX70"
+                android:background="@drawable/cash_bg_icon"
+                android:text="确定"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/PX36" />
+
+            <Button
+                android:id="@+id/btn_cancel"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="@dimen/PX70"
+                android:layout_marginLeft="@dimen/PX30"
+                android:layout_marginRight="@dimen/PX40"
+                android:background="@drawable/cash_bg_icon"
+                android:text="取消"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/PX36" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</layout>

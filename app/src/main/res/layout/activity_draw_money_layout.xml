@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="stateModel"
+            type="com.gsy.ml.ui.common.StateModel" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/il_head"
+            layout="@layout/comon_tarbar2_layout" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorf2f2f2"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/lly_yajin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorFFFFFF"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/PX30">
+
+                        <TextView
+                            android:id="@+id/tv_total_money_hint"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="总金额"
+                            android:textColor="@color/color292929"
+                            android:textSize="@dimen/PX32" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:text=" ¥ "
+                            android:textColor="@color/colorfedb56"
+                            android:textSize="@dimen/PX36" />
+
+                        <com.gsy.ml.ui.views.AutofitTextView
+                            android:id="@+id/tv_total_money"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
+                            android:text="0"
+                            android:textColor="@color/colorfedb56"
+                            android:textSize="@dimen/PX36" />
+
+                        <TextView
+                            android:id="@+id/tv_ya_money"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/PX5"
+                            android:gravity="right"
+                            android:text="保证金强制提现"
+                            android:textColor="@color/colorffc000"
+                            android:textSize="@dimen/PX32" />
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/view_yajin"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/colorafafaf" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorFFFFFF"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/PX30">
+
+                        <TextView
+                            android:id="@+id/textView8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="您当前可提现金额"
+                            android:textColor="@color/color292929"
+                            android:textSize="@dimen/PX32" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:text=" ¥"
+                            android:textColor="@color/colorfedb56"
+                            android:textSize="@dimen/PX36" />
+
+                        <com.gsy.ml.ui.views.AutofitTextView
+                            android:id="@+id/tv_money"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/PX10"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:text="0"
+                            android:textColor="@color/colorfedb56"
+                            android:textSize="@dimen/PX36" />
+
+                        <TextView
+                            android:id="@+id/tv_all_money"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/PX40"
+                            android:gravity="right"
+                            android:text="全部提现"
+                            android:textColor="@color/colorffc000"
+                            android:textSize="@dimen/PX32" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/colorafafaf" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorFFFFFF"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/PX30">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="请输入提现金额"
+                            android:textColor="@color/color292929"
+                            android:textSize="@dimen/PX32" />
+
+
+                        <EditText
+                            android:id="@+id/et_money"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/PX20"
+                            android:background="@null"
+                            android:gravity="center"
+                            android:hint="0"
+                            android:inputType="numberDecimal"
+                            android:minWidth="@dimen/PX164"
+                            android:textColor="@color/colorfedb56"
+                            android:textColorHint="@color/colorafafaf"
+                            android:textSize="@dimen/PX36" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="元"
+                            android:textColor="@color/colorafafaf"
+                            android:textSize="@dimen/PX32" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/PX20"
+                        android:background="@color/colorFFFFFF"
+                        android:orientation="vertical"
+                        android:padding="@dimen/PX20">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/yellow_circle_icon"
+                            android:drawablePadding="@dimen/PX10"
+                            android:paddingBottom="@dimen/PX20"
+                            android:text="1.可提现金额为账户总余额中除保证金以外的金额" />
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/PX10"
+                                android:src="@drawable/yellow_circle_icon" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/PX10"
+                                android:lineSpacingExtra="@dimen/PX15"
+                                android:paddingBottom="@dimen/PX20"
+                                android:text="2.您的保证金金额可以申请强制提现,保证金提现后您将不能继续享受蚂蚁快服提供的接单及订单推送服务" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/yellow_circle_icon"
+                            android:drawablePadding="@dimen/PX10"
+                            android:paddingBottom="@dimen/PX20"
+                            android:text="3.每人每天最多可提现两次 " />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/PX10"
+                                android:src="@drawable/yellow_circle_icon" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/PX10"
+                                android:lineSpacingExtra="@dimen/PX15"
+                                android:paddingBottom="@dimen/PX20"
+                                android:text="4.提现申请将会在1-2个工作日(节假日顺延)完成审核" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorf2f2f2"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView23"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/PX20"
+                            android:text="选择提现方式"
+                            android:textColor="@color/color292929"
+                            android:textSize="@dimen/PX36" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/colorFFFFFF"
+                            android:orientation="vertical">
+
+                            <RadioGroup
+                                android:id="@+id/rg_type"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <RadioButton
+                                    android:id="@+id/rb_zhi"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/PX20"
+                                    android:button="@drawable/selector_rb2"
+                                    android:checked="false"
+                                    android:drawableLeft="@drawable/alipay_icon"
+                                    android:drawablePadding="@dimen/PX20"
+                                    android:padding="@dimen/PX20"
+                                    android:text="支付宝"
+                                    android:textColor="@color/color15AAFF"
+                                    android:textSize="@dimen/PX36"
+                                    android:visibility="gone" />
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0.5dp"
+                                    android:background="@color/colorf2f2f2" />
+
+                                <RadioButton
+                                    android:id="@+id/rb_wei"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/PX20"
+                                    android:button="@drawable/selector_rb2"
+                                    android:checked="false"
+                                    android:drawableLeft="@drawable/wechat_icon"
+                                    android:drawablePadding="@dimen/PX20"
+                                    android:padding="@dimen/PX20"
+                                    android:text="微信"
+                                    android:textColor="@color/color00B100"
+                                    android:textSize="@dimen/PX36"
+                                    android:visibility="gone" />
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0.5dp"
+                                    android:background="@color/colorf2f2f2" />
+
+                                <RadioButton
+                                    android:id="@+id/rb_yin"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/PX20"
+                                    android:button="@drawable/selector_rb2"
+                                    android:checked="false"
+                                    android:drawableLeft="@drawable/unionpay_icon"
+                                    android:drawablePadding="@dimen/PX20"
+                                    android:padding="@dimen/PX20"
+                                    android:text="银行卡"
+                                    android:textColor="@color/colorff6c00"
+                                    android:textSize="@dimen/PX36" />
+                            </RadioGroup>
+
+                            <LinearLayout
+                                android:id="@+id/lly_bank"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:paddingBottom="@dimen/PX20"
+                                android:paddingLeft="@dimen/PX20"
+                                android:paddingRight="@dimen/PX20"
+                                android:paddingTop="@dimen/PX20"
+                                android:visibility="gone">
+
+                                <ImageView
+                                    android:layout_width="@dimen/PX60"
+                                    android:layout_height="@dimen/PX60"
+                                    android:src="@drawable/attract_investment_icon" />
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/PX20"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/tv_bank_name"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="招商银行"
+                                        android:textColor="@color/color292929"
+                                        android:textSize="@dimen/PX32" />
+
+                                    <TextView
+                                        android:id="@+id/tv_bank_no"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/PX10"
+                                        android:text="尾号6639"
+                                        android:textColor="@color/colortextnomal"
+                                        android:textSize="@dimen/PX30" />
+
+                                </LinearLayout>
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/enter_icon" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+                        <Button
+                            android:id="@+id/btn_cash_money"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/PX50"
+                            android:background="@drawable/selector_dialog_info_btn1"
+                            android:text="确认提现"
+                            android:textColor="@color/colorFFFFFF"
+                            android:textSize="@dimen/PX30" />
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+
+            <!--<include
+                layout="@layout/widget_layout_empty"
+                app:stateModel="@{stateModel}" />-->
+        </FrameLayout>
+    </LinearLayout>
+</layout>

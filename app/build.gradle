@@ -1,0 +1,107 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        applicationId "com.gsy.ml"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 234
+        versionName "2.34"
+        multiDexEnabled true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        ndk {
+            //选择要添加的对应cpu类型的.so库。 v
+            abiFilters 'armeabi', 'armeabi-v7a', 'armeabi-v8a'
+            // 还可以添加 'x86', 'x86_64', 'mips', 'mips64'
+        }
+
+        manifestPlaceholders = [
+                JPUSH_PKGNAME: applicationId,
+                JPUSH_APPKEY : "2fb0d721276fc5cb35ff75eb", //JPush上注册的包名对应的appkey.
+                JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
+                HUAWEI_APPID : "100056617", // 华为平台注册的appid
+                XIAOMI_APPKEY: "MI-5911760237654", // ⼩⽶平台注册的appkey
+                XIAOMI_APPID : "MI-2882303761517602654", // ⼩⽶平台注册的appid
+                MEIZU_APPKEY : "MZ-d1278d1e87584b5ba62bfd104e24f06a", // 魅族平台注册的 appkey
+                MEIZU_APPID  : "MZ-111072", // 魅族平台注册的 appid
+        ]
+    }
+    signingConfigs {
+        xxconfig {
+            storeFile file("keystore.jks")
+            keyAlias "maili"
+            keyPassword "111111"
+            storePassword "111111"
+        }
+    }
+
+    buildTypes {
+        release {
+            buildConfigField "boolean", "IS_DEBUG", "false"
+            //混淆
+            minifyEnabled false
+            //Zipalign优化
+            zipAlignEnabled false
+            // 移除无用的resource文件
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.xxconfig
+        }
+        debug {
+            buildConfigField "boolean", "IS_DEBUG", "true"
+            //混淆
+            minifyEnabled false
+            //Zipalign优化
+            zipAlignEnabled false
+            // 移除无用的resource文件
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.xxconfig
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+}
+repositories {
+    maven {
+        url "http://maven.aliyun.com/nexus/content/repositories/releases"
+    }
+}
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile project(':material_refresh_lib')
+    compile project(':library')
+    compile files('libs/aliyun-oss-sdk-android-2.3.0.jar')
+    compile files('libs/AMap_Location_V3.3.0_20170118.jar')
+    compile files('libs/zixing-core-3.2.0.jar')
+    // 此处以JPush 3.0.5 版本为例。
+
+    // 此处以JCore 1.1.2 版本为例。
+    compile files('libs/AMap3DMap_5.0.0_AMapSearch_5.0.0_AMapLocation_3.3.0_20170311.jar')
+    compile files('libs/Msc.jar')
+    compile files('libs/alipaySingle-20170510.jar')
+    compile files('libs/libammsdk.jar')
+    compile project(':card_lib')
+    compile project(':liveness_lib')
+    compile project(':easeui')
+
+    compile 'com.android.support:appcompat-v7:23.0.1'
+    compile 'com.android.support:recyclerview-v7:23.0.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'cn.jiguang.sdk:jpush:3.0.8'
+    compile 'cn.jiguang.sdk:jcore:1.1.6'
+    compile 'cn.jiguang.sdk.plugin:huawei:3.0.5'
+    compile 'cn.jiguang.sdk.plugin:meizu:3.0.6'
+    compile 'cn.jiguang.sdk.plugin:xiaomi:3.0.5'
+    compile 'com.android.support:multidex:1.0.0'
+    compile 'com.aliyun.ams:alicloud-android-hotfix:3.1.0'
+    testCompile 'junit:junit:4.12'
+}

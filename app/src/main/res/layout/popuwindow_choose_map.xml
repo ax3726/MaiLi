@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/PX20"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/lly_gaode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_marginLeft="@dimen/PX20"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="@dimen/PX120"
+                    android:layout_height="@dimen/PX120"
+                    android:src="@drawable/gaode_icon" />
+
+                <TextView
+                    android:id="@+id/tv_gaode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/PX16"
+                    android:text="高德"
+                    android:textColor="@color/color292929"
+                    android:textSize="@dimen/PX30" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lly_baidu"
+                android:layout_marginLeft="@dimen/PX20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/PX120"
+                    android:layout_height="@dimen/PX120"
+                    android:src="@drawable/baidu_icon" />
+
+                <TextView
+                    android:id="@+id/tv_baidu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/PX16"
+                    android:text="百度"
+                    android:textColor="@color/color292929"
+                    android:textSize="@dimen/PX30" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/PX90"
+            android:layout_marginTop="-3dp"
+            android:background="@color/colorFFFFFF"
+            android:text="取消"
+            android:textColor="@color/color292929"
+            android:textSize="@dimen/PX30" />
+
+    </LinearLayout>
+
+
+</layout>

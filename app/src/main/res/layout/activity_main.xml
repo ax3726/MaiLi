@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@+id/fly_contain"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/PX1"
+                android:background="@color/colorcccccc" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <RadioGroup
+                    android:id="@+id/rg_buttom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorWhite"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/PX4"
+                    android:paddingTop="@dimen/PX12">
+
+                    <RadioButton
+                        android:id="@+id/rb_main"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:button="@null"
+                        android:checked="true"
+                        android:drawablePadding="4dp"
+                        android:drawableTop="@drawable/selector_home"
+                        android:gravity="center"
+                        android:text="首页"
+                        android:textColor="@color/colora5a5a5"
+                        android:textSize="@dimen/PX26" />
+
+
+                    <RadioButton
+                        android:id="@+id/rb_user_card"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:button="@null"
+                        android:drawablePadding="4dp"
+                        android:drawableTop="@drawable/selector_user_card"
+                        android:gravity="center"
+                        android:text="消息"
+                        android:textColor="@color/colora5a5a5"
+                        android:textSize="@dimen/PX26" />
+
+                    <RadioButton
+                        android:id="@+id/rb_person"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:button="@null"
+                        android:drawablePadding="4dp"
+                        android:drawableTop="@drawable/selector_person"
+                        android:gravity="center"
+                        android:text="我的"
+                        android:textColor="@color/colora5a5a5"
+                        android:textSize="@dimen/PX26" />
+
+                </RadioGroup>
+
+                <TextView
+                    android:id="@+id/tv_unread_msg_number"
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="2dp"
+                    android:background="@drawable/shape_round_cout"
+                    android:gravity="center"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp"
+                    android:visibility="gone" />
+
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <com.gsy.ml.ui.views.DragFloatView
+            android:id="@+id/dfview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_marginBottom="70dp"
+            android:background="#fff"
+            android:elevation="@dimen/PX10">
+
+
+            <LinearLayout
+                android:id="@+id/lly_float"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <com.gsy.ml.ui.views.MarqueeTextView
+                    android:id="@+id/tv_notice"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:background="#fff"
+                    android:ellipsize="marquee"
+                    android:focusableInTouchMode="true"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:paddingBottom="@dimen/PX20"
+                    android:paddingLeft="@dimen/PX12"
+                    android:paddingRight="@dimen/PX20"
+                    android:paddingTop="@dimen/PX20"
+                    android:singleLine="true"
+                    android:text="你有正在进行的订单,同人精华A座1635"
+                    android:textColor="@color/colorff6c00"
+                    android:textSize="@dimen/PX28" />
+            </LinearLayout>
+
+        </com.gsy.ml.ui.views.DragFloatView>
+
+    </FrameLayout>
+</layout>

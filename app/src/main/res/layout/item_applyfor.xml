@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lly_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorafafaf"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/under_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/PX12"
+        android:background="@color/colorF6F3E9" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorFFFFFF"
+        android:orientation="vertical"
+        android:padding="@dimen/PX20">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="西城印象城传单派发"
+            android:textColor="@color/color292929"
+            android:textSize="@dimen/PX36" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/PX14"
+            android:layout_marginTop="@dimen/PX16"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_address"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:drawableLeft="@drawable/location_icon"
+                android:drawablePadding="@dimen/PX10"
+                android:gravity="center_vertical"
+                android:text="西湖区"
+                android:textSize="@dimen/PX22" />
+
+            <TextView
+                android:id="@+id/tv_content"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/PX40"
+                android:drawableLeft="@drawable/time_icon"
+                android:drawablePadding="@dimen/PX10"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:text="银乐迪集合，主要负责派发绿城房产的传单"
+                android:textSize="@dimen/PX22" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/PX10"
+                android:text="120"
+                android:textColor="@color/colorFF911B"
+                android:textSize="@dimen/PX36"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="元"
+                android:textColor="@color/color292929"
+                android:textSize="@dimen/PX22" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/PX50"
+                android:layout_weight="1"
+                android:text="日结"
+                android:textColor="@color/color292929"
+                android:textSize="@dimen/PX22"
+                android:visibility="invisible" />
+
+            <TextView
+                android:id="@+id/tv_state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="待处理"
+                android:textColor="@color/color292929"
+                android:textSize="@dimen/PX22" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lly_buttom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/PX1"
+        android:background="@color/colorFFFFFF"
+        android:orientation="horizontal"
+        android:padding="@dimen/PX20">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tv_txt1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:background="@drawable/shape_outline"
+                android:paddingBottom="@dimen/PX12"
+                android:paddingLeft="@dimen/PX16"
+                android:paddingRight="@dimen/PX16"
+                android:paddingTop="@dimen/PX12"
+                android:textColor="@color/color292929"
+                android:visibility="invisible" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tv_txt3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/shape_outline"
+                android:gravity="center"
+                android:paddingBottom="@dimen/PX12"
+                android:paddingLeft="@dimen/PX16"
+                android:paddingRight="@dimen/PX16"
+                android:paddingTop="@dimen/PX12"
+                android:text=""
+                android:textColor="@color/color292929"
+                android:visibility="invisible" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tv_txt2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/PX20"
+                android:background="@drawable/shape_outline"
+
+                android:gravity="center"
+                android:paddingBottom="@dimen/PX12"
+                android:paddingLeft="@dimen/PX16"
+                android:paddingRight="@dimen/PX16"
+                android:paddingTop="@dimen/PX12"
+
+                android:textColor="@color/color292929" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

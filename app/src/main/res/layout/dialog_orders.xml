@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:weightSum="2">
+
+
+        <FrameLayout
+            android:id="@+id/fly_all_content"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <com.gsy.ml.ui.views.OrdersScrollView
+                android:id="@+id/sv_all_content"
+                android:scrollbars="none"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:background="@color/colorWhite"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/lly_all_body"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <com.gsy.ml.ui.views.MyScrollView1
+                            android:id="@+id/sv_content"
+                            android:scrollbars="none"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <RelativeLayout
+                                    android:id="@+id/rly_add_head"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@color/colorffc000">
+
+                                    <ImageView
+                                        android:id="@+id/img_yuyue"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/order_yuyue_icon"
+                                        android:visibility="gone" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerInParent="true"
+                                        android:orientation="vertical">
+
+                                        <TextView
+
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center_horizontal"
+                                            android:layout_marginTop="@dimen/PX16"
+                                            android:drawableLeft="@drawable/order_man_icon"
+                                            android:drawablePadding="@dimen/PX6"
+                                            android:gravity="center_vertical"
+                                            android:text="没想到,赚钱如此轻松!"
+                                            android:textColor="@color/color292929"
+                                            android:textSize="@dimen/PX30" />
+
+                                        <TextView
+                                            android:id="@+id/tv_title"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+
+                                            android:layout_gravity="center_horizontal"
+                                            android:layout_marginTop="@dimen/PX26"
+                                            android:gravity="center"
+                                            android:singleLine="true"
+                                            android:text="英语家教"
+                                            android:textColor="@color/colorWhite"
+                                            android:textSize="@dimen/PX70" />
+
+                                        <TextView
+                                            android:id="@+id/tv_order_info"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center_horizontal"
+                                            android:layout_marginBottom="@dimen/PX16"
+                                            android:layout_marginTop="@dimen/PX26"
+                                            android:singleLine="true"
+                                            android:text="¥80/小时  距你7.9公里"
+                                            android:textColor="@color/colorWhite"
+                                            android:textSize="@dimen/PX36" />
+                                    </LinearLayout>
+
+                                </RelativeLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:paddingBottom="@dimen/PX24"
+                                    android:paddingLeft="@dimen/PX16">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/PX24"
+                                        android:text="做工内容及要求:"
+                                        android:textColor="@color/color000000"
+                                        android:textSize="@dimen/PX28"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/tv_content"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="@dimen/PX20"
+                                        android:layout_marginTop="@dimen/PX16"
+                                        android:lineSpacingExtra="@dimen/PX8"
+                                        android:paddingBottom="@dimen/PX24"
+                                        android:textColor="@color/color292929"
+                                        android:textSize="@dimen/PX26" />
+
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </com.gsy.ml.ui.views.MyScrollView1>
+
+                        <LinearLayout
+                            android:id="@+id/lly_up"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:background="@color/colorcccccc"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical"
+                            android:paddingBottom="@dimen/PX14"
+                            android:paddingTop="@dimen/PX14">
+
+                            <ImageView
+                                android:id="@+id/img_up"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/orders_up_icon" />
+
+                            <TextView
+                                android:id="@+id/tv_hint"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:text="向上滑动查看地图"
+                                android:textColor="@color/color000000"
+                                android:textSize="@dimen/PX32" />
+
+                            <ImageView
+                                android:id="@+id/img_down"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/orders_down_icon"
+                                android:visibility="gone" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.amap.api.maps.TextureMapView
+                            android:id="@+id/mv_loaction"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/colorWhite" />
+                    </FrameLayout>
+                </LinearLayout>
+            </com.gsy.ml.ui.views.OrdersScrollView>
+
+            <ImageView
+                android:id="@+id/img_del"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:paddingRight="@dimen/PX22"
+
+                android:paddingTop="@dimen/PX14"
+                android:src="@drawable/orders_del_icon" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+
+
+            android:orientation="vertical">
+
+            <ImageView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+
+                android:src="@drawable/orders_turn_down_icon" />
+
+            <RelativeLayout
+                android:id="@+id/rly_commit_order"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/PX40">
+
+
+                <ImageView
+                    android:id="@+id/img_orders_bg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+
+                    android:src="@drawable/selector_round_btn" />
+
+                <TextView
+                    android:id="@+id/tv_commit_order"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="抢单"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/PX40" />
+            </RelativeLayout>
+        </FrameLayout>
+
+
+    </LinearLayout>
+
+</layout>

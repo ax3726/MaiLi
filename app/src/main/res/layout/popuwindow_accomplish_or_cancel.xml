@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/PX8"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="@dimen/PX342"
+                android:layout_height="wrap_content"
+                android:background="@color/colorFFFFFF"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/tv_push"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/order_push_icon"
+                    android:drawablePadding="@dimen/PX20"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/PX20"
+                    android:text="推送订单"
+                    android:textSize="@dimen/PX32" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1px"
+                    android:background="@color/colorcccccc" />
+                <TextView
+                    android:id="@+id/tv_accomplish"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/que_icon"
+                    android:drawablePadding="@dimen/PX20"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/PX20"
+                    android:text="完成订单"
+                    android:textSize="@dimen/PX32" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1px"
+                    android:background="@color/colorcccccc" />
+
+                <TextView
+                    android:id="@+id/tv_cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/quxiao_icon"
+                    android:drawablePadding="@dimen/PX20"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/PX20"
+                    android:text="取消订单"
+                    android:textSize="@dimen/PX32" />
+
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+</layout>

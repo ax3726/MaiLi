@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/il_head"
+            layout="@layout/comon_tarbar_layout" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/PX20"
+                android:text="可全选"
+                android:textColor="@color/colorafafaf"
+                android:textSize="@dimen/PX30" />
+
+            <com.gsy.ml.ui.views.FluidLayout
+                android:id="@+id/fl_liushi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/PX20"
+                android:text=""
+                android:textColor="@color/colorafafaf"
+                android:textSize="@dimen/PX30" />
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>

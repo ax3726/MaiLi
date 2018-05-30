@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="stateModel"
+            type="com.gsy.ml.ui.common.StateModel" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:id="@+id/lly_search"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/colorFFd249"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/lly_left"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/id_leftBtnImg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/back2_icon" />
+            </LinearLayout>
+
+
+            <EditText
+                android:id="@+id/et_search"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="@dimen/PX30"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:singleLine="true"
+                android:imeOptions="actionSearch"
+                android:background="@drawable/shape_location"
+                android:drawableLeft="@drawable/search_icon"
+                android:drawablePadding="@dimen/PX20"
+                android:hint="搜索职位"
+                android:textCursorDrawable="@null"
+                android:paddingLeft="@dimen/PX20"
+                android:textColor="@color/color292929"
+                android:textSize="@dimen/PX28" />
+
+            <TextView
+                android:id="@+id/tv_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/PX20"
+                android:text="搜索"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/PX30" />
+
+        </LinearLayout>
+
+
+        <com.lm.material_refresh_lib.MaterialRefreshLayout
+            android:id="@+id/mrl_content"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rc_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+            <include
+                layout="@layout/widget_layout_empty"
+                app:stateModel="@{stateModel}" />
+        </com.lm.material_refresh_lib.MaterialRefreshLayout>
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <!--关闭-->
+        <ImageView
+            android:id="@+id/img_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginRight="@dimen/PX20"
+            android:src="@drawable/down_order_cancel" />
+
+        <!--线上线下-->
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/PX10"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/PX20"
+                    android:layout_marginLeft="@dimen/PX40"
+                    android:layout_marginTop="@dimen/PX20"
+                    android:text="提示"
+                    android:textColor="@color/colorffc000"
+                    android:textSize="@dimen/PX40" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/PX3"
+                    android:background="@color/colorffc000" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/PX20"
+                    android:layout_marginLeft="@dimen/PX40"
+                    android:layout_marginTop="@dimen/PX20"
+                    android:text="温馨提示："
+                    android:textColor="@color/colorFF0400"
+                    android:textSize="@dimen/PX30" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/PX20"
+                    android:layout_marginLeft="@dimen/PX40"
+                    android:layout_marginRight="@dimen/PX40"
+                    android:text="您好，为保障您的权益，谨防受骗，所有交易推荐使用蚂蚁快服平台线上交易。"
+                    android:textColor="@color/colorFF0400"
+                    android:textSize="@dimen/PX26" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/PX20"
+                    android:layout_marginLeft="@dimen/PX40"
+                    android:layout_marginRight="@dimen/PX40"
+                    android:text="线下交易，通过蚂蚁快服平台缴纳信息服务费即可获得对方完整信息，双方直接沟通，进行线下交易。"
+                    android:textColor="@color/color5E5E5E"
+                    android:textSize="@dimen/PX26" />
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/PX20"
+                    android:layout_marginLeft="@dimen/PX40"
+                    android:layout_marginRight="@dimen/PX40"
+                    app:cardCornerRadius="@dimen/PX5"
+                    app:cardElevation="0dp">
+
+                    <LinearLayout
+                        android:id="@+id/lly_offline"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorffc000"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:paddingBottom="@dimen/PX20"
+                        android:paddingTop="@dimen/PX20">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="线下交易：("
+                                android:textColor="@color/colorFFFFFF"
+                                android:textSize="@dimen/PX28" />
+
+                            <TextView
+                                android:id="@+id/tv_original_cost"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:text="￥10 "
+                                android:textColor="@color/editTextColor"
+                                android:textSize="@dimen/PX28" />
+
+                            <TextView
+                                android:id="@+id/tv_current_price"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="￥1)"
+                                android:textColor="@color/colorFFFFFF"
+                                android:textSize="@dimen/PX28" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/PX40"
+                    android:layout_marginLeft="@dimen/PX40"
+                    android:layout_marginRight="@dimen/PX40"
+                    app:cardCornerRadius="@dimen/PX5"
+                    app:cardElevation="0dp">
+
+                    <LinearLayout
+                        android:id="@+id/lly_on_line"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorcccccc"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:paddingBottom="@dimen/PX20"
+                        android:paddingTop="@dimen/PX20">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="线上交易"
+                            android:textColor="@color/colorFFFFFF"
+                            android:textSize="@dimen/PX28" />
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+</layout>

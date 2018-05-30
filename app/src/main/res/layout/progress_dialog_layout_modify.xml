@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/root"
+    android:background="@color/colorWhite">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorFFFFFF"
+        android:id="@+id/linearLayout"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="提示"
+            android:id="@+id/txtV_title"
+            android:textSize="@dimen/PX32"
+            android:textColor="@color/color333333"
+            android:layout_marginLeft="@dimen/PX38"
+            android:layout_marginTop="@dimen/PX52"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_marginTop="@dimen/PX20"
+            android:layout_marginLeft="@dimen/PX26"
+            android:layout_marginRight="@dimen/PX26"
+            android:layerType="software"
+            android:background="@drawable/lib_dash_line_bg">
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="message"
+            android:id="@+id/txtV_message"
+            android:layout_marginTop="@dimen/PX50"
+            android:textSize="@dimen/PX28"
+            android:textColor="@color/color666666"
+            android:lineSpacingExtra="@dimen/PX32"
+            android:layout_marginLeft="@dimen/PX38"
+            android:layout_marginRight="@dimen/PX38"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingBottom="20dp"
+            android:paddingRight="20dp" >
+
+            <ProgressBar
+                android:id="@+id/pb_progress"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="20dp" />
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/txtV_percent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0%" />
+
+                <TextView
+                    android:visibility="gone"
+                    android:id="@+id/txtV_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="0/0" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/PX68"
+            android:layout_marginBottom="@dimen/PX20"
+            android:visibility="gone"
+            android:background="@drawable/shape_common_white"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtV_btn1"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="@dimen/PX68"
+
+                android:background="@drawable/selector_dialog_info_btn"
+                android:gravity="center"
+                android:layout_marginLeft="@dimen/PX80"
+                android:layout_marginRight="@dimen/PX40"
+                android:text="取消"
+                android:textColor="@color/colorffc000"
+                android:textSize="@dimen/PX28" />
+
+
+            <TextView
+                android:id="@+id/txtV_btn2"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="@dimen/PX68"
+                android:layout_marginLeft="@dimen/PX40"
+                android:layout_marginRight="@dimen/PX80"
+                android:background="@drawable/selector_dialog_info_btn1"
+                android:gravity="center"
+                android:text="确定"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/PX28" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lly_occupation"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+android:orientation="vertical"
+        android:paddingBottom="@dimen/PX20"
+        android:paddingTop="@dimen/PX20"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/work_type1" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/tv_type_name"
+            android:text="同城配送"
+            android:layout_marginTop="@dimen/PX16"
+            android:textSize="@dimen/PX24"
+            android:textColor="@color/color292929"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

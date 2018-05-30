@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/PX20"
+    android:paddingRight="@dimen/PX20"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginRight="@dimen/PX20"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/img_state"
+            android:layout_width="wrap_content"
+            android:src="@drawable/progress_sucess_icon"
+            android:layout_height="wrap_content" />
+        <com.gsy.ml.ui.views.DashedLineView
+            android:layout_width="2dp"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_marginTop="@dimen/PX10"
+        android:id="@+id/tv_txt1"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:singleLine="true"
+
+        android:text="支付成功，正在配送中"
+        android:textColor="@color/color292929"
+        android:textSize="@dimen/PX28" />
+
+    <TextView
+        android:layout_marginTop="@dimen/PX10"
+        android:id="@+id/tv_time1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="15:50"
+        android:textColor="@color/colortextnomal"
+        android:textSize="@dimen/PX28" />
+
+
+</LinearLayout>

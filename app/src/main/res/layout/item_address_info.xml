@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <LinearLayout
+        android:id="@+id/lly_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/lly_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/PX16">
+
+            <TextView
+                android:id="@+id/tv_name_hint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="联系人:"
+                android:textSize="@dimen/PX30" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/PX30"
+                android:text="黎明"
+                android:textColor="@color/color292929"
+                android:textSize="@dimen/PX30" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="联系号码:"
+
+                android:textSize="@dimen/PX30" />
+
+            <TextView
+                android:id="@+id/tv_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autoLink="phone"
+                android:text="15170193726"
+                android:textColor="@color/colorFF911B"
+                android:textColorLink="@color/colorFF911B"
+                android:textSize="@dimen/PX32" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/PX16">
+
+            <TextView
+                android:id="@+id/tv_me"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="工作地点："
+                android:textSize="@dimen/PX28" />
+
+
+            <TextView
+                android:id="@+id/tv_workplace"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/PX10"
+                android:drawableRight="@drawable/address_location_icon"
+                android:lineSpacingExtra="@dimen/PX6"
+                android:textColor="@color/color292929"
+                android:textSize="@dimen/PX28" />
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

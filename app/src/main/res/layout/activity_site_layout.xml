@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/il_head"
+            layout="@layout/comon_tarbar2_layout" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/PX20"
+            android:background="@color/colorBlack" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorFFFFFF"
+            android:divider="@drawable/divider"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/PX20"
+            android:paddingRight="@dimen/PX20"
+            android:showDividers="middle">
+
+            <TextView
+                android:id="@+id/et_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:drawableLeft="@drawable/orientation_icon"
+                android:drawablePadding="@dimen/PX10"
+                android:gravity="center_vertical"
+                android:hint="请输入小区名/大厦名"
+                android:paddingBottom="@dimen/PX20"
+                android:paddingLeft="@dimen/PX20"
+                android:paddingTop="@dimen/PX20"
+                android:textColor="@color/color292929"
+                android:textColorHint="@color/colora5a5a5"
+                android:textSize="@dimen/PX30" />
+
+            <EditText
+                android:id="@+id/et_add_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:drawableLeft="@drawable/house_icon"
+                android:drawablePadding="@dimen/PX10"
+                android:hint="请输入楼层/门牌号"
+                android:maxLength="20"
+                android:maxLines="1"
+                android:paddingBottom="@dimen/PX20"
+                android:paddingLeft="@dimen/PX20"
+                android:paddingTop="@dimen/PX20"
+                android:textColor="@color/color292929"
+                android:textColorHint="@color/colora5a5a5"
+                android:textSize="@dimen/PX30" />
+
+            <LinearLayout
+                android:id="@+id/lly_info"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/PX20"
+                android:paddingLeft="@dimen/PX20"
+                android:paddingTop="@dimen/PX20">
+
+                <EditText
+                    android:id="@+id/et_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:drawableLeft="@drawable/sender_icon"
+                    android:drawablePadding="@dimen/PX10"
+                    android:gravity="center_vertical"
+                    android:hint="寄件人"
+                    android:maxLength="7"
+                    android:maxLines="1"
+                    android:textColor="@color/color292929"
+                    android:textColorHint="@color/colora5a5a5"
+                    android:textSize="@dimen/PX30" />
+
+                <View
+                    android:layout_width="@dimen/PX1"
+                    android:layout_height="match_parent"
+                    android:background="@color/colora5a5a5" />
+
+                <EditText
+                    android:id="@+id/et_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:drawableLeft="@drawable/cellphone_icon"
+                    android:drawablePadding="@dimen/PX20"
+                    android:hint="联系电话"
+                    android:inputType="phone"
+                    android:paddingLeft="@dimen/PX10"
+                    android:textColor="@color/color292929"
+                    android:textColorHint="@color/colora5a5a5"
+                    android:textSize="@dimen/PX30" />
+
+                <ImageView
+                    android:id="@+id/img_lian"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/PX20"
+                    android:src="@drawable/lian_icon" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/btn_ok"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/PX88"
+            android:layout_marginLeft="@dimen/PX15"
+            android:layout_marginRight="@dimen/PX15"
+            android:layout_marginTop="@dimen/PX80"
+            android:background="@drawable/selector_dialog_info_btn1"
+            android:gravity="center"
+            android:text="确定"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/PX30" />
+    </LinearLayout>
+</layout>

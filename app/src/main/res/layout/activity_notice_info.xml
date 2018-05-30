@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="stateModel"
+            type="com.gsy.ml.ui.common.StateModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/in_head"
+            layout="@layout/comon_tarbar2_layout" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/lly_body"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorf2f2f2"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorWhite"
+                    android:padding="@dimen/PX20"
+                    android:text="标题"
+                    android:textColor="@color/color292929"
+                    android:textSize="@dimen/PX34" />
+
+                <TextView
+                    android:id="@+id/tv_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorWhite"
+                    android:paddingBottom="@dimen/PX20"
+                    android:paddingLeft="@dimen/PX20"
+                    android:paddingRight="@dimen/PX20"
+                    android:textColor="@color/colortextnomal"
+                    android:textSize="@dimen/PX28" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/PX60"
+                    android:layout_marginLeft="@dimen/PX20"
+                    android:layout_marginRight="@dimen/PX20"
+                    android:layout_marginTop="@dimen/PX20"
+                    android:background="@color/colorWhite"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/PX16"
+                        android:text="通知内容"
+                        android:textColor="@color/color292929"
+                        android:textSize="@dimen/PX32" />
+
+                    <TextView
+                        android:id="@+id/tv_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorWhite"
+                        android:paddingBottom="@dimen/PX60"
+                        android:paddingLeft="@dimen/PX16"
+                        android:paddingRight="@dimen/PX16"
+                        android:text=""
+                        android:textColor="@color/colortextnomal"
+                        android:textSize="@dimen/PX28" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:gravity="right"
+                        android:padding="@dimen/PX16"
+                        android:text="蚂蚁快服平台"
+                        android:textColor="@color/color292929"
+                        android:textSize="@dimen/PX32" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <include
+                layout="@layout/widget_layout_empty"
+                app:stateModel="@{stateModel}" />
+        </FrameLayout>
+
+    </LinearLayout>
+
+
+</layout>
+

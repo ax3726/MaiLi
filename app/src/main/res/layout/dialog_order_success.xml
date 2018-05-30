@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite">
+
+
+        <ScrollView
+            android:id="@+id/sv_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:id="@+id/lly_body"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/PX218"
+                    android:background="@drawable/order_success_head_bg"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_title"
+                        android:layout_width="match_parent"
+                        android:gravity="center"
+                        android:layout_marginLeft="@dimen/PX80"
+                        android:layout_marginRight="@dimen/PX80"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="小和山水果配送"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/PX36" />
+
+                    <TextView
+                        android:id="@+id/tv_message"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/PX30"
+                        android:text="$40/次  距你7.9公里"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/PX30" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/PX20"
+                    android:paddingRight="@dimen/PX20">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/PX20"
+                        android:layout_marginTop="@dimen/PX20"
+                        android:text="具体信息"
+                        android:textColor="@color/color292929"
+                        android:textSize="@dimen/PX32" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_name"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.99"
+                             android:text="联系人:黎明"
+                            android:textColor="@color/color292929"
+                            android:textSize="@dimen/PX30" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="联系号码:"
+                            android:textColor="@color/color292929"
+                            android:textSize="@dimen/PX30" />
+
+                        <TextView
+                            android:id="@+id/tv_phone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:autoLink="phone"
+                            android:text="15170193726"
+                            android:textColor="@color/colorFF911B"
+                            android:textColorLink="@color/colorFF911B"
+                            android:textSize="@dimen/PX32" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tv_add_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/PX20"
+                        android:text="取件地址"
+                        android:textColor="@color/color292929"
+                        android:textSize="@dimen/PX30" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/PX20"
+                        android:layout_marginTop="@dimen/PX8"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_address"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="杭州是西湖区"
+                            android:textColor="@color/color292929"
+                            android:textSize="@dimen/PX30" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lly_add_to"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" />
+
+
+                    <TextView
+                        android:id="@+id/tv_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:lineSpacingExtra="@dimen/PX8"
+                        android:textColor="@color/color292929"
+                        android:textSize="@dimen/PX30" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <ImageView
+            android:id="@+id/img_success"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/PX20"
+            android:src="@drawable/order_success_lu" />
+
+        <ImageView
+            android:id="@+id/img_del"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginRight="@dimen/PX22"
+            android:layout_marginTop="@dimen/PX14"
+            android:src="@drawable/orders_del_icon" />
+
+
+        <LinearLayout
+            android:id="@+id/lly_to_order_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="@dimen/PX20"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/look_order_info" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/PX20"
+                android:text="查看订单详情"
+                android:textColor="@color/colorFFd249" />
+
+        </LinearLayout>
+    </FrameLayout>
+
+
+</layout>

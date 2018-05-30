@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/il_head"
+            layout="@layout/comon_tarbar2_layout" />
+
+        <ImageView
+            android:id="@+id/img_zhen"
+            android:layout_width="@dimen/PX366"
+            android:layout_height="@dimen/PX244"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/PX80"
+            android:src="@drawable/person_up_pic" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/PX30"
+            android:text="身份证正面扫描"
+            android:textColor="@color/color707070"
+            android:textSize="@dimen/PX30" />
+
+
+        <ImageView
+            android:id="@+id/img_fan"
+            android:layout_width="@dimen/PX366"
+            android:layout_height="@dimen/PX244"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/PX50"
+            android:src="@drawable/person_down_pic" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/PX30"
+            android:text="身份证反面扫描"
+            android:textColor="@color/color707070"
+            android:textSize="@dimen/PX30" />
+
+
+        <TextView
+            android:id="@+id/tv_turn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/PX60"
+            android:layout_marginLeft="@dimen/PX20"
+            android:layout_marginRight="@dimen/PX20"
+            android:layout_marginTop="@dimen/PX120"
+            android:background="@drawable/selector_common_btn"
+            android:gravity="center"
+            android:paddingBottom="@dimen/PX30"
+            android:paddingTop="@dimen/PX30"
+            android:text="确认提交"
+            android:textColor="@color/color_common_btn"
+            android:textSize="@dimen/PX30" />
+
+    </LinearLayout>
+
+</layout>

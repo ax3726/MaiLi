@@ -1,0 +1,63 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/color5E5E5E</item>
+        <item name="colorPrimaryDark">@color/color5E5E5E</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:listDivider" >@drawable/shape_home_adv_line</item>
+    </style>
+    <style name="SplashTheme" parent="AppTheme">
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@drawable/welcome</item>
+
+    </style>
+    <style name="LiveActivityStyle">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:windowDisablePreview">true</item>
+        <item name="android:windowNoDisplay">false</item>
+    </style>
+
+
+    <style name="BaseTheme" parent="@style/Theme.AppCompat.Light">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Translucent</item>
+    </style>
+
+    <!-- popwindow动画样式 11-->
+    <style name="lib_popwindow_anim_style">
+        <item name="android:windowEnterAnimation">@anim/lib_pop_enter_bottom_anim</item>
+        <!-- 指定显示的动画xml -->
+        <item name="android:windowExitAnimation">@anim/lib_pop_exit_bottom_anim</item>
+        <!-- 指定消失的动画xml -->
+    </style>
+
+    <style name="lib_popwindow_anim_style_center">
+        <item name="android:windowEnterAnimation">@anim/lib_pop_enter_center_anim</item>
+        <!-- 指定显示的动画xml -->
+        <item name="android:windowExitAnimation">@anim/lib_pop_exit_center_anim</item>
+        <!-- 指定消失的动画xml -->
+    </style>
+
+    <!-- popwindow动画样式 -->
+    <!--四位分隔-->
+    <declare-styleable name="ContentWithSpaceEditText">
+        <attr name="epaysdk_type" format="enum">
+            <enum name="phone" value="0" />
+            <enum name="card" value="1" />
+            <enum name="IDCard" value="2" />
+        </attr>
+    </declare-styleable>
+    <!-- Base application theme. -->
+
+
+</resources>

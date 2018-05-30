@@ -1,0 +1,10 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="app_name">蚂蚁快服</string>
+    <string name="no_result">对不起，没有搜索到相关数据！</string>
+    <string name="no_data">暂无数据！</string>
+    <string name="please_check_net_state">请检查网络状态</string>
+    <string name="server_not_avaliabe">服务不可用</string>
+    <string name="make_an_appointment_job_time">预约工作时间</string>
+    <string name="receipt_notice">发布须知</string>
+    <string name="receipt_message">此价格为蚂蚁快服的指导价格,实际支付价格经双方沟通后可修改。</string>
+</resources>

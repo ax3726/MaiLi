@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="stateModel"
+            type="com.gsy.ml.ui.common.StateModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/il_head"
+            layout="@layout/comon_tarbar2_layout" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorEEEEEE"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorFFFFFF"
+                    android:paddingBottom="@dimen/PX26"
+                    android:paddingLeft="@dimen/PX40"
+                    android:paddingTop="@dimen/PX26">
+<!---->
+                    <ml.gsy.com.library.views.RoundImageView
+                        android:id="@+id/img_head"
+                        android:layout_width="@dimen/PX142"
+                        android:layout_height="@dimen/PX142"
+                        android:src="@drawable/head_icon"
+                        app:border_color="@color/colorWhite"
+                        app:border_width="@dimen/PX4" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/img_head"
+                        android:layout_toEndOf="@+id/img_head"
+                        android:layout_marginStart="15dp">
+
+                        <android.support.v7.widget.CardView
+                            android:id="@+id/cv_state"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:cardCornerRadius="@dimen/PX10">
+
+                            <TextView
+                                android:id="@+id/tv_state"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@color/colortextnomal"
+                                android:padding="@dimen/PX8"
+                                android:textColor="@color/colorEEEEEE"
+                                android:textSize="@dimen/PX26" />
+                        </android.support.v7.widget.CardView>
+
+
+                        <TextView
+                            android:id="@+id/tv_phone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/PX20"
+                            android:drawableLeft="@drawable/phone_icon"
+                            android:drawablePadding="@dimen/PX5"
+                            android:gravity="center_vertical"
+                            android:text=""
+                            android:textSize="@dimen/PX26" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/img_erweima"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/erweima_icon"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="42dp" />
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/PX100"
+                    android:background="@color/colorEEEEEE"
+                    android:gravity="bottom"
+                    android:paddingBottom="@dimen/PX18"
+                    android:paddingLeft="@dimen/PX34"
+                    android:text="完善个人信息，保障您的个人权益"
+                    android:textColor="@color/color999999"
+                    android:textSize="@dimen/PX30" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorFFFFFF"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/PX38"
+                    android:paddingLeft="@dimen/PX44"
+                    android:paddingTop="@dimen/PX38">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="昵称"
+                        android:textColor="@color/color292929"
+                        android:textSize="@dimen/PX30" />
+
+                    <TextView
+                        android:id="@+id/tv_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/PX30"
+                        android:drawablePadding="@dimen/PX40"
+                        android:drawableRight="@drawable/enter_icon"
+                        android:hint="昵称"
+                        android:textColor="@color/color292929" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_sex"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/PX2"
+                    android:background="@color/colorFFFFFF"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/PX38"
+                    android:paddingLeft="@dimen/PX44"
+                    android:paddingTop="@dimen/PX38">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="性别"
+                        android:textColor="@color/color292929"
+                        android:textSize="@dimen/PX30" />
+                    <!---->
+                    <TextView
+                        android:id="@+id/tv_sex"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/PX30"
+                        android:drawablePadding="@dimen/PX40"
+                        android:drawableRight="@drawable/enter_icon"
+                        android:text="男"
+                        android:textColor="@color/color292929" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_occupation_choose"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/PX2"
+                    android:background="@color/colorFFFFFF"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/PX38"
+                    android:paddingLeft="@dimen/PX44"
+                    android:paddingTop="@dimen/PX38">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="职业选择"
+                        android:textColor="@color/color292929"
+                        android:textSize="@dimen/PX30" />
+
+                    <TextView
+                        android:id="@+id/tv_occupation_choose"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/PX30"
+                        android:drawablePadding="@dimen/PX40"
+                        android:drawableRight="@drawable/enter_icon"
+                        android:hint="未选择"
+                        android:textColor="@color/color292929" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_city"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/PX2"
+                    android:background="@color/colorFFFFFF"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/PX38"
+                    android:paddingLeft="@dimen/PX44"
+                    android:paddingTop="@dimen/PX38">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="所在城市"
+                        android:textColor="@color/color292929"
+                        android:textSize="@dimen/PX30" />
+
+                    <TextView
+                        android:id="@+id/tv_city"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/PX30"
+                        android:drawablePadding="@dimen/PX36"
+                        android:drawableRight="@drawable/loaction_icon"
+                        android:text="正在定位" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rly_renzhen"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/PX2"
+                    android:background="@color/colorFFFFFF"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/PX38"
+                    android:paddingLeft="@dimen/PX44"
+                    android:paddingTop="@dimen/PX38">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="实名认证"
+                        android:textColor="@color/color292929"
+                        android:textSize="@dimen/PX30" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/PX30"
+                        android:drawablePadding="@dimen/PX40"
+                        android:drawableRight="@drawable/enter_icon"
+                        android:text="未认证" />
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal|bottom"
+                    android:paddingBottom="@dimen/PX20"
+                    android:text="蚂蚁快服确保您的信息安全"
+                    android:textColor="@color/editTextColor" />
+            </LinearLayout>
+
+            <include
+                layout="@layout/widget_layout_empty"
+                app:stateModel="@{stateModel}" />
+        </FrameLayout>
+    </LinearLayout>
+</layout>
