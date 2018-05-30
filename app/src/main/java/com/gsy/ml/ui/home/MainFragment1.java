@@ -611,6 +611,7 @@ public class MainFragment1 extends BaseFragment implements View.OnClickListener,
         view1.setWorkStatus(is_work);
         view2.setWorkStatus(is_work);
         view3.setWorkStatus(is_work);
+        view4.setWorkStatus(is_work);
         SharedPreferencesUtils.setParam(aty, Constant.ROLESTATUE, is_work);
     }
 

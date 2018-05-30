@@ -34,6 +34,7 @@ import com.gsy.ml.ui.home.WorkType.ComputerActivity;
 import com.gsy.ml.ui.home.WorkType.ElectricClearActivity;
 import com.gsy.ml.ui.home.WorkType.FactoryActivity;
 import com.gsy.ml.ui.home.WorkType.LeafletsActivity;
+import com.gsy.ml.ui.home.WorkType.MedicinalActivity;
 import com.gsy.ml.ui.home.WorkType.ModelActivity;
 import com.gsy.ml.ui.home.WorkType.PayoutActivity;
 import com.gsy.ml.ui.home.WorkType.SalonActivity;
@@ -222,6 +223,12 @@ public class DemoUtils {
 
             case 30://下水道疏通
                 aty.startActivity(new Intent(aty, ElectricClearActivity.class)
+                        .putExtra("type_name", TypeToOccupation(type))
+                        .putExtra("type", type));
+                break;
+            case 32://茶叶交易
+            case 41://中药材交易
+                aty.startActivity(new Intent(aty, MedicinalActivity.class)
                         .putExtra("type_name", TypeToOccupation(type))
                         .putExtra("type", type));
                 break;

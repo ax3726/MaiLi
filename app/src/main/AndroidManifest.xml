@@ -62,7 +62,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <!--热修复-->
+
+        <!-- 热修复 -->
         <meta-data
             android:name="com.taobao.android.hotfix.IDSECRET"
             android:value="24619171-1" />
@@ -71,12 +72,9 @@
             android:value="77092483691870ba08753d5df9f5d512" />
         <meta-data
             android:name="com.taobao.android.hotfix.RSASECRET"
-            android:value="MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCmPRbhrhGxJ7Bu8+5wVoDnFKLWB8jbvdMHnHJxcdyHTupLdxsT6YCaqVQVEFA9EGFrWUGXhZmPzjKzmy8xDJmAOPvQlfr5dtroe3P3Ept4EMScPr7HMff+2c38v2CHyXL3S1U6gVXI0Vsgrprik/SkXEWYn7/3wngOJc+0nR3ZDU41/urqQIWSm8M/AeqXoUj6q/tECBwqD8M1qOoTUjJWTCfFEnqIpeHZwZaOMf8wHY+gAlvqSkrJABK0KfdYZ6o3EjIj2hYUzpYenFKobwiYc427QCs9rMLjNLDb+h2kbh9QFCsWN2F7HN8N6Ko7LVayC0PagvLUAb+0eytLiuIbAgMBAAECggEAe472XeFqhvkP+zfVZqv0/UxqR5jbovAxVPvkWAugNPXj0RmDB8bLbqkitNE+QlTVg9uAlCWZ4LgLGVHjvpo10YcJK5z+QMMlrBxuMhsjcRdNezBrzlSGlma+4vg/wE1r5QCaJXUSFMP+7oi42GXONQfcNreuEHH7l9Bk1ELfd35ir2tx3IfXNf1MqI7/jQsGkEZBAjdgZTd8hnEIM20Aqo2jxh5KRDZcKBk+nPS+arLklf+aNsuyEbkjXVThuH+6gGlVX/BJLuTT9jsLHjiMsSCWPFSB1YTef9q2s4ExFsZZYmmsB27d+ThbAPiLOs+bNQan6mXZZeKjO4n9eVgECQKBgQD65j/YqfcQfwOyxy91a3yW9KKCQX8qQ0nNUElNXIHliImVf+dFUXmIfO3wQRUUeo8c3U/dAc3yv5kafXRtoD3iPb0rZQJmMNDuFzrD+kOCPtFFtQ6MDfTj3mGbyikYtBBnICYg7NzEx97sFeCs0jmnrgqXKIhEJRL67RVwA1C4vwKBgQCpnj3bwdILJIDjtTPmK6FqWQGemDxGUTVAh49kRI2WHWfD7ji/zij6dj18cgqYIJ6c139afaRkM3NFsAfewaRJWk//eyCbNu14YIT02ytTV5KB+hTPdTk+0Tr1loyzOg+83FCT5ut+Q+MTRyOgn1uIL02lkYnRDOPc5+lzI2jxpQKBgQDUR2UzkrJ34Y8mfsKXrUavjfHFFVdbUa0qqkgqzR8WLkyCEcKB8qpKIbFLOjV0qzFUsab1jaZLQXJvaD/O1Oom9ieMhJzgC2NqXnsY/zCJDU8QlFzngJN3DFs3bXcR8J+EMT4xU1aCo7znsKb0cbXYOje5ptCMH3YMmfUuXY+5jwKBgDIRPK8ukiKp3sXYSf6KKHZs2XaH91rGQ9LNcP0m4yhJe8Sw/91WLHBqEJI4U3o+PrOLRNNgPPM64K7UXC5buHPSjcSbAq/uUcBztStVun86XUuylwv5zTEGr8Goc9W/sL+NxNczlZXK0i9xk0mpYGpdlCzoPecQR/6AEj/jVunlAoGBAJg/1Ooz2brfnnnraNmOJTf+7/VIishGCbcN8uCsvOdxDUkMoMxZxM/GannnlvK0y2VNZZoMwxpRYWS7bScdNBUsZ7ewUhsx3OJMyHu+6o5XGC5S3TG1gSCgT4F7VXEHrbru39gFCCFaLt5q54lC/6gecUrqK4vj3qDQdYPXhq1F"/>
-
+            android:value="MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCmPRbhrhGxJ7Bu8+5wVoDnFKLWB8jbvdMHnHJxcdyHTupLdxsT6YCaqVQVEFA9EGFrWUGXhZmPzjKzmy8xDJmAOPvQlfr5dtroe3P3Ept4EMScPr7HMff+2c38v2CHyXL3S1U6gVXI0Vsgrprik/SkXEWYn7/3wngOJc+0nR3ZDU41/urqQIWSm8M/AeqXoUj6q/tECBwqD8M1qOoTUjJWTCfFEnqIpeHZwZaOMf8wHY+gAlvqSkrJABK0KfdYZ6o3EjIj2hYUzpYenFKobwiYc427QCs9rMLjNLDb+h2kbh9QFCsWN2F7HN8N6Ko7LVayC0PagvLUAb+0eytLiuIbAgMBAAECggEAe472XeFqhvkP+zfVZqv0/UxqR5jbovAxVPvkWAugNPXj0RmDB8bLbqkitNE+QlTVg9uAlCWZ4LgLGVHjvpo10YcJK5z+QMMlrBxuMhsjcRdNezBrzlSGlma+4vg/wE1r5QCaJXUSFMP+7oi42GXONQfcNreuEHH7l9Bk1ELfd35ir2tx3IfXNf1MqI7/jQsGkEZBAjdgZTd8hnEIM20Aqo2jxh5KRDZcKBk+nPS+arLklf+aNsuyEbkjXVThuH+6gGlVX/BJLuTT9jsLHjiMsSCWPFSB1YTef9q2s4ExFsZZYmmsB27d+ThbAPiLOs+bNQan6mXZZeKjO4n9eVgECQKBgQD65j/YqfcQfwOyxy91a3yW9KKCQX8qQ0nNUElNXIHliImVf+dFUXmIfO3wQRUUeo8c3U/dAc3yv5kafXRtoD3iPb0rZQJmMNDuFzrD+kOCPtFFtQ6MDfTj3mGbyikYtBBnICYg7NzEx97sFeCs0jmnrgqXKIhEJRL67RVwA1C4vwKBgQCpnj3bwdILJIDjtTPmK6FqWQGemDxGUTVAh49kRI2WHWfD7ji/zij6dj18cgqYIJ6c139afaRkM3NFsAfewaRJWk//eyCbNu14YIT02ytTV5KB+hTPdTk+0Tr1loyzOg+83FCT5ut+Q+MTRyOgn1uIL02lkYnRDOPc5+lzI2jxpQKBgQDUR2UzkrJ34Y8mfsKXrUavjfHFFVdbUa0qqkgqzR8WLkyCEcKB8qpKIbFLOjV0qzFUsab1jaZLQXJvaD/O1Oom9ieMhJzgC2NqXnsY/zCJDU8QlFzngJN3DFs3bXcR8J+EMT4xU1aCo7znsKb0cbXYOje5ptCMH3YMmfUuXY+5jwKBgDIRPK8ukiKp3sXYSf6KKHZs2XaH91rGQ9LNcP0m4yhJe8Sw/91WLHBqEJI4U3o+PrOLRNNgPPM64K7UXC5buHPSjcSbAq/uUcBztStVun86XUuylwv5zTEGr8Goc9W/sL+NxNczlZXK0i9xk0mpYGpdlCzoPecQR/6AEj/jVunlAoGBAJg/1Ooz2brfnnnraNmOJTf+7/VIishGCbcN8uCsvOdxDUkMoMxZxM/GannnlvK0y2VNZZoMwxpRYWS7bScdNBUsZ7ewUhsx3OJMyHu+6o5XGC5S3TG1gSCgT4F7VXEHrbru39gFCCFaLt5q54lC/6gecUrqK4vj3qDQdYPXhq1F" />
 
         <!-- 高德 -->
-
-
 
         <meta-data
             android:name="com.amap.api.v2.apikey"
@@ -543,7 +541,6 @@
 
         <activity
             android:name=".ui.message.ChatActivity"
-
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.person.OrderListChatActivity"
@@ -557,7 +554,7 @@
             android:name=".ui.usercard.UserCardFragment"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
-
+        <activity android:name=".ui.home.WorkType.MedicinalActivity"></activity>
     </application>
 
 </manifest>
