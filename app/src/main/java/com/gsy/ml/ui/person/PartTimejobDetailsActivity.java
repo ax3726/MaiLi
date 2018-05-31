@@ -325,7 +325,7 @@ public class PartTimejobDetailsActivity extends BaseActivity implements ILoadPVL
                     if (mPartTimeJobModel != null) {
                         PartTimeJobModel.DataBean.SendOrdersBean sendOrders = mPartTimeJobModel.getData().getSendOrders();
                         String address = "";
-                        if ("24".equals(sendOrders.getWorkType())) {
+                        if (DemoUtils.TypeToNoAddress(Integer.valueOf(sendOrders.getWorkType()))) {
                             address = DemoUtils.TypeToContent2(Integer.valueOf(sendOrders.getWorkType()), sendOrders.getWorkContent());
                         } else {
                             address = sendOrders.getWorkPlace();
@@ -350,7 +350,7 @@ public class PartTimejobDetailsActivity extends BaseActivity implements ILoadPVL
             mBinding.rlyChat.setVisibility(View.GONE);
         }
 
-        if (!"24".equals(sendOrders.getWorkType()) && (sendOrders.getOrderStatus() == 0 || sendOrders.getOrderStatus() == 1 || sendOrders.getOrderStatus() == 4)) {//显示地址
+        if (!DemoUtils.TypeToNoAddress(Integer.valueOf(sendOrders.getWorkType())) && (sendOrders.getOrderStatus() == 0 || sendOrders.getOrderStatus() == 1 || sendOrders.getOrderStatus() == 4)) {//显示地址
             mBinding.llyWorkAddress.setVisibility(View.VISIBLE);
             mBinding.viewWorkAddressLine.setVisibility(View.VISIBLE);
             aMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(Double.valueOf(sendOrders.getWorkWei()),
@@ -465,7 +465,7 @@ public class PartTimejobDetailsActivity extends BaseActivity implements ILoadPVL
                             PartTimeJobModel.DataBean.SendOrdersBean sendOrders = mPartTimeJobModel.getData().getSendOrders();
 
                             String address = "";
-                            if ("24".equals(sendOrders.getWorkType())) {
+                            if (DemoUtils.TypeToNoAddress(Integer.valueOf(sendOrders.getWorkType()))) {
                                 address = DemoUtils.TypeToContent2(Integer.valueOf(sendOrders.getWorkType()), sendOrders.getWorkContent());
                             } else {
                                 address = sendOrders.getWorkPlace();
@@ -492,7 +492,7 @@ public class PartTimejobDetailsActivity extends BaseActivity implements ILoadPVL
                         } else {
                             PartTimeJobModel.DataBean.SendOrdersBean sendOrders = mPartTimeJobModel.getData().getSendOrders();
                             String address = "";
-                            if ("24".equals(sendOrders.getWorkType())) {
+                            if (DemoUtils.TypeToNoAddress(Integer.valueOf(sendOrders.getWorkType()))) {
                                 address = DemoUtils.TypeToContent2(Integer.valueOf(sendOrders.getWorkType()), sendOrders.getWorkContent());
                             } else {
                                 address = sendOrders.getWorkPlace();

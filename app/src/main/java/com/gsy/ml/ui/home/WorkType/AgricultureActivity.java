@@ -10,8 +10,7 @@ import android.widget.Toast;
 
 import com.gsy.ml.R;
 import com.gsy.ml.common.MaiLiApplication;
-import com.gsy.ml.databinding.ActivityArttutorLayoutBinding;
-import com.gsy.ml.databinding.ActivityComputerLayoutBinding;
+import com.gsy.ml.databinding.ActivityAgricultureBinding;
 import com.gsy.ml.databinding.ActivityMedicinalBinding;
 import com.gsy.ml.model.EventMessage.UpdateNotice;
 import com.gsy.ml.model.common.AddressModel;
@@ -20,7 +19,7 @@ import com.gsy.ml.model.common.HttpSuccessModel;
 import com.gsy.ml.model.main.PriceModel;
 import com.gsy.ml.model.main.UserInfoModel;
 import com.gsy.ml.model.person.WEXModel;
-import com.gsy.ml.model.workType.FactoryModel;
+import com.gsy.ml.model.workType.AgricultureModel;
 import com.gsy.ml.model.workType.MedicinalModel;
 import com.gsy.ml.prestener.common.ILoadPVListener;
 import com.gsy.ml.prestener.home.SendOrdersPresenter;
@@ -49,11 +48,11 @@ import java.util.List;
 import ml.gsy.com.library.utils.ParseJsonUtils;
 import ml.gsy.com.library.utils.Utils;
 
-public class MedicinalActivity extends BaseOrderActivity implements View.OnClickListener,
+public class AgricultureActivity extends BaseOrderActivity implements View.OnClickListener,
         DownOrderDialog.IDownOrderListener, PayPwdPopupWindow.IPayPwdListener, ILoadPVListener {
     private long mHuiheTimeLong = 0;
-    private ActivityMedicinalBinding mBinding;
-    private int mType = 32;
+    private ActivityAgricultureBinding mBinding;
+    private int mType = 33;
     private TotalPricePresenter mTotalPricePresenter = new TotalPricePresenter(this);
     private SendOrdersPresenter mPresenter = new SendOrdersPresenter(this);
     private AliPayPresenter mAliPayPresenter = new AliPayPresenter(this);//支付
@@ -61,16 +60,60 @@ public class MedicinalActivity extends BaseOrderActivity implements View.OnClick
 
     @Override
     public int getLayoutId() {
-        return R.layout.activity_medicinal;
+        return R.layout.activity_agriculture;
     }
 
     @Override
     public void initActionBar() {
         super.initActionBar();
-        if (mType == 32) {
-            mBinding.ilHead.tvTitle.setText("茶叶交易");
-        } else {
-            mBinding.ilHead.tvTitle.setText("中药材交易");
+        if (mType == 33) {
+            mBinding.ilHead.tvTitle.setText("果蔬粮油");
+            mBinding.rb1.setVisibility(View.VISIBLE);
+            mBinding.rb1.setText("果品");
+
+            mBinding.rb2.setVisibility(View.VISIBLE);
+            mBinding.rb2.setText("蔬菜");
+
+            mBinding.rb3.setVisibility(View.VISIBLE);
+            mBinding.rb3.setText("粮油");
+
+        } else if (mType == 37) {
+            mBinding.ilHead.tvTitle.setText("农用物资");
+            mBinding.rb1.setVisibility(View.VISIBLE);
+            mBinding.rb1.setText("农药");
+
+            mBinding.rb2.setVisibility(View.VISIBLE);
+            mBinding.rb2.setText("化肥");
+
+            mBinding.rb3.setVisibility(View.VISIBLE);
+            mBinding.rb3.setText("农具");
+
+            mBinding.rb4.setVisibility(View.VISIBLE);
+            mBinding.rb4.setText("其他");
+
+        } else if (mType == 38) {
+            mBinding.ilHead.tvTitle.setText("禽畜水产");
+            mBinding.rb1.setVisibility(View.VISIBLE);
+            mBinding.rb1.setText("禽类");
+
+            mBinding.rb2.setVisibility(View.VISIBLE);
+            mBinding.rb2.setText("畜类");
+
+            mBinding.rb3.setVisibility(View.VISIBLE);
+            mBinding.rb3.setText("水产");
+        } else if (mType == 40) {
+            mBinding.ilHead.tvTitle.setText("文化艺术");
+            mBinding.rb1.setVisibility(View.VISIBLE);
+            mBinding.rb1.setText("书籍");
+
+            mBinding.rb2.setVisibility(View.VISIBLE);
+            mBinding.rb2.setText("工艺品");
+
+            mBinding.rb3.setVisibility(View.VISIBLE);
+            mBinding.rb3.setText("字画");
+
+            mBinding.rb4.setVisibility(View.VISIBLE);
+            mBinding.rb4.setText("其他");
         }
         mBinding.ilHead.llyLeft.setOnClickListener(this);
         mBinding.ilHead.tvRight.setVisibility(View.VISIBLE);
@@ -114,7 +157,7 @@ public class MedicinalActivity extends BaseOrderActivity implements View.OnClick
     public void initData() {
         super.initData();
         mType = getIntent().getIntExtra("type", 32);
-        mBinding = (ActivityMedicinalBinding) vdb;
+        mBinding = (ActivityAgricultureBinding) vdb;
         initChooseTimeData1();
         initListener();
         initView();
@@ -366,6 +409,18 @@ public class MedicinalActivity extends BaseOrderActivity implements View.OnClick
             mudi = mBinding.rbToBuy.getText().toString().trim();
         }
 
+        String  type="";
+        if (mBinding.rb1.isChecked()) {
+            type = mBinding.rb1.getText().toString().trim();
+        } else if(mBinding.rb2.isChecked()) {
+            type = mBinding.rb2.getText().toString().trim();
+        } else if(mBinding.rb3.isChecked()) {
+            type = mBinding.rb3.getText().toString().trim();
+        } else if(mBinding.rb4.isChecked()) {
+            type = mBinding.rb4.getText().toString().trim();
+        }
+
+
         if (TextUtils.isEmpty(ProductName)) {
             Toast.makeText(MaiLiApplication.getInstance(), "请输入产品名称!", Toast.LENGTH_SHORT).show();
             return;
@@ -384,16 +439,17 @@ public class MedicinalActivity extends BaseOrderActivity implements View.OnClick
         }
 
 
-        MedicinalModel medicinalModel = new MedicinalModel();
-        medicinalModel.setProductName(ProductName);
-        medicinalModel.setProductNum(ProductNum);
-        medicinalModel.setOrigin(Address);
-        medicinalModel.setPriceInfo(PriceInfo);
-        medicinalModel.setReleasePurpose(mudi);
-        medicinalModel.setContent(Content);
-        medicinalModel.setEndTime(mHuiheTimeLong);
+        AgricultureModel agricultureModel = new AgricultureModel();
+        agricultureModel.setProductName(ProductName);
+        agricultureModel.setProductType(type);
+        agricultureModel.setProductNum(ProductNum);
+        agricultureModel.setOrigin(Address);
+        agricultureModel.setPriceInfo(PriceInfo);
+        agricultureModel.setReleasePurpose(mudi);
+        agricultureModel.setContent(Content);
+        agricultureModel.setEndTime(mHuiheTimeLong);
 
-        String content = ParseJsonUtils.getjsonStr(medicinalModel);
+        String content = ParseJsonUtils.getjsonStr(agricultureModel);
 
 
         showWaitDialog();
@@ -439,3 +495,4 @@ public class MedicinalActivity extends BaseOrderActivity implements View.OnClick
         }
     }
 }
+

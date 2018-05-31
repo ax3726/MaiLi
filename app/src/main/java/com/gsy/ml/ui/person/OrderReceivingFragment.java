@@ -143,7 +143,7 @@ public class OrderReceivingFragment extends BaseFragment implements ILoadPVListe
 
                 if (dataBean.getWorkType().equals("1")) {
                     tv_title.setText(dataBean.getStartPlace() + DemoUtils.TypeToOccupation(Integer.valueOf(dataBean.getWorkType())));
-                } else if ("24".equals(dataBean.getWorkType())) {
+                } else if (DemoUtils.TypeToNoAddress(Integer.valueOf(dataBean.getWorkType()))) {
                     tv_title.setText(DemoUtils.TypeToOccupation(Integer.valueOf(dataBean.getWorkType())));
                 } else {
                     tv_title.setText(dataBean.getWorkPlace() + DemoUtils.TypeToOccupation(Integer.valueOf(dataBean.getWorkType())));

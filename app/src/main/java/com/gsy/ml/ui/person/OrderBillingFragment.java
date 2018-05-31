@@ -134,7 +134,7 @@ public class OrderBillingFragment extends BaseFragment implements ILoadPVListene
                 tv_txt.setVisibility(View.INVISIBLE);
                 if (dataBean.getWorkType().equals("1")) {
                     tv_title.setText(dataBean.getStartPlace() + DemoUtils.TypeToOccupation(Integer.valueOf(dataBean.getWorkType())));
-                } else if ("24".equals(dataBean.getWorkType())) {
+                } else if (DemoUtils.TypeToNoAddress(Integer.valueOf(dataBean.getWorkType()))) {
                     tv_title.setText(DemoUtils.TypeToOccupation(Integer.valueOf(dataBean.getWorkType())));
                 } else {
                     tv_title.setText(dataBean.getWorkPlace() + DemoUtils.TypeToOccupation(Integer.valueOf(dataBean.getWorkType())));

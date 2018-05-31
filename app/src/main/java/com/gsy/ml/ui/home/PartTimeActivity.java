@@ -258,7 +258,7 @@ public class PartTimeActivity extends BaseActivity implements ILoadPVListener, V
         mBinding.tvContent.setText(Html.fromHtml(con[0]));//工作内容
         mBinding.tvTimes.setText(Html.fromHtml(con[1]));//工作时间
 
-        if (!"24".equals(sendOrders.getWorkType())) {
+        if (!DemoUtils.TypeToNoAddress(Integer.valueOf(sendOrders.getWorkType()))) {
             mBinding.llyAdds.setVisibility(View.VISIBLE);
             //地址加工种
             mBinding.tvTitle.setText(model.getData().getSendOrders().getStartPlace() + DemoUtils.TypeToOccupation(Integer.parseInt(model.getData().getSendOrders().getWorkType())));
@@ -335,7 +335,7 @@ public class PartTimeActivity extends BaseActivity implements ILoadPVListener, V
             if (mPartTimeJobModel != null) {
                 PartTimeJobModel.DataBean.SendOrdersBean sendOrders = mPartTimeJobModel.getData().getSendOrders();
                 String address = "";
-                if ("24".equals(sendOrders.getWorkType())) {
+                if (DemoUtils.TypeToNoAddress(Integer.valueOf(sendOrders.getWorkType()))) {
                     address = DemoUtils.TypeToContent2(Integer.valueOf(sendOrders.getWorkType()), sendOrders.getWorkContent());
                 } else {
                     address = sendOrders.getWorkPlace();

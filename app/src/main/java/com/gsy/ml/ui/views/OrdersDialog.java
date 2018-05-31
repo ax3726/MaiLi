@@ -731,7 +731,7 @@ public class OrdersDialog extends Dialog implements ILocationListener, RouteSear
             if (mOrderinfo != null) {
                 OrderInfoModel.DataBean data = mOrderinfo.getData();
                 String address = "";
-                if ("24".equals(mOrderinfo.getData().getWorkType())) {
+                if (DemoUtils.TypeToNoAddress(Integer.valueOf(mOrderinfo.getData().getWorkType()))) {
                     address = DemoUtils.TypeToContent2(Integer.valueOf(mOrderinfo.getData().getWorkType()), mOrderinfo.getData().getWorkContent());
                 } else {
                     address = data.getWorkPlace();

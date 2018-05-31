@@ -150,9 +150,9 @@ public class ReceivingActivity extends BaseActivity implements View.OnClickListe
                 ImageView img_yuyue = holder.getView(R.id.img_yuyue);
                 img_type.setImageResource(DemoUtils.TypeToImage(Integer.valueOf(dataBean.getWorkType())));
                 tv_title.getPaint().setFakeBoldText(true);//字体加粗
-                if (Integer.valueOf(dataBean.getWorkType()) == 24) {
+                if (DemoUtils.TypeToNoAddress(Integer.valueOf(dataBean.getWorkType()))) {
                     tv_distance.setText("");
-                    tv_title.setText("游戏陪练\t" + DemoUtils.TypeToContent2(Integer.valueOf(dataBean.getWorkType()), dataBean.getWorkContent()));
+                    tv_title.setText(DemoUtils.TypeToOccupation(Integer.valueOf(dataBean.getWorkType()))+"\t" + DemoUtils.TypeToContent2(Integer.valueOf(dataBean.getWorkType()), dataBean.getWorkContent()));
                 } else {
                     tv_title.setText(dataBean.getStartPlace() + DemoUtils.TypeToOccupation(Integer.valueOf(dataBean.getWorkType())));
                     tv_distance.setText(DemoUtils.countDistance1(dataBean.getJuli()));

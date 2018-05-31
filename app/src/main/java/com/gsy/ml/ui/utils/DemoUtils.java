@@ -19,16 +19,19 @@ import com.gsy.ml.R;
 import com.gsy.ml.common.Link;
 import com.gsy.ml.common.MaiLiApplication;
 import com.gsy.ml.model.main.UserInfoModel;
+import com.gsy.ml.model.workType.AgricultureModel;
 import com.gsy.ml.model.workType.BeautyModel;
 import com.gsy.ml.model.workType.CityServiceModel;
 import com.gsy.ml.model.workType.CommonTypeModel;
 import com.gsy.ml.model.workType.FactoryModel;
 import com.gsy.ml.model.workType.GuideContentModel;
+import com.gsy.ml.model.workType.MedicinalModel;
 import com.gsy.ml.model.workType.MoTeModel;
 import com.gsy.ml.model.workType.MotionModel;
 import com.gsy.ml.model.workType.OtherServiceModel;
 import com.gsy.ml.model.workType.PartJobModel;
 import com.gsy.ml.model.workType.TutorModel;
+import com.gsy.ml.ui.home.WorkType.AgricultureActivity;
 import com.gsy.ml.ui.home.WorkType.ArtTutorActivity;
 import com.gsy.ml.ui.home.WorkType.ComputerActivity;
 import com.gsy.ml.ui.home.WorkType.ElectricClearActivity;
@@ -227,11 +230,22 @@ public class DemoUtils {
                         .putExtra("type", type));
                 break;
             case 32://茶叶交易
+            case 34://花卉苗木
+            case 35://林业产品
             case 41://中药材交易
                 aty.startActivity(new Intent(aty, MedicinalActivity.class)
                         .putExtra("type_name", TypeToOccupation(type))
                         .putExtra("type", type));
                 break;
+            case 33://果蔬粮油
+            case 37://农用物资
+            case 38://禽畜水产
+            case 40://文化艺术
+                aty.startActivity(new Intent(aty, AgricultureActivity.class)
+                        .putExtra("type_name", TypeToOccupation(type))
+                        .putExtra("type", type));
+            break;
+
         }
     }
 
@@ -299,6 +313,26 @@ public class DemoUtils {
                 return R.drawable.xiashuidao_icon;
             case 31:
                 return R.drawable.chongchang_icon;
+            case 32:
+                return R.drawable.icon_jy_cyjy;
+            case 33:
+                return R.drawable.icon_jy_gsly;
+            case 34:
+                return R.drawable.icon_jy_hhmm;
+            case 35:
+                return R.drawable.icon_jy_lycp;
+            case 36:
+                return R.drawable.icon_jy_ms;
+            case 37:
+                return R.drawable.icon_jy_nywz;
+            case 38:
+                return R.drawable.icon_jy_qxsc;
+            case 39:
+                return R.drawable.icon_jy_tdcz;
+            case 40:
+                return R.drawable.icon_jy_whys;
+            case 41:
+                return R.drawable.icon_jy_zycjy;
         }
         return R.drawable.tongcheng_icon;
     }
@@ -470,7 +504,31 @@ public class DemoUtils {
         }
         return "职位不限";
     }
+    public static boolean TypeToNoAddress(int type) {
 
+        switch (type){
+            case 24:
+                return true;
+            case 32:
+                return true;
+            case 33:
+                return true;
+            case 34:
+                return true;
+
+            case 37:
+                return true;
+            case 38:
+                return true;
+
+            case 40:
+                return true;
+            case 41:
+                return true;
+
+        }
+        return false;
+    }
     public static int TypeToMuchPeopleOrder(int type) {
         switch (type) {
             case 1:
@@ -783,6 +841,48 @@ public class DemoUtils {
                     e.printStackTrace();
                 }
                 return new String[]{"", ""};
+
+            case 32://茶叶交易
+            case 34://花卉苗木
+            case 35://林业产品
+            case 41://中药材交易
+                try {
+                    MedicinalModel modle = ParseJsonUtils.getBean((String) content, MedicinalModel.class);
+                    String mudi = checkEmpty(modle.getReleasePurpose()) ? "" : getTitle("发布目的") + modle.getReleasePurpose() + "<br/>";
+                    String productName = checkEmpty(modle.getProductName()) ? "" : getTitle("产品名称") + modle.getProductName() + "<br/>";
+                    String origin = checkEmpty(modle.getOrigin()) ? "" : getTitle("产地") + modle.getOrigin() + "<br/>";
+                    String productNum = checkEmpty(modle.getProductNum()) ? "" : getTitle("产品数量") + modle.getProductNum() + "<br/>";
+                    String priceInfo = checkEmpty(modle.getPriceInfo()) ? "" : getTitle("价格说明") + modle.getPriceInfo() + "<br/>";
+                    String con = checkEmpty(modle.getContent()) ? "" : getTitle("其他描述及特殊要求") + modle.getContent() ;
+                    long timelong = modle.getEndTime();
+                    String time = getTitle("有效时间") + Utils.getDateToString(timelong, "yyyy年MM月dd日HH:mm") ;
+                    return new String[]{mudi+productName+origin+productNum+priceInfo+con, time};
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                return new String[]{"", ""};
+
+            case 33://果蔬粮油
+            case 37://农用物资
+            case 38://禽畜水产
+            case 40://文化艺术
+                try {
+                    AgricultureModel modle = ParseJsonUtils.getBean((String) content, AgricultureModel.class);
+                    String mudi = checkEmpty(modle.getReleasePurpose()) ? "" : getTitle("发布目的") + modle.getReleasePurpose() + "<br/>";
+                    String productType = checkEmpty(modle.getProductType()) ? "" : getTitle("产品类别") + modle.getProductType() + "<br/>";
+                    String productName = checkEmpty(modle.getProductName()) ? "" : getTitle("产品名称") + modle.getProductName() + "<br/>";
+                    String origin = checkEmpty(modle.getOrigin()) ? "" : getTitle("产地") + modle.getOrigin() + "<br/>";
+                    String productNum = checkEmpty(modle.getProductNum()) ? "" : getTitle("产品数量") + modle.getProductNum() + "<br/>";
+                    String priceInfo = checkEmpty(modle.getPriceInfo()) ? "" : getTitle("价格说明") + modle.getPriceInfo() + "<br/>";
+                    String con = checkEmpty(modle.getContent()) ? "" : getTitle("其他描述及特殊要求") + modle.getContent() ;
+                    long timelong = modle.getEndTime();
+                    String time = getTitle("有效时间") + Utils.getDateToString(timelong, "yyyy年MM月dd日HH:mm") ;
+                    return new String[]{mudi+productType+productName+origin+productNum+priceInfo+con, time};
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                return new String[]{"", ""};
+
 
         }
         return new String[]{"", ""};

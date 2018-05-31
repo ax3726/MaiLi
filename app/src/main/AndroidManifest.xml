@@ -554,7 +554,8 @@
             android:name=".ui.usercard.UserCardFragment"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
-        <activity android:name=".ui.home.WorkType.MedicinalActivity"></activity>
+        <activity android:name=".ui.home.WorkType.MedicinalActivity" />
+        <activity android:name=".ui.home.WorkType.AgricultureActivity"></activity>
     </application>
 
 </manifest>

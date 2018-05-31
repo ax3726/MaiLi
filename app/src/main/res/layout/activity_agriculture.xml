@@ -1,0 +1,578 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorFFFFFF"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/il_head"
+            layout="@layout/comon_tarbar_layout" />
+
+
+        <com.gsy.ml.ui.views.SeekbarScrollView
+            android:id="@+id/ssv_content"
+            android:layout_width="match_parent"
+
+            android:layout_height="match_parent"
+            android:background="@color/colorWhite"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:background="@color/colorFFFFFF"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/PX16"
+                    android:paddingLeft="@dimen/PX20"
+                    android:paddingRight="@dimen/PX24"
+                    android:paddingTop="@dimen/PX16">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="发布目的"
+                        android:textColor="@color/color292929"
+                        android:textSize="@dimen/PX28" />
+
+                    <RadioGroup
+                        android:id="@+id/rg_mudi"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/rb_sale"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/PX28"
+                            android:background="@drawable/selector_lable"
+                            android:button="@null"
+                            android:checked="true"
+                            android:gravity="center"
+                            android:paddingBottom="@dimen/PX10"
+                            android:paddingLeft="@dimen/PX26"
+                            android:paddingRight="@dimen/PX26"
+                            android:paddingTop="@dimen/PX10"
+                            android:text="销售"
+                            android:textColor="@color/color_lable"
+                            android:textSize="@dimen/PX24" />
+
+
+                        <RadioButton
+                            android:id="@+id/rb_to_buy"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/PX28"
+                            android:background="@drawable/selector_lable"
+                            android:button="@null"
+                            android:checked="false"
+                            android:gravity="center"
+                            android:paddingBottom="@dimen/PX10"
+                            android:paddingLeft="@dimen/PX26"
+                            android:paddingRight="@dimen/PX26"
+                            android:paddingTop="@dimen/PX10"
+                            android:text="求购"
+                            android:textColor="@color/color_lable"
+                            android:textSize="@dimen/PX24" />
+
+
+                    </RadioGroup>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:background="@color/colorFFFFFF"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/PX16"
+                    android:paddingLeft="@dimen/PX20"
+                    android:paddingRight="@dimen/PX24"
+                    android:paddingTop="@dimen/PX16">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="产品类别"
+                        android:textColor="@color/color292929"
+                        android:textSize="@dimen/PX28" />
+
+                    <RadioGroup
+                        android:id="@+id/rg_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/rb_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/PX28"
+                            android:background="@drawable/selector_lable"
+                            android:button="@null"
+                            android:checked="true"
+                            android:gravity="center"
+                            android:paddingBottom="@dimen/PX10"
+                            android:paddingLeft="@dimen/PX26"
+                            android:paddingRight="@dimen/PX26"
+                            android:paddingTop="@dimen/PX10"
+                            android:text="类别1"
+                            android:textColor="@color/color_lable"
+                            android:textSize="@dimen/PX24"
+                            android:visibility="gone" />
+
+                        <RadioButton
+                            android:id="@+id/rb_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/PX28"
+                            android:background="@drawable/selector_lable"
+                            android:button="@null"
+                            android:checked="false"
+                            android:gravity="center"
+                            android:paddingBottom="@dimen/PX10"
+                            android:paddingLeft="@dimen/PX26"
+                            android:paddingRight="@dimen/PX26"
+                            android:paddingTop="@dimen/PX10"
+                            android:text="类别2"
+                            android:textColor="@color/color_lable"
+                            android:textSize="@dimen/PX24"
+                            android:visibility="gone" />
+
+                        <RadioButton
+                            android:id="@+id/rb_3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/PX28"
+                            android:background="@drawable/selector_lable"
+                            android:button="@null"
+                            android:gravity="center"
+                            android:paddingBottom="@dimen/PX10"
+                            android:paddingLeft="@dimen/PX26"
+                            android:paddingRight="@dimen/PX26"
+                            android:paddingTop="@dimen/PX10"
+                            android:text="类别3"
+                            android:textColor="@color/color_lable"
+                            android:textSize="@dimen/PX24"
+                            android:visibility="gone" />
+
+                        <RadioButton
+                            android:id="@+id/rb_4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/PX28"
+                            android:background="@drawable/selector_lable"
+                            android:button="@null"
+                            android:checked="false"
+                            android:gravity="center"
+                            android:paddingBottom="@dimen/PX10"
+                            android:paddingLeft="@dimen/PX26"
+                            android:paddingRight="@dimen/PX26"
+                            android:paddingTop="@dimen/PX10"
+                            android:text="类别4"
+                            android:textColor="@color/color_lable"
+                            android:textSize="@dimen/PX24"
+                            android:visibility="gone" />
+
+
+                    </RadioGroup>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/PX16"
+                    android:paddingLeft="@dimen/PX20"
+                    android:paddingRight="@dimen/PX24"
+                    android:paddingTop="@dimen/PX16">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="产品名称"
+                        android:textColor="@color/color292929"
+                        android:textSize="@dimen/PX28" />
+
+                    <EditText
+                        android:id="@+id/et_product_name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/PX24"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:hint="请输入产品名称"
+                        android:textColorHint="@color/colorE7E7E7"
+                        android:textSize="@dimen/PX24" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/PX16"
+                    android:paddingLeft="@dimen/PX20"
+                    android:paddingRight="@dimen/PX24"
+                    android:paddingTop="@dimen/PX16">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="产地"
+                        android:textColor="@color/color292929"
+                        android:textSize="@dimen/PX28" />
+
+                    <EditText
+                        android:id="@+id/et_address"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/PX24"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:hint="请输入产地"
+                        android:textColorHint="@color/colorE7E7E7"
+                        android:textSize="@dimen/PX24" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/PX16"
+                    android:paddingLeft="@dimen/PX20"
+                    android:paddingRight="@dimen/PX24"
+                    android:paddingTop="@dimen/PX16">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="产品数量"
+                        android:textColor="@color/color292929"
+                        android:textSize="@dimen/PX28" />
+
+                    <EditText
+                        android:id="@+id/et_product_num"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/PX24"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:hint="请输入产品数量"
+                        android:textColorHint="@color/colorE7E7E7"
+                        android:textSize="@dimen/PX24" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/PX16"
+                    android:paddingLeft="@dimen/PX20"
+                    android:paddingRight="@dimen/PX24"
+                    android:paddingTop="@dimen/PX16">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="价格说明"
+                        android:textColor="@color/color292929"
+                        android:textSize="@dimen/PX28" />
+
+                    <EditText
+                        android:id="@+id/et_price_info"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/PX24"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:hint="请输入价格说明"
+                        android:textColorHint="@color/colorE7E7E7"
+                        android:textSize="@dimen/PX24" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/lly_pre_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/PX3"
+                    android:background="@color/colorFFFFFF"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/PX16"
+                    android:paddingLeft="@dimen/PX20"
+                    android:paddingRight="@dimen/PX24"
+                    android:paddingTop="@dimen/PX16">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="信息有效期至"
+                        android:textColor="@color/color292929"
+                        android:textSize="@dimen/PX28" />
+
+                    <TextView
+                        android:id="@+id/tv_huihe_time"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/PX20"
+                        android:layout_weight="1"
+                        android:drawablePadding="@dimen/PX20"
+                        android:drawableRight="@drawable/enter_icon"
+                        android:gravity="right"
+                        android:hint="请选择时间"
+                        android:singleLine="true"
+                        android:textColor="@color/colorffc000"
+                        android:textSize="@dimen/PX24" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/colorf2f2f2" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:background="@color/colorFFFFFF"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/PX16"
+                    android:paddingLeft="@dimen/PX20"
+                    android:paddingRight="@dimen/PX24"
+                    android:paddingTop="@dimen/PX16">
+
+                    <TextView
+                        android:id="@+id/textView18"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="@dimen/PX16"
+                        android:text="其他描述及特殊要求（选填）"
+                        android:textColor="@color/color292929"
+                        android:textSize="@dimen/PX28" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.1dp"
+                        android:background="@color/colorE7E7E7" />
+
+                    <EditText
+                        android:id="@+id/et_special_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:gravity="top"
+                        android:hint="请输入其他描述及特殊要求"
+                        android:lineSpacingExtra="5dp"
+                        android:maxLength="1000"
+                        android:minHeight="@dimen/PX142"
+                        android:paddingTop="@dimen/PX16"
+                        android:textColorHint="@color/colorE7E7E7"
+                        android:textSize="@dimen/PX24" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/colorf2f2f2" />
+
+                <RelativeLayout
+                    android:id="@+id/rly_kajuan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorFFFFFF"
+                    android:padding="@dimen/PX16"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="优惠券"
+                        android:textColor="@color/color292929"
+                        android:textSize="@dimen/PX28" />
+
+                    <TextView
+                        android:id="@+id/tv_kajuan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:drawablePadding="@dimen/PX20"
+                        android:drawableRight="@drawable/enter_icon"
+                        android:text="未使用卡卷"
+                        android:textColor="@color/colortextnomal"
+                        android:textSize="@dimen/PX28" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/PX8"
+                    android:background="@color/colorf2f2f2" />
+
+                <RelativeLayout
+                    android:id="@+id/rly_total_error"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/PX16">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="价格没有显示?"
+                        android:textColor="@color/color292929"
+                        android:textSize="@dimen/PX28" />
+
+                    <TextView
+                        android:id="@+id/tv_re_total"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:text="点击重新计算"
+                        android:textColor="@color/colorffc000"
+                        android:textSize="@dimen/PX28" />
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/lly_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginBottom="@dimen/PX3"
+                    android:background="@color/colorWhite"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/PX16"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="费用"
+                        android:textColor="@color/color292929"
+                        android:textSize="@dimen/PX28" />
+
+                    <TextView
+                        android:id="@+id/tv_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/PX20"
+                        android:text="￥11.00"
+                        android:textColor="@color/colorFF6C00"
+                        android:textSize="@dimen/PX34" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="起"
+                        android:textColor="@color/color292929"
+                        android:textSize="@dimen/PX28" />
+
+                    <TextView
+                        android:id="@+id/tv_add_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:drawableLeft="@drawable/addition_icon"
+                        android:drawablePadding="@dimen/PX6"
+                        android:gravity="center"
+                        android:text="我要加价"
+                        android:textColor="#ffc000"
+                        android:textSize="@dimen/PX26" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/colorf2f2f2" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginLeft="@dimen/PX16"
+                    android:layout_marginRight="@dimen/PX16"
+                    android:layout_marginTop="@dimen/PX40"
+                    android:text="@string/receipt_message"
+
+                    android:textColor="#ffc000"
+                    android:textSize="@dimen/PX26" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/PX80"
+                    android:background="@color/colorFFFFFF"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/PX16"
+                    android:paddingLeft="@dimen/PX20"
+                    android:paddingRight="@dimen/PX24"
+                    android:paddingTop="@dimen/PX16">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/PX68"
+                        android:layout_marginBottom="@dimen/PX20"
+                        android:background="@drawable/shape_common_white"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_negative"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/PX68"
+                            android:layout_marginRight="@dimen/PX24"
+                            android:background="@drawable/selector_dialog_info_btn"
+                            android:gravity="center"
+                            android:paddingLeft="@dimen/PX80"
+                            android:paddingRight="@dimen/PX80"
+                            android:text="取消"
+                            android:textColor="@color/colorffc000"
+                            android:textSize="@dimen/PX28" />
+
+
+                        <TextView
+                            android:id="@+id/btn_ok"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/PX68"
+                            android:layout_marginLeft="@dimen/PX24"
+                            android:background="@drawable/selector_dialog_info_btn1"
+                            android:gravity="center"
+                            android:paddingLeft="@dimen/PX80"
+                            android:paddingRight="@dimen/PX80"
+                            android:text="确定"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="@dimen/PX28" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_price_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="@dimen/PX30"
+                    android:layout_marginTop="@dimen/PX80"
+                    android:text="价格说明"
+                    android:textColor="@color/color292929"
+                    android:textSize="@dimen/PX30" />
+            </LinearLayout>
+        </com.gsy.ml.ui.views.SeekbarScrollView>
+    </LinearLayout>
+
+</layout>
+
