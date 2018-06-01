@@ -47,8 +47,10 @@
     <dimen name="PX64">96px</dimen>
     <dimen name="PX66">99px</dimen>
     <dimen name="PX68">102px</dimen>
+
     <dimen name="PX70">105px</dimen>
     <dimen name="PX72">108px</dimen>
+    <dimen name="PX76">114px</dimen>
     <dimen name="PX80">120px</dimen>
     <dimen name="PX82">123px</dimen>
     <dimen name="PX84">126px</dimen>

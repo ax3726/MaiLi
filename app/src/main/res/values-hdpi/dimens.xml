@@ -51,6 +51,7 @@
     <!--<dimen name="PX69">51px</dimen>-->
     <dimen name="PX70">52.5px</dimen>
     <dimen name="PX72">54px</dimen>
+    <dimen name="PX76">57px</dimen>
     <dimen name="PX80">60px</dimen>
     <dimen name="PX82">61.5px</dimen>
     <dimen name="PX84">63px</dimen>

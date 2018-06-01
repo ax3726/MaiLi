@@ -98,6 +98,7 @@ public class MedicinalActivity extends BaseOrderActivity implements View.OnClick
     }
 
     private void initView() {
+        mHuiheTime.setTitle("信息有效期");
         mHuiheTime.setIOccupationListener(new ChooseDatePopupWindow.IOccupationListener() {
             @Override
             public void selectItem(int position1, String item1, int position2, String item2, int position3, String item3) {
@@ -155,10 +156,6 @@ public class MedicinalActivity extends BaseOrderActivity implements View.OnClick
 
     }
 
-    @Subscribe(threadMode = ThreadMode.MAIN)
-    public void getAddress(AddressModel addressModel) {
-
-    }
 
     @Override
     public void onClick(View v) {

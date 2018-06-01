@@ -141,6 +141,7 @@ public class AgricultureActivity extends BaseOrderActivity implements View.OnCli
     }
 
     private void initView() {
+        mHuiheTime.setTitle("信息有效期");
         mHuiheTime.setIOccupationListener(new ChooseDatePopupWindow.IOccupationListener() {
             @Override
             public void selectItem(int position1, String item1, int position2, String item2, int position3, String item3) {
@@ -198,10 +199,7 @@ public class AgricultureActivity extends BaseOrderActivity implements View.OnCli
 
     }
 
-    @Subscribe(threadMode = ThreadMode.MAIN)
-    public void getAddress(AddressModel addressModel) {
 
-    }
 
     @Override
     public void onClick(View v) {

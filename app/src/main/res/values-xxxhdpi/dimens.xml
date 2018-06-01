@@ -49,6 +49,7 @@
     <dimen name="PX68">136px</dimen>
     <dimen name="PX70">140px</dimen>
     <dimen name="PX72">144px</dimen>
+    <dimen name="PX76">152px</dimen>
     <dimen name="PX80">160px</dimen>
     <dimen name="PX82">164px</dimen>
     <dimen name="PX84">168px</dimen>
