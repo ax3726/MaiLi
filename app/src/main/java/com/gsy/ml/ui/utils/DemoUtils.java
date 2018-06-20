@@ -25,6 +25,8 @@ import com.gsy.ml.model.workType.CityServiceModel;
 import com.gsy.ml.model.workType.CommonTypeModel;
 import com.gsy.ml.model.workType.FactoryModel;
 import com.gsy.ml.model.workType.GuideContentModel;
+import com.gsy.ml.model.workType.HouseModel;
+import com.gsy.ml.model.workType.LandTenantModel;
 import com.gsy.ml.model.workType.MedicinalModel;
 import com.gsy.ml.model.workType.MoTeModel;
 import com.gsy.ml.model.workType.MotionModel;
@@ -36,6 +38,8 @@ import com.gsy.ml.ui.home.WorkType.ArtTutorActivity;
 import com.gsy.ml.ui.home.WorkType.ComputerActivity;
 import com.gsy.ml.ui.home.WorkType.ElectricClearActivity;
 import com.gsy.ml.ui.home.WorkType.FactoryActivity;
+import com.gsy.ml.ui.home.WorkType.HouseActivity;
+import com.gsy.ml.ui.home.WorkType.LandTenantActivity;
 import com.gsy.ml.ui.home.WorkType.LeafletsActivity;
 import com.gsy.ml.ui.home.WorkType.MedicinalActivity;
 import com.gsy.ml.ui.home.WorkType.ModelActivity;
@@ -244,8 +248,17 @@ public class DemoUtils {
                 aty.startActivity(new Intent(aty, AgricultureActivity.class)
                         .putExtra("type_name", TypeToOccupation(type))
                         .putExtra("type", type));
-            break;
-
+                break;
+            case 39://土地承租
+                aty.startActivity(new Intent(aty, LandTenantActivity.class)
+                        .putExtra("type_name", TypeToOccupation(type))
+                        .putExtra("type", type));
+                break;
+            case 36://配套设施
+                aty.startActivity(new Intent(aty, HouseActivity.class)
+                        .putExtra("type_name", TypeToOccupation(type))
+                        .putExtra("type", type));
+                break;
         }
     }
 
@@ -502,11 +515,12 @@ public class DemoUtils {
             case 41:
                 return "中药材交易";
         }
-        return "职位不限";
+        return "信息不限";
     }
+
     public static boolean TypeToNoAddress(int type) {
 
-        switch (type){
+        switch (type) {
             case 24:
                 return true;
             case 32:
@@ -515,12 +529,16 @@ public class DemoUtils {
                 return true;
             case 34:
                 return true;
-
+            case 35:
+                return true;
+            case 36:
+                return true;
             case 37:
                 return true;
             case 38:
                 return true;
-
+            case 39:
+                return true;
             case 40:
                 return true;
             case 41:
@@ -529,6 +547,7 @@ public class DemoUtils {
         }
         return false;
     }
+
     public static int TypeToMuchPeopleOrder(int type) {
         switch (type) {
             case 1:
@@ -853,10 +872,10 @@ public class DemoUtils {
                     String origin = checkEmpty(modle.getOrigin()) ? "" : getTitle("产地") + modle.getOrigin() + "<br/>";
                     String productNum = checkEmpty(modle.getProductNum()) ? "" : getTitle("产品数量") + modle.getProductNum() + "<br/>";
                     String priceInfo = checkEmpty(modle.getPriceInfo()) ? "" : getTitle("价格说明") + modle.getPriceInfo() + "<br/>";
-                    String con = checkEmpty(modle.getContent()) ? "" : getTitle("其他描述及特殊要求") + modle.getContent() ;
+                    String con = checkEmpty(modle.getContent()) ? "" : getTitle("其他描述及特殊要求") + modle.getContent();
                     long timelong = modle.getEndTime();
-                    String time = getTitle("有效时间") + Utils.getDateToString(timelong, "yyyy年MM月dd日HH:mm") ;
-                    return new String[]{mudi+productName+origin+productNum+priceInfo+con, time};
+                    String time = getTitle("信息有效时间") + Utils.getDateToString(timelong, "yyyy年MM月dd日HH:mm");
+                    return new String[]{mudi + productName + origin + productNum + priceInfo + con, time};
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -874,15 +893,53 @@ public class DemoUtils {
                     String origin = checkEmpty(modle.getOrigin()) ? "" : getTitle("产地") + modle.getOrigin() + "<br/>";
                     String productNum = checkEmpty(modle.getProductNum()) ? "" : getTitle("产品数量") + modle.getProductNum() + "<br/>";
                     String priceInfo = checkEmpty(modle.getPriceInfo()) ? "" : getTitle("价格说明") + modle.getPriceInfo() + "<br/>";
-                    String con = checkEmpty(modle.getContent()) ? "" : getTitle("其他描述及特殊要求") + modle.getContent() ;
+                    String con = checkEmpty(modle.getContent()) ? "" : getTitle("其他描述及特殊要求") + modle.getContent();
                     long timelong = modle.getEndTime();
-                    String time = getTitle("有效时间") + Utils.getDateToString(timelong, "yyyy年MM月dd日HH:mm") ;
-                    return new String[]{mudi+productType+productName+origin+productNum+priceInfo+con, time};
+                    String time = getTitle("信息有效时间") + Utils.getDateToString(timelong, "yyyy年MM月dd日HH:mm");
+                    return new String[]{mudi + productType + productName + origin + productNum + priceInfo + con, time};
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
                 return new String[]{"", ""};
 
+            case 39://土地承租
+                try {
+                    LandTenantModel modle = ParseJsonUtils.getBean((String) content, LandTenantModel.class);
+                    String mudi = checkEmpty(modle.getReleasePurpose()) ? "" : getTitle("发布目的") + modle.getReleasePurpose() + "<br/>";
+                    String productType = checkEmpty(modle.getLandType()) ? "" : getTitle("土地类型") + modle.getLandType() + "<br/>";
+                    String productName = checkEmpty(modle.getOtherTag()) ? "" : getTitle("其它标记") + modle.getOtherTag() + "<br/>";
+                    String origin = checkEmpty(modle.getLandAddress()) ? "" : getTitle("土地所在地") + modle.getLandAddress() + "<br/>";
+                    String productNum = checkEmpty(modle.getLandArea()) ? "" : getTitle("面积") + modle.getLandArea() + "<br/>";
+                    String priceInfo = checkEmpty(modle.getPriceInfo()) ? "" : getTitle("价格说明") + modle.getPriceInfo() + "<br/>";
+                    String con = checkEmpty(modle.getContent()) ? "" : getTitle("其他描述及特殊要求") + modle.getContent();
+                    long timelong = modle.getEndTime();
+                    String time = getTitle("信息有效时间") + Utils.getDateToString(timelong, "yyyy年MM月dd日HH:mm");
+                    return new String[]{mudi + productType + productName + origin + productNum + priceInfo + con, time};
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                return new String[]{"", ""};
+
+            case 36://民宿
+                try {
+                    HouseModel modle = ParseJsonUtils.getBean((String) content, HouseModel.class);
+                    String mudi = checkEmpty(modle.getReleasePurpose()) ? "" : getTitle("发布目的") + modle.getReleasePurpose() + "<br/>";
+                    String productType = checkEmpty(modle.getHouseAddress()) ? "" : getTitle("房源所在地") + modle.getHouseAddress() + "<br/>";
+                    String priceInfo = checkEmpty(modle.getPriceInfo()) ? "" : getTitle("价格说明") + modle.getPriceInfo() + "<br/>";
+                    String productName = checkEmpty(modle.getHouseType()) ? "" : getTitle("房源类型") + modle.getHouseType() + "<br/>";
+                    String origin = checkEmpty(modle.getHouseArea()) ? "" : getTitle("房源面积") + modle.getHouseArea() + "<br/>";
+                    String huxing = checkEmpty(modle.getHouseDoor()) ? "" : getTitle("房源户型") + modle.getHouseDoor() + "<br/>";
+                    String productNum = checkEmpty(modle.getHousePeopleNum()) ? "" : getTitle("可入住人数") + modle.getHousePeopleNum() + "<br/>";
+                    String houseDay = checkEmpty(modle.getHouseDay()) ? "" : getTitle("最少入住天数") + modle.getHouseDay() + "<br/>";
+                    String facilities = checkEmpty(modle.getFacilities()) ? "" : getTitle("配套设施") + modle.getFacilities() + "<br/>";
+                    String con = checkEmpty(modle.getContent()) ? "" : getTitle("其他描述及特殊要求") + modle.getContent();
+                    long timelong = modle.getEndTime();
+                    String time = getTitle("信息有效时间") + Utils.getDateToString(timelong, "yyyy年MM月dd日HH:mm");
+                    return new String[]{mudi + productType + priceInfo + productName + origin+huxing + productNum +houseDay+ facilities + con, time};
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                return new String[]{"", ""};
 
         }
         return new String[]{"", ""};

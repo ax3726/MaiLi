@@ -62,10 +62,10 @@
                             android:checked="true"
                             android:gravity="center"
                             android:paddingBottom="@dimen/PX10"
-                            android:paddingLeft="@dimen/PX26"
-                            android:paddingRight="@dimen/PX26"
+                            android:paddingLeft="@dimen/PX20"
+                            android:paddingRight="@dimen/PX20"
                             android:paddingTop="@dimen/PX10"
-                            android:text="销售"
+                            android:text="求租"
                             android:textColor="@color/color_lable"
                             android:textSize="@dimen/PX24" />
 
@@ -80,10 +80,10 @@
                             android:checked="false"
                             android:gravity="center"
                             android:paddingBottom="@dimen/PX10"
-                            android:paddingLeft="@dimen/PX26"
-                            android:paddingRight="@dimen/PX26"
+                            android:paddingLeft="@dimen/PX20"
+                            android:paddingRight="@dimen/PX20"
                             android:paddingTop="@dimen/PX10"
-                            android:text="求购"
+                            android:text="出租"
                             android:textColor="@color/color_lable"
                             android:textSize="@dimen/PX24" />
 
@@ -95,22 +95,22 @@
                     android:layout_width="match_parent"
                     android:layout_height="0.5dp"
                     android:background="@color/colorf2f2f2" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-
                     android:background="@color/colorFFFFFF"
                     android:orientation="horizontal"
                     android:paddingBottom="@dimen/PX16"
                     android:paddingLeft="@dimen/PX20"
-                    android:paddingRight="@dimen/PX24"
+                    android:paddingRight="@dimen/PX10"
                     android:paddingTop="@dimen/PX16">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
-                        android:text="产品类别"
+                        android:text="房源类型"
                         android:textColor="@color/color292929"
                         android:textSize="@dimen/PX28" />
 
@@ -130,13 +130,12 @@
                             android:checked="true"
                             android:gravity="center"
                             android:paddingBottom="@dimen/PX10"
-                            android:paddingLeft="@dimen/PX26"
-                            android:paddingRight="@dimen/PX26"
+                            android:paddingLeft="@dimen/PX20"
+                            android:paddingRight="@dimen/PX20"
                             android:paddingTop="@dimen/PX10"
-                            android:text="类别1"
+                            android:text="民宿"
                             android:textColor="@color/color_lable"
-                            android:textSize="@dimen/PX24"
-                            android:visibility="gone" />
+                            android:textSize="@dimen/PX24" />
 
                         <RadioButton
                             android:id="@+id/rb_2"
@@ -148,13 +147,12 @@
                             android:checked="false"
                             android:gravity="center"
                             android:paddingBottom="@dimen/PX10"
-                            android:paddingLeft="@dimen/PX26"
-                            android:paddingRight="@dimen/PX26"
+                            android:paddingLeft="@dimen/PX20"
+                            android:paddingRight="@dimen/PX20"
                             android:paddingTop="@dimen/PX10"
-                            android:text="类别2"
+                            android:text="公寓"
                             android:textColor="@color/color_lable"
-                            android:textSize="@dimen/PX24"
-                            android:visibility="gone" />
+                            android:textSize="@dimen/PX24" />
 
                         <RadioButton
                             android:id="@+id/rb_3"
@@ -165,13 +163,12 @@
                             android:button="@null"
                             android:gravity="center"
                             android:paddingBottom="@dimen/PX10"
-                            android:paddingLeft="@dimen/PX26"
-                            android:paddingRight="@dimen/PX26"
+                            android:paddingLeft="@dimen/PX20"
+                            android:paddingRight="@dimen/PX20"
                             android:paddingTop="@dimen/PX10"
-                            android:text="类别3"
+                            android:text="商住楼"
                             android:textColor="@color/color_lable"
-                            android:textSize="@dimen/PX24"
-                            android:visibility="gone" />
+                            android:textSize="@dimen/PX24" />
 
                         <RadioButton
                             android:id="@+id/rb_4"
@@ -183,13 +180,12 @@
                             android:checked="false"
                             android:gravity="center"
                             android:paddingBottom="@dimen/PX10"
-                            android:paddingLeft="@dimen/PX26"
-                            android:paddingRight="@dimen/PX26"
+                            android:paddingLeft="@dimen/PX20"
+                            android:paddingRight="@dimen/PX20"
                             android:paddingTop="@dimen/PX10"
-                            android:text="类别4"
+                            android:text="别墅"
                             android:textColor="@color/color_lable"
-                            android:textSize="@dimen/PX24"
-                            android:visibility="gone" />
+                            android:textSize="@dimen/PX24" />
 
 
                     </RadioGroup>
@@ -199,6 +195,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="0.5dp"
                     android:background="@color/colorf2f2f2" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -211,18 +208,18 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="产品名称"
+                        android:text="房源所在地"
                         android:textColor="@color/color292929"
                         android:textSize="@dimen/PX28" />
 
                     <EditText
-                        android:id="@+id/et_product_name"
+                        android:id="@+id/et_houseAddress"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/PX24"
                         android:layout_weight="1"
                         android:background="@null"
-                        android:hint="请输入产品名称"
+                        android:hint="请输入房源所在地"
                         android:textColorHint="@color/colorE7E7E7"
                         android:textSize="@dimen/PX24" />
                 </LinearLayout>
@@ -231,70 +228,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="0.5dp"
                     android:background="@color/colorf2f2f2" />
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:paddingBottom="@dimen/PX16"
-                    android:paddingLeft="@dimen/PX20"
-                    android:paddingRight="@dimen/PX24"
-                    android:paddingTop="@dimen/PX16">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="产地"
-                        android:textColor="@color/color292929"
-                        android:textSize="@dimen/PX28" />
-
-                    <EditText
-                        android:id="@+id/et_address"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/PX24"
-                        android:layout_weight="1"
-                        android:background="@null"
-                        android:hint="请输入产地"
-                        android:textColorHint="@color/colorE7E7E7"
-                        android:textSize="@dimen/PX24" />
-                </LinearLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="0.5dp"
-                    android:background="@color/colorf2f2f2" />
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:paddingBottom="@dimen/PX16"
-                    android:paddingLeft="@dimen/PX20"
-                    android:paddingRight="@dimen/PX24"
-                    android:paddingTop="@dimen/PX16">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="产品数量"
-                        android:textColor="@color/color292929"
-                        android:textSize="@dimen/PX28" />
-
-                    <EditText
-                        android:id="@+id/et_product_num"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/PX24"
-                        android:layout_weight="1"
-                        android:background="@null"
-                        android:hint="请输入产品数量"
-                        android:textColorHint="@color/colorE7E7E7"
-                        android:textSize="@dimen/PX24" />
-                </LinearLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="0.5dp"
-                    android:background="@color/colorf2f2f2" />
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -318,10 +252,441 @@
                         android:layout_marginLeft="@dimen/PX24"
                         android:layout_weight="1"
                         android:background="@null"
-                        android:hint="请输入价格说明"
+                        android:hint="请输入房源价格说明"
                         android:textColorHint="@color/colorE7E7E7"
                         android:textSize="@dimen/PX24" />
                 </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/colorf2f2f2" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/PX16"
+                    android:paddingLeft="@dimen/PX20"
+                    android:paddingRight="@dimen/PX24"
+                    android:paddingTop="@dimen/PX16">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="房源面积"
+                        android:textColor="@color/color292929"
+                        android:textSize="@dimen/PX28" />
+
+                    <EditText
+                        android:id="@+id/et_mianji"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/PX24"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:hint="请输入房源面积"
+                        android:textColorHint="@color/colorE7E7E7"
+                        android:textSize="@dimen/PX24" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/colorf2f2f2" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/PX16"
+                    android:paddingLeft="@dimen/PX20"
+                    android:paddingRight="@dimen/PX24"
+                    android:paddingTop="@dimen/PX16">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="房源户型"
+                        android:textColor="@color/color292929"
+                        android:textSize="@dimen/PX28" />
+
+                    <EditText
+                        android:id="@+id/et_huxing"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/PX24"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:hint="请输入房源户型"
+                        android:textColorHint="@color/colorE7E7E7"
+                        android:textSize="@dimen/PX24" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/colorf2f2f2" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/PX16"
+                    android:paddingLeft="@dimen/PX20"
+                    android:paddingRight="@dimen/PX24"
+                    android:paddingTop="@dimen/PX16">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="可入住人数"
+                        android:textColor="@color/color292929"
+                        android:textSize="@dimen/PX28" />
+
+                    <EditText
+                        android:id="@+id/et_people_num"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/PX24"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:hint="请输入可入住人数"
+                        android:textColorHint="@color/colorE7E7E7"
+                        android:textSize="@dimen/PX24" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/colorf2f2f2" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/PX16"
+                    android:paddingLeft="@dimen/PX20"
+                    android:paddingRight="@dimen/PX24"
+                    android:paddingTop="@dimen/PX16">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="最少入住天数"
+                        android:textColor="@color/color292929"
+                        android:textSize="@dimen/PX28" />
+
+                    <EditText
+                        android:id="@+id/et_house_day"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/PX24"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:hint="请输入最少入住天数"
+                        android:textColorHint="@color/colorE7E7E7"
+                        android:textSize="@dimen/PX24" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/colorf2f2f2" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorFFFFFF"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/PX16"
+                    android:paddingLeft="@dimen/PX20"
+                    android:paddingRight="@dimen/PX10"
+                    android:paddingTop="@dimen/PX16">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="配套设施"
+                        android:textColor="@color/color292929"
+                        android:textSize="@dimen/PX28" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+
+                        <RadioButton
+                            android:id="@+id/rb_5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/PX28"
+                            android:background="@drawable/selector_lable"
+                            android:button="@null"
+                            android:checked="true"
+                            android:gravity="center"
+                            android:paddingBottom="@dimen/PX10"
+                            android:paddingLeft="@dimen/PX20"
+                            android:paddingRight="@dimen/PX20"
+                            android:paddingTop="@dimen/PX10"
+                            android:text="无线WIFI"
+                            android:textColor="@color/color_lable"
+                            android:textSize="@dimen/PX24" />
+
+                        <RadioButton
+                            android:id="@+id/rb_6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/PX28"
+                            android:background="@drawable/selector_lable"
+                            android:button="@null"
+                            android:checked="false"
+                            android:gravity="center"
+                            android:paddingBottom="@dimen/PX10"
+                            android:paddingLeft="@dimen/PX20"
+                            android:paddingRight="@dimen/PX20"
+                            android:paddingTop="@dimen/PX10"
+                            android:text="空调"
+                            android:textColor="@color/color_lable"
+                            android:textSize="@dimen/PX24" />
+
+                        <RadioButton
+                            android:id="@+id/rb_7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/PX28"
+                            android:background="@drawable/selector_lable"
+                            android:button="@null"
+                            android:gravity="center"
+                            android:paddingBottom="@dimen/PX10"
+                            android:paddingLeft="@dimen/PX20"
+                            android:paddingRight="@dimen/PX20"
+                            android:paddingTop="@dimen/PX10"
+                            android:text="冰箱"
+                            android:textColor="@color/color_lable"
+                            android:textSize="@dimen/PX24" />
+
+                        <RadioButton
+                            android:id="@+id/rb_8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/PX28"
+                            android:background="@drawable/selector_lable"
+                            android:button="@null"
+                            android:checked="false"
+                            android:gravity="center"
+                            android:paddingBottom="@dimen/PX10"
+                            android:paddingLeft="@dimen/PX20"
+                            android:paddingRight="@dimen/PX20"
+                            android:paddingTop="@dimen/PX10"
+                            android:text="洗衣机"
+                            android:textColor="@color/color_lable"
+                            android:textSize="@dimen/PX24" />
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorFFFFFF"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/PX16"
+                    android:paddingLeft="@dimen/PX20"
+                    android:paddingRight="@dimen/PX10">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/rb_9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+
+                            android:background="@drawable/selector_lable"
+                            android:button="@null"
+                            android:checked="false"
+                            android:gravity="center"
+                            android:paddingBottom="@dimen/PX10"
+                            android:paddingLeft="@dimen/PX20"
+                            android:paddingRight="@dimen/PX20"
+                            android:paddingTop="@dimen/PX10"
+                            android:text="电脑"
+                            android:textColor="@color/color_lable"
+                            android:textSize="@dimen/PX24" />
+
+                        <RadioButton
+                            android:id="@+id/rb_10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/PX28"
+                            android:background="@drawable/selector_lable"
+                            android:button="@null"
+                            android:checked="false"
+                            android:gravity="center"
+                            android:paddingBottom="@dimen/PX10"
+                            android:paddingLeft="@dimen/PX20"
+                            android:paddingRight="@dimen/PX20"
+                            android:paddingTop="@dimen/PX10"
+                            android:text="电视"
+                            android:textColor="@color/color_lable"
+                            android:textSize="@dimen/PX24" />
+
+                        <RadioButton
+                            android:id="@+id/rb_11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/PX28"
+                            android:background="@drawable/selector_lable"
+                            android:button="@null"
+
+                            android:gravity="center"
+                            android:paddingBottom="@dimen/PX10"
+                            android:paddingLeft="@dimen/PX20"
+                            android:paddingRight="@dimen/PX20"
+                            android:paddingTop="@dimen/PX10"
+                            android:text="24小时热水"
+                            android:textColor="@color/color_lable"
+                            android:textSize="@dimen/PX24" />
+
+                        <RadioButton
+                            android:id="@+id/rb_12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/PX28"
+                            android:background="@drawable/selector_lable"
+                            android:button="@null"
+                            android:checked="false"
+                            android:gravity="center"
+                            android:paddingBottom="@dimen/PX10"
+                            android:paddingLeft="@dimen/PX20"
+                            android:paddingRight="@dimen/PX20"
+                            android:paddingTop="@dimen/PX10"
+                            android:text="牙膏香皂"
+                            android:textColor="@color/color_lable"
+                            android:textSize="@dimen/PX24" />
+
+                        <RadioButton
+                            android:id="@+id/rb_13"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/PX28"
+                            android:background="@drawable/selector_lable"
+                            android:button="@null"
+                            android:checked="false"
+                            android:gravity="center"
+                            android:paddingBottom="@dimen/PX10"
+                            android:paddingLeft="@dimen/PX20"
+                            android:paddingRight="@dimen/PX20"
+                            android:paddingTop="@dimen/PX10"
+                            android:text="拖鞋"
+                            android:textColor="@color/color_lable"
+                            android:textSize="@dimen/PX24" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorFFFFFF"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/PX16"
+                    android:paddingLeft="@dimen/PX20"
+                    android:paddingRight="@dimen/PX10">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/rb_14"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+
+                            android:background="@drawable/selector_lable"
+                            android:button="@null"
+                            android:checked="false"
+                            android:gravity="center"
+                            android:paddingBottom="@dimen/PX10"
+                            android:paddingLeft="@dimen/PX20"
+                            android:paddingRight="@dimen/PX20"
+                            android:paddingTop="@dimen/PX10"
+                            android:text="毛巾浴巾"
+                            android:textColor="@color/color_lable"
+                            android:textSize="@dimen/PX24" />
+
+                        <RadioButton
+                            android:id="@+id/rb_15"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/PX28"
+                            android:background="@drawable/selector_lable"
+                            android:button="@null"
+                            android:checked="false"
+                            android:gravity="center"
+                            android:paddingBottom="@dimen/PX10"
+                            android:paddingLeft="@dimen/PX20"
+                            android:paddingRight="@dimen/PX20"
+                            android:paddingTop="@dimen/PX10"
+                            android:text="可养宠物"
+                            android:textColor="@color/color_lable"
+                            android:textSize="@dimen/PX24" />
+
+                        <RadioButton
+                            android:id="@+id/rb_16"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/PX28"
+                            android:background="@drawable/selector_lable"
+                            android:button="@null"
+
+                            android:gravity="center"
+                            android:paddingBottom="@dimen/PX10"
+                            android:paddingLeft="@dimen/PX20"
+                            android:paddingRight="@dimen/PX20"
+                            android:paddingTop="@dimen/PX10"
+                            android:text="可做饭"
+                            android:textColor="@color/color_lable"
+                            android:textSize="@dimen/PX24" />
+
+                        <RadioButton
+                            android:id="@+id/rb_17"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/PX28"
+                            android:background="@drawable/selector_lable"
+                            android:button="@null"
+                            android:checked="false"
+                            android:gravity="center"
+                            android:paddingBottom="@dimen/PX10"
+                            android:paddingLeft="@dimen/PX20"
+                            android:paddingRight="@dimen/PX20"
+                            android:paddingTop="@dimen/PX10"
+                            android:text="可停车"
+                            android:textColor="@color/color_lable"
+                            android:textSize="@dimen/PX24" />
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
 
                 <View
                     android:layout_width="match_parent"

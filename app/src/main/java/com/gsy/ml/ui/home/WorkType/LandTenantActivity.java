@@ -10,9 +10,8 @@ import android.widget.Toast;
 
 import com.gsy.ml.R;
 import com.gsy.ml.common.MaiLiApplication;
-import com.gsy.ml.databinding.ActivityArttutorLayoutBinding;
 import com.gsy.ml.databinding.ActivityComputerLayoutBinding;
-import com.gsy.ml.databinding.ActivityMedicinalBinding;
+import com.gsy.ml.databinding.ActivityLandTenantBinding;
 import com.gsy.ml.model.EventMessage.UpdateNotice;
 import com.gsy.ml.model.common.AddressModel;
 import com.gsy.ml.model.common.HttpErrorModel;
@@ -21,8 +20,8 @@ import com.gsy.ml.model.main.PriceModel;
 import com.gsy.ml.model.main.UserInfoModel;
 import com.gsy.ml.model.person.VoucherModel;
 import com.gsy.ml.model.person.WEXModel;
-import com.gsy.ml.model.workType.FactoryModel;
-import com.gsy.ml.model.workType.MedicinalModel;
+import com.gsy.ml.model.workType.LandTenantModel;
+import com.gsy.ml.model.workType.OtherServiceModel;
 import com.gsy.ml.prestener.common.ILoadPVListener;
 import com.gsy.ml.prestener.home.SendOrdersPresenter;
 import com.gsy.ml.prestener.home.TotalPricePresenter;
@@ -39,6 +38,7 @@ import com.gsy.ml.ui.views.ChooseDatePopupWindow;
 import com.gsy.ml.ui.views.DownOrderDialog;
 import com.gsy.ml.ui.views.InformationDialog;
 import com.gsy.ml.ui.views.PayPwdPopupWindow;
+import com.iflytek.cloud.thirdparty.B;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -50,30 +50,29 @@ import java.util.List;
 import ml.gsy.com.library.utils.ParseJsonUtils;
 import ml.gsy.com.library.utils.Utils;
 
-public class MedicinalActivity extends BaseOrderActivity implements View.OnClickListener,
-        DownOrderDialog.IDownOrderListener, PayPwdPopupWindow.IPayPwdListener, ILoadPVListener {
-    private long mHuiheTimeLong = 0;
-    private ActivityMedicinalBinding mBinding;
-    private int mType = 32;
-    private TotalPricePresenter mTotalPricePresenter = new TotalPricePresenter(this);
-    private SendOrdersPresenter mPresenter = new SendOrdersPresenter(this);
-    private AliPayPresenter mAliPayPresenter = new AliPayPresenter(this);//支付
+public class LandTenantActivity extends BaseOrderActivity implements View.OnClickListener
+        , ILoadPVListener
+        , DownOrderDialog.IDownOrderListener
+        , PayPwdPopupWindow.IPayPwdListener {
+    private ActivityLandTenantBinding mBinding;
     private ChooseDatePopupWindow mPricePopupWindow;
+    private AddressModel mStartAddress;
+    private SendOrdersPresenter mPresenter = new SendOrdersPresenter(this);
+    private int mType = 39;
+    private long mHuiheTimeLong = 0;
+    private AliPayPresenter mAliPayPresenter = new AliPayPresenter(this);//支付
 
     @Override
     public int getLayoutId() {
-        return R.layout.activity_medicinal;
+        return R.layout.activity_land_tenant;
     }
 
     @Override
     public void initActionBar() {
         super.initActionBar();
-        if (mType == 32) {
-            mBinding.ilHead.tvTitle.setText("茶叶交易");
-        } else {
-            mBinding.ilHead.tvTitle.setText("中药材交易");
-        }
+        mBinding.ilHead.tvTitle.setText("土地承租");
         mBinding.ilHead.llyLeft.setOnClickListener(this);
+        mBinding.tvReTotal.setOnClickListener(this);
         mBinding.ilHead.tvRight.setVisibility(View.VISIBLE);
         mBinding.ilHead.tvRight.setText(R.string.receipt_notice);
         mBinding.ilHead.llyRight.setOnClickListener(new View.OnClickListener() {
@@ -85,42 +84,15 @@ public class MedicinalActivity extends BaseOrderActivity implements View.OnClick
         });
     }
 
-    private void initListener() {
-        mBinding.btnOk.setOnClickListener(this);
-        mBinding.tvNegative.setOnClickListener(this);
-        mBinding.llyPreTime.setOnClickListener(this);
-        mBinding.tvAddPrice.setOnClickListener(this);
-        mBinding.tvReTotal.setOnClickListener(this);
-        mBinding.rlyKajuan.setOnClickListener(this);
-        mBinding.tvPriceInfo.setOnClickListener(this);
-        mDownOrderDialog.setIDownOrderListener(this);
-
-
-    }
-
-    private void initView() {
-        mHuiheTime.setTitle("信息有效期");
-        mHuiheTime.setIOccupationListener(new ChooseDatePopupWindow.IOccupationListener() {
-            @Override
-            public void selectItem(int position1, String item1, int position2, String item2, int position3, String item3) {
-                long time = getTime1(item1, item2, item3);
-                if (time != 0) {
-                    mBinding.tvHuiheTime.setText(Utils.getDateToString(time, "MM月dd日HH:mm"));
-                    mHuiheTimeLong = time;
-                }
-            }
-        });
-    }
-
     @Override
     public void initData() {
         super.initData();
-        mType = getIntent().getIntExtra("type", 32);
-        mBinding = (ActivityMedicinalBinding) vdb;
+        mType = getIntent().getIntExtra("type", 39);
+        mBinding = (ActivityLandTenantBinding) vdb;
+
         initChooseTimeData1();
         initListener();
         initView();
-
 
         mPricePopupWindow = new ChooseDatePopupWindow(aty, 1);
         mPricePopupWindow.setTitle("请选择要加价的价格");
@@ -143,6 +115,22 @@ public class MedicinalActivity extends BaseOrderActivity implements View.OnClick
                 mBinding.tvAddPrice.setText("加价" + mAddPrice + "元");
             }
         });
+        getTotalPrice(false);
+    }
+
+    private void initListener() {
+        mBinding.btnOk.setOnClickListener(this);
+        mBinding.tvNegative.setOnClickListener(this);
+        mBinding.llyPreTime.setOnClickListener(this);
+        mBinding.tvAddPrice.setOnClickListener(this);
+        mBinding.tvReTotal.setOnClickListener(this);
+        mBinding.rlyKajuan.setOnClickListener(this);
+        mBinding.tvPriceInfo.setOnClickListener(this);
+        mDownOrderDialog.setIDownOrderListener(this);
+    }
+
+    private void initView() {
+        mHuiheTime.setTitle("信息有效期");
         mHuiheTime.setIOccupationListener(new ChooseDatePopupWindow.IOccupationListener() {
             @Override
             public void selectItem(int position1, String item1, int position2, String item2, int position3, String item3) {
@@ -153,11 +141,22 @@ public class MedicinalActivity extends BaseOrderActivity implements View.OnClick
                 }
             }
         });
-        getTotalPrice(false);
-
     }
 
+    private TotalPricePresenter mTotalPricePresenter = new TotalPricePresenter(this);
 
+    /**
+     * 计算价格
+     */
+    private void getTotalPrice(boolean showLoading) {
+
+
+        if (showLoading) {
+            showWaitDialog();
+        }
+        mTotalPricePresenter.getMoney(MaiLiApplication.getInstance().getUserPlace().getCity(), "3", mType + "");
+
+    }
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -210,6 +209,173 @@ public class MedicinalActivity extends BaseOrderActivity implements View.OnClick
         }
     }
 
+    private void check() {
+        String landAddress = mBinding.etLandAddress.getText().toString().trim();
+        String mianji = mBinding.etMianji.getText().toString().trim();
+        String PriceInfo = mBinding.etPriceInfo.getText().toString().trim();
+        String time = mBinding.tvHuiheTime.getText().toString().trim();    //汇合时间
+
+        if (TextUtils.isEmpty(landAddress)) {
+            DemoUtils.nope(mBinding.etLandAddress).start();
+            Toast.makeText(MaiLiApplication.getInstance(), "请输入土地所在地!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (TextUtils.isEmpty(time)) {
+            DemoUtils.nope(mBinding.tvHuiheTime).start();
+            Toast.makeText(MaiLiApplication.getInstance(), "请选择截止时间!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (TextUtils.isEmpty(mianji)) {
+            DemoUtils.nope(mBinding.etMianji).start();
+            Toast.makeText(MaiLiApplication.getInstance(), "请输入面积!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (TextUtils.isEmpty(PriceInfo)) {
+            DemoUtils.nope(mBinding.etPriceInfo).start();
+            Toast.makeText(MaiLiApplication.getInstance(), "请输入价格说明!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (mPrice == 0) {
+            DemoUtils.nope(mBinding.tvReTotal).start();
+            Toast.makeText(MaiLiApplication.getInstance(), "价格没出来？试试点击右下角的重新计算!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        //   checkOrder();
+        checkData();
+    }
+
+
+    public String checkOtherTag(String biaoji) {
+
+        return TextUtils.isEmpty(biaoji) ? "" : "、";
+    }
+
+    private void checkData() {
+        String landAddress = mBinding.etLandAddress.getText().toString().trim();
+        String mianji = mBinding.etMianji.getText().toString().trim();
+        String PriceInfo = mBinding.etPriceInfo.getText().toString().trim();
+        String time = mBinding.tvHuiheTime.getText().toString().trim();
+        String Content = mBinding.etSpecialContent.getText().toString().trim();
+
+        String mudi = "";
+        if (mBinding.rbSale.isChecked()) {
+            mudi = mBinding.rbSale.getText().toString().trim();
+        } else if (mBinding.rbToBuy.isChecked()) {
+            mudi = mBinding.rbToBuy.getText().toString().trim();
+        }
+
+        String landType = "";
+        if (mBinding.rb1.isChecked()) {
+            landType = mBinding.rb1.getText().toString().trim();
+        } else if (mBinding.rb2.isChecked()) {
+            landType = mBinding.rb2.getText().toString().trim();
+        } else if (mBinding.rb3.isChecked()) {
+            landType = mBinding.rb3.getText().toString().trim();
+        } else if (mBinding.rb4.isChecked()) {
+            landType = mBinding.rb4.getText().toString().trim();
+        } else if (mBinding.rb5.isChecked()) {
+            landType = mBinding.rb5.getText().toString().trim();
+        }
+
+        String biaoji = "";
+        if (mBinding.rb6.isChecked()) {
+            biaoji = mBinding.rb6.getText().toString().trim();
+        }
+
+        if (mBinding.rb7.isChecked()) {
+            biaoji = biaoji + checkOtherTag(biaoji) + mBinding.rb7.getText().toString().trim();
+        }
+        if (mBinding.rb8.isChecked()) {
+            biaoji = biaoji + checkOtherTag(biaoji) + mBinding.rb8.getText().toString().trim();
+        }
+        if (mBinding.rb9.isChecked()) {
+            biaoji = biaoji + checkOtherTag(biaoji) + mBinding.rb9.getText().toString().trim();
+        }
+        if (mBinding.rb10.isChecked()) {
+            biaoji = biaoji + checkOtherTag(biaoji) + mBinding.rb10.getText().toString().trim();
+        }
+        if (mBinding.rb11.isChecked()) {
+            biaoji = biaoji + checkOtherTag(biaoji) + mBinding.rb11.getText().toString().trim();
+        }
+        if (mBinding.rb12.isChecked()) {
+            biaoji = biaoji + checkOtherTag(biaoji) + mBinding.rb12.getText().toString().trim();
+        }
+
+
+        if (TextUtils.isEmpty(landAddress)) {
+            DemoUtils.nope(mBinding.etLandAddress).start();
+            Toast.makeText(MaiLiApplication.getInstance(), "请输入土地所在地!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (TextUtils.isEmpty(time)) {
+            DemoUtils.nope(mBinding.tvHuiheTime).start();
+            Toast.makeText(MaiLiApplication.getInstance(), "请选择截止时间!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (TextUtils.isEmpty(mianji)) {
+            DemoUtils.nope(mBinding.etMianji).start();
+            Toast.makeText(MaiLiApplication.getInstance(), "请输入面积!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (TextUtils.isEmpty(PriceInfo)) {
+            DemoUtils.nope(mBinding.etPriceInfo).start();
+            Toast.makeText(MaiLiApplication.getInstance(), "请输入价格说明!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (mPrice == 0) {
+            DemoUtils.nope(mBinding.tvReTotal).start();
+            Toast.makeText(MaiLiApplication.getInstance(), "价格没出来？试试点击右下角的重新计算!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        LandTenantModel landTenantModel = new LandTenantModel();
+        landTenantModel.setReleasePurpose(mudi);
+        landTenantModel.setLandType(landType);
+        landTenantModel.setOtherTag(biaoji);
+        landTenantModel.setLandAddress(landAddress);
+        landTenantModel.setLandArea(mianji);
+        landTenantModel.setPriceInfo(PriceInfo);
+        landTenantModel.setContent(Content);
+        landTenantModel.setEndTime(mHuiheTimeLong);
+
+
+        String contents = ParseJsonUtils.getjsonStr(landTenantModel);
+
+        showWaitDialog();
+        UserInfoModel.UserInfoBean userInfo = MaiLiApplication.getInstance().getUserInfo();
+        mPresenter.SendOrders(userInfo.getPhone(),
+                userInfo.getName(),
+                mType + "",
+                mHuiheTimeLong + "",
+                "",
+                MaiLiApplication.getInstance().getUserPlace().getProvince(),
+                MaiLiApplication.getInstance().getUserPlace().getCity(),
+                MaiLiApplication.getInstance().getUserPlace().getArea(),
+                "",
+                "",
+                "",
+                "",
+                "",
+                contents,
+                String.valueOf((mPrice + mAddPrice)),
+                String.valueOf((mPrice + mAddPrice)),
+                "1",
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                "0",
+                mReservationTime + "",
+                mMoneyType + "",
+                mCashCouponId
+        );
+
+    }
+
     @Override
     public void onLoadComplete(Object object, int... parms) {
         hideWaitDialog();
@@ -238,7 +404,7 @@ public class MedicinalActivity extends BaseOrderActivity implements View.OnClick
                     Toast.makeText(MaiLiApplication.getInstance(), info.getInfo(), Toast.LENGTH_SHORT).show();
                     EventBus.getDefault().post(new UpdateNotice());
                     finish();
-                    startActivity(new Intent(MaiLiApplication.getInstance(), SendOrderSuccessActivity.class).putExtra("type", mType));//发单成功
+                    startActivity(new Intent(aty, SendOrderSuccessActivity.class).putExtra("type", mType));//发单成功
                 }
             }
         } else if (object instanceof PriceModel) {
@@ -257,6 +423,16 @@ public class MedicinalActivity extends BaseOrderActivity implements View.OnClick
     @Override
     public void onLoadComplete(Object object, Class itemClass) {
 
+    }
+
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void getAddress(AddressModel addressModel) {
+        mStartAddress = addressModel;
+       /* String name = addressModel.getName();
+        String door_info = addressModel.getDoor_info();
+        mBinding.tvFromAdd.setText(name + door_info);
+        getTotalPrice(false);*/
     }
 
     @Override
@@ -295,138 +471,6 @@ public class MedicinalActivity extends BaseOrderActivity implements View.OnClick
         }
     }
 
-    @Override
-    public void finishCheck() {
-        checkData();
-    }
-
-    private void check() {
-        String ProductName = mBinding.etProductName.getText().toString().trim();
-        String PriceInfo = mBinding.etPriceInfo.getText().toString().trim();
-        String Address = mBinding.etAddress.getText().toString().trim();
-        String ProductNum = mBinding.etProductNum.getText().toString().trim();
-
-
-        if (TextUtils.isEmpty(ProductName)) {
-            DemoUtils.nope(mBinding.etProductName).start();
-            Toast.makeText(MaiLiApplication.getInstance(), "请输入产品名称!", Toast.LENGTH_SHORT).show();
-            return;
-        }
-        if (TextUtils.isEmpty(Address)) {
-            DemoUtils.nope(mBinding.etAddress).start();
-            Toast.makeText(MaiLiApplication.getInstance(), "请输入产地!", Toast.LENGTH_SHORT).show();
-            return;
-        }
-        if (TextUtils.isEmpty(ProductNum)) {
-            DemoUtils.nope(mBinding.etProductNum).start();
-            Toast.makeText(MaiLiApplication.getInstance(), "请输入产品数量!", Toast.LENGTH_SHORT).show();
-            return;
-        }
-        if (TextUtils.isEmpty(PriceInfo)) {
-            DemoUtils.nope(mBinding.etPriceInfo).start();
-            Toast.makeText(MaiLiApplication.getInstance(), "请输入价格说明!", Toast.LENGTH_SHORT).show();
-            return;
-        }
-        if (mPrice == 0) {
-            DemoUtils.nope(mBinding.tvReTotal).start();
-            Toast.makeText(MaiLiApplication.getInstance(), "价格没出来？试试点击右下角的重新计算!", Toast.LENGTH_SHORT).show();
-            return;
-        }
-        checkData();
-    }
-
-
-    /**
-     * 计算价格
-     */
-    private void getTotalPrice(boolean showLoading) {
-
-
-        if (showLoading) {
-            showWaitDialog();
-        }
-        mTotalPricePresenter.getMoney(MaiLiApplication.getInstance().getUserPlace().getCity(), "3", mType + "");
-
-    }
-
-    private void checkData() {
-
-        String ProductName = mBinding.etProductName.getText().toString().trim();
-        String PriceInfo = mBinding.etPriceInfo.getText().toString().trim();
-        String Address = mBinding.etAddress.getText().toString().trim();
-        String ProductNum = mBinding.etProductNum.getText().toString().trim();
-        String Content = mBinding.etSpecialContent.getText().toString().trim();
-
-        String mudi = "";
-        if (mBinding.rbSale.isChecked()) {
-            mudi = mBinding.rbSale.getText().toString().trim();
-        } else if (mBinding.rbToBuy.isChecked()) {
-            mudi = mBinding.rbToBuy.getText().toString().trim();
-        }
-
-        if (TextUtils.isEmpty(ProductName)) {
-            Toast.makeText(MaiLiApplication.getInstance(), "请输入产品名称!", Toast.LENGTH_SHORT).show();
-            return;
-        }
-        if (TextUtils.isEmpty(Address)) {
-            Toast.makeText(MaiLiApplication.getInstance(), "请输入产地!", Toast.LENGTH_SHORT).show();
-            return;
-        }
-        if (TextUtils.isEmpty(ProductNum)) {
-            Toast.makeText(MaiLiApplication.getInstance(), "请输入产品数量!", Toast.LENGTH_SHORT).show();
-            return;
-        }
-        if (TextUtils.isEmpty(PriceInfo)) {
-            Toast.makeText(MaiLiApplication.getInstance(), "请输入价格说明!", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-
-        MedicinalModel medicinalModel = new MedicinalModel();
-        medicinalModel.setProductName(ProductName);
-        medicinalModel.setProductNum(ProductNum);
-        medicinalModel.setOrigin(Address);
-        medicinalModel.setPriceInfo(PriceInfo);
-        medicinalModel.setReleasePurpose(mudi);
-        medicinalModel.setContent(Content);
-        medicinalModel.setEndTime(mHuiheTimeLong);
-
-        String content = ParseJsonUtils.getjsonStr(medicinalModel);
-
-
-        showWaitDialog();
-        UserInfoModel.UserInfoBean userInfo = MaiLiApplication.getInstance().getUserInfo();
-        mPresenter.SendOrders(userInfo.getPhone(),
-                userInfo.getName(),
-                mType + "",
-                mHuiheTimeLong + "",
-                "",
-                MaiLiApplication.getInstance().getUserPlace().getProvince(),
-                MaiLiApplication.getInstance().getUserPlace().getCity(),
-                MaiLiApplication.getInstance().getUserPlace().getArea(),
-                "",
-                "",
-                "",
-                "",
-                "",
-                content,
-                String.valueOf((mPrice + mAddPrice)),
-                String.valueOf((mPrice + mAddPrice)),
-                "1",
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                "0",
-                mReservationTime + "",
-                mMoneyType + "",
-                mCashCouponId
-        );
-    }
-
     /**
      * 更新价格
      */
@@ -436,6 +480,7 @@ public class MedicinalActivity extends BaseOrderActivity implements View.OnClick
             checkData();
         }
     }
+
     /**
      * 卡卷
      */
@@ -461,4 +506,8 @@ public class MedicinalActivity extends BaseOrderActivity implements View.OnClick
         }
     }
 
+    @Override
+    public void finishCheck() {
+        checkData();
+    }
 }

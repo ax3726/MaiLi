@@ -555,7 +555,9 @@
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity android:name=".ui.home.WorkType.MedicinalActivity" />
-        <activity android:name=".ui.home.WorkType.AgricultureActivity"></activity>
+        <activity android:name=".ui.home.WorkType.AgricultureActivity" />
+        <activity android:name=".ui.home.WorkType.LandTenantActivity" />
+        <activity android:name=".ui.home.WorkType.HouseActivity"></activity>
     </application>
 
 </manifest>

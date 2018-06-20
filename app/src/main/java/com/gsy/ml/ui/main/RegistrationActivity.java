@@ -218,11 +218,11 @@ public class RegistrationActivity extends BaseActivity implements View.OnClickLi
             Toast.makeText(aty, "请输入密码!", Toast.LENGTH_SHORT).show();
             return;
         }
-        if (pwd.length()<6||pwd.length()>16) {
+       /* if (pwd.length()<6||pwd.length()>16) {
             DemoUtils.nope(mBinding.etPwd).start();
             Toast.makeText(aty, "请输入6-16位密码，由中英文组成!", Toast.LENGTH_SHORT).show();
             return;
-        }
+        }*/
 
         if (TextUtils.isEmpty(code)) {
             DemoUtils.nope(mBinding.etCode).start();

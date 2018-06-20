@@ -119,7 +119,7 @@
                     android:drawableRight="@drawable/choose_add_down_icon"
                     android:gravity="center"
                     android:singleLine="true"
-                    android:text="职位类型"
+                    android:text="信息类型"
                     android:textColor="@color/color292929"
                     android:textSize="@dimen/PX28" />
 

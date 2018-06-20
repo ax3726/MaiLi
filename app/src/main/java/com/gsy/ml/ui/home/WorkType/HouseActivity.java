@@ -2,13 +2,16 @@ package com.gsy.ml.ui.home.WorkType;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Toast;
 
 import com.gsy.ml.R;
 import com.gsy.ml.common.MaiLiApplication;
-import com.gsy.ml.databinding.ActivityComputerLayoutBinding;
+import com.gsy.ml.databinding.ActivityHouseBinding;
+import com.gsy.ml.databinding.ActivityLandTenantBinding;
 import com.gsy.ml.model.EventMessage.UpdateNotice;
 import com.gsy.ml.model.common.AddressModel;
 import com.gsy.ml.model.common.HttpErrorModel;
@@ -17,7 +20,8 @@ import com.gsy.ml.model.main.PriceModel;
 import com.gsy.ml.model.main.UserInfoModel;
 import com.gsy.ml.model.person.VoucherModel;
 import com.gsy.ml.model.person.WEXModel;
-import com.gsy.ml.model.workType.OtherServiceModel;
+import com.gsy.ml.model.workType.HouseModel;
+import com.gsy.ml.model.workType.LandTenantModel;
 import com.gsy.ml.prestener.common.ILoadPVListener;
 import com.gsy.ml.prestener.home.SendOrdersPresenter;
 import com.gsy.ml.prestener.home.TotalPricePresenter;
@@ -45,32 +49,27 @@ import java.util.List;
 import ml.gsy.com.library.utils.ParseJsonUtils;
 import ml.gsy.com.library.utils.Utils;
 
-/**
- * Created by Administrator on 2017/4/28.
- * 电脑维修
- */
-
-public class ComputerActivity extends BaseOrderActivity implements View.OnClickListener
+public class HouseActivity extends BaseOrderActivity implements View.OnClickListener
         , ILoadPVListener
         , DownOrderDialog.IDownOrderListener
         , PayPwdPopupWindow.IPayPwdListener {
-    private ActivityComputerLayoutBinding mBinding;
+    private ActivityHouseBinding mBinding;
     private ChooseDatePopupWindow mPricePopupWindow;
     private AddressModel mStartAddress;
     private SendOrdersPresenter mPresenter = new SendOrdersPresenter(this);
-    private int mType = 18;
+    private int mType = 36;
     private long mHuiheTimeLong = 0;
     private AliPayPresenter mAliPayPresenter = new AliPayPresenter(this);//支付
 
     @Override
     public int getLayoutId() {
-        return R.layout.activity_computer_layout;
+        return R.layout.activity_house;
     }
 
     @Override
     public void initActionBar() {
         super.initActionBar();
-        mBinding.ilHead.tvTitle.setText("电脑维修");
+        mBinding.ilHead.tvTitle.setText("民宿");
         mBinding.ilHead.llyLeft.setOnClickListener(this);
         mBinding.tvReTotal.setOnClickListener(this);
         mBinding.ilHead.tvRight.setVisibility(View.VISIBLE);
@@ -87,8 +86,8 @@ public class ComputerActivity extends BaseOrderActivity implements View.OnClickL
     @Override
     public void initData() {
         super.initData();
-        mType = getIntent().getIntExtra("type", 18);
-        mBinding = (ActivityComputerLayoutBinding) vdb;
+        mType = getIntent().getIntExtra("type", 36);
+        mBinding = (ActivityHouseBinding) vdb;
 
         initChooseTimeData1();
         initListener();
@@ -115,6 +114,7 @@ public class ComputerActivity extends BaseOrderActivity implements View.OnClickL
                 mBinding.tvAddPrice.setText("加价" + mAddPrice + "元");
             }
         });
+        getTotalPrice(false);
     }
 
     private void initListener() {
@@ -122,7 +122,6 @@ public class ComputerActivity extends BaseOrderActivity implements View.OnClickL
         mBinding.tvNegative.setOnClickListener(this);
         mBinding.llyPreTime.setOnClickListener(this);
         mBinding.tvAddPrice.setOnClickListener(this);
-        mBinding.tvFromAdd.setOnClickListener(this);
         mBinding.tvReTotal.setOnClickListener(this);
         mBinding.rlyKajuan.setOnClickListener(this);
         mBinding.tvPriceInfo.setOnClickListener(this);
@@ -130,6 +129,7 @@ public class ComputerActivity extends BaseOrderActivity implements View.OnClickL
     }
 
     private void initView() {
+        mHuiheTime.setTitle("信息有效期");
         mHuiheTime.setIOccupationListener(new ChooseDatePopupWindow.IOccupationListener() {
             @Override
             public void selectItem(int position1, String item1, int position2, String item2, int position3, String item3) {
@@ -148,16 +148,13 @@ public class ComputerActivity extends BaseOrderActivity implements View.OnClickL
      * 计算价格
      */
     private void getTotalPrice(boolean showLoading) {
-        if (mStartAddress == null) {
-            if (showLoading) {
-                Toast.makeText(MaiLiApplication.getInstance(), "请输入维修地点!", Toast.LENGTH_SHORT).show();
-            }
-            return;
-        }
+
+
         if (showLoading) {
             showWaitDialog();
         }
-        mTotalPricePresenter.getMoney(mStartAddress.getCity(), "3", mType + "");
+        mTotalPricePresenter.getMoney(MaiLiApplication.getInstance().getUserPlace().getCity(), "3", mType + "");
+
     }
 
     @Override
@@ -213,22 +210,47 @@ public class ComputerActivity extends BaseOrderActivity implements View.OnClickL
     }
 
     private void check() {
-        String tiem = mBinding.tvHuiheTime.getText().toString().trim();    //汇合时间
-        String content = mBinding.etSpecialContent.getText().toString().trim();  //电脑故障内容
-        if (mStartAddress == null) {
-            DemoUtils.nope(mBinding.tvFromAdd).start();
-            Toast.makeText(MaiLiApplication.getInstance(), "请输入维修地点!", Toast.LENGTH_SHORT).show();
-            return;
-        }
+        String houseAddress = mBinding.etHouseAddress.getText().toString().trim();
+        String mianji = mBinding.etMianji.getText().toString().trim();
+        String huxing = mBinding.etHuxing.getText().toString().trim();
+        String PeopleNum = mBinding.etPeopleNum.getText().toString().trim();
+        String HouseDay = mBinding.etHouseDay.getText().toString().trim();
+        String PriceInfo = mBinding.etPriceInfo.getText().toString().trim();
+        String time = mBinding.tvHuiheTime.getText().toString().trim();    //汇合时间
 
-        if (TextUtils.isEmpty(tiem)) {
-            DemoUtils.nope(mBinding.tvHuiheTime).start();
-            Toast.makeText(MaiLiApplication.getInstance(), "请确认时间!", Toast.LENGTH_SHORT).show();
+        if (TextUtils.isEmpty(houseAddress)) {
+            DemoUtils.nope(mBinding.etHouseAddress).start();
+            Toast.makeText(MaiLiApplication.getInstance(), "请输入房源所在地!", Toast.LENGTH_SHORT).show();
             return;
         }
-        if (TextUtils.isEmpty(content)) {
-            DemoUtils.nope(mBinding.etSpecialContent).start();
-            Toast.makeText(MaiLiApplication.getInstance(), "请输入电脑故障描述!", Toast.LENGTH_SHORT).show();
+        if (TextUtils.isEmpty(time)) {
+            DemoUtils.nope(mBinding.tvHuiheTime).start();
+            Toast.makeText(MaiLiApplication.getInstance(), "请选择截止时间!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (TextUtils.isEmpty(mianji)) {
+            DemoUtils.nope(mBinding.etMianji).start();
+            Toast.makeText(MaiLiApplication.getInstance(), "请输入房源面积!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (TextUtils.isEmpty(huxing)) {
+            DemoUtils.nope(mBinding.etHuxing).start();
+            Toast.makeText(MaiLiApplication.getInstance(), "请输入房源户型!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (TextUtils.isEmpty(PeopleNum)) {
+            DemoUtils.nope(mBinding.etPeopleNum).start();
+            Toast.makeText(MaiLiApplication.getInstance(), "请输入可入住人数!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (TextUtils.isEmpty(HouseDay)) {
+            DemoUtils.nope(mBinding.etHouseDay).start();
+            Toast.makeText(MaiLiApplication.getInstance(), "请输入可入住天数!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (TextUtils.isEmpty(PriceInfo)) {
+            DemoUtils.nope(mBinding.etPriceInfo).start();
+            Toast.makeText(MaiLiApplication.getInstance(), "请输入价格说明!", Toast.LENGTH_SHORT).show();
             return;
         }
         if (mPrice == 0) {
@@ -236,39 +258,141 @@ public class ComputerActivity extends BaseOrderActivity implements View.OnClickL
             Toast.makeText(MaiLiApplication.getInstance(), "价格没出来？试试点击右下角的重新计算!", Toast.LENGTH_SHORT).show();
             return;
         }
-
-     //   checkOrder();
+        //   checkOrder();
         checkData();
     }
 
+
+    public String checkOtherTag(String biaoji) {
+
+        return TextUtils.isEmpty(biaoji) ? "" : "、";
+    }
+
     private void checkData() {
-        String tiem = mBinding.tvHuiheTime.getText().toString().trim();    //汇合时间
-        String content = mBinding.etSpecialContent.getText().toString().trim();  //电脑故障内容
-        if (mStartAddress == null) {
-            Toast.makeText(MaiLiApplication.getInstance(), "请输入维修|地点!", Toast.LENGTH_SHORT).show();
+        String houseAddress = mBinding.etHouseAddress.getText().toString().trim();
+        String mianji = mBinding.etMianji.getText().toString().trim();
+        String huxing = mBinding.etHuxing.getText().toString().trim();
+        String PriceInfo = mBinding.etPriceInfo.getText().toString().trim();
+        String PeopleNum = mBinding.etPeopleNum.getText().toString().trim();
+        String HouseDay = mBinding.etHouseDay.getText().toString().trim();
+        String time = mBinding.tvHuiheTime.getText().toString().trim();
+        String Content = mBinding.etSpecialContent.getText().toString().trim();
+
+        String mudi = "";
+        if (mBinding.rbSale.isChecked()) {
+            mudi = mBinding.rbSale.getText().toString().trim();
+        } else if (mBinding.rbToBuy.isChecked()) {
+            mudi = mBinding.rbToBuy.getText().toString().trim();
+        }
+
+        String landType = "";
+        if (mBinding.rb1.isChecked()) {
+            landType = mBinding.rb1.getText().toString().trim();
+        } else if (mBinding.rb2.isChecked()) {
+            landType = mBinding.rb2.getText().toString().trim();
+        } else if (mBinding.rb3.isChecked()) {
+            landType = mBinding.rb3.getText().toString().trim();
+        } else if (mBinding.rb4.isChecked()) {
+            landType = mBinding.rb4.getText().toString().trim();
+        }
+
+        String biaoji = "";
+        if (mBinding.rb5.isChecked()) {
+            biaoji = mBinding.rb5.getText().toString().trim();
+        }
+
+        if (mBinding.rb6.isChecked()) {
+            biaoji = biaoji + checkOtherTag(biaoji) + mBinding.rb6.getText().toString().trim();
+        }
+        if (mBinding.rb7.isChecked()) {
+            biaoji = biaoji + checkOtherTag(biaoji) + mBinding.rb7.getText().toString().trim();
+        }
+        if (mBinding.rb8.isChecked()) {
+            biaoji = biaoji + checkOtherTag(biaoji) + mBinding.rb8.getText().toString().trim();
+        }
+        if (mBinding.rb9.isChecked()) {
+            biaoji = biaoji + checkOtherTag(biaoji) + mBinding.rb9.getText().toString().trim();
+        }
+        if (mBinding.rb10.isChecked()) {
+            biaoji = biaoji + checkOtherTag(biaoji) + mBinding.rb10.getText().toString().trim();
+        }
+        if (mBinding.rb11.isChecked()) {
+            biaoji = biaoji + checkOtherTag(biaoji) + mBinding.rb11.getText().toString().trim();
+        }
+        if (mBinding.rb12.isChecked()) {
+            biaoji = biaoji + checkOtherTag(biaoji) + mBinding.rb12.getText().toString().trim();
+        }
+        if (mBinding.rb13.isChecked()) {
+            biaoji = biaoji + checkOtherTag(biaoji) + mBinding.rb13.getText().toString().trim();
+        }
+        if (mBinding.rb14.isChecked()) {
+            biaoji = biaoji + checkOtherTag(biaoji) + mBinding.rb14.getText().toString().trim();
+        }
+        if (mBinding.rb15.isChecked()) {
+            biaoji = biaoji + checkOtherTag(biaoji) + mBinding.rb15.getText().toString().trim();
+        }
+        if (mBinding.rb16.isChecked()) {
+            biaoji = biaoji + checkOtherTag(biaoji) + mBinding.rb16.getText().toString().trim();
+        }
+        if (mBinding.rb17.isChecked()) {
+            biaoji = biaoji + checkOtherTag(biaoji) + mBinding.rb17.getText().toString().trim();
+        }
+        if (TextUtils.isEmpty(houseAddress)) {
+            DemoUtils.nope(mBinding.etHouseAddress).start();
+            Toast.makeText(MaiLiApplication.getInstance(), "请输入房源所在地!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (TextUtils.isEmpty(time)) {
+            DemoUtils.nope(mBinding.tvHuiheTime).start();
+            Toast.makeText(MaiLiApplication.getInstance(), "请选择截止时间!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (TextUtils.isEmpty(mianji)) {
+            DemoUtils.nope(mBinding.etMianji).start();
+            Toast.makeText(MaiLiApplication.getInstance(), "请输入房源面积!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (TextUtils.isEmpty(huxing)) {
+            DemoUtils.nope(mBinding.etHuxing).start();
+            Toast.makeText(MaiLiApplication.getInstance(), "请输入房源户型!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (TextUtils.isEmpty(PeopleNum)) {
+            DemoUtils.nope(mBinding.etPeopleNum).start();
+            Toast.makeText(MaiLiApplication.getInstance(), "请输入可入住人数!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (TextUtils.isEmpty(HouseDay)) {
+            DemoUtils.nope(mBinding.etHouseDay).start();
+            Toast.makeText(MaiLiApplication.getInstance(), "请输入可入住天数!", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        if (TextUtils.isEmpty(tiem)) {
-            Toast.makeText(MaiLiApplication.getInstance(), "请确认时间!", Toast.LENGTH_SHORT).show();
+        if (TextUtils.isEmpty(PriceInfo)) {
+            DemoUtils.nope(mBinding.etPriceInfo).start();
+            Toast.makeText(MaiLiApplication.getInstance(), "请输入价格说明!", Toast.LENGTH_SHORT).show();
             return;
         }
-        if (TextUtils.isEmpty(content)) {
-            Toast.makeText(MaiLiApplication.getInstance(), "请输入电脑故障描述!", Toast.LENGTH_SHORT).show();
+        if (mPrice == 0) {
+            DemoUtils.nope(mBinding.tvReTotal).start();
+            Toast.makeText(MaiLiApplication.getInstance(), "价格没出来？试试点击右下角的重新计算!", Toast.LENGTH_SHORT).show();
             return;
         }
+        HouseModel houseModel = new HouseModel();
+        houseModel.setReleasePurpose(mudi);
+        houseModel.setHouseType(landType);
+        houseModel.setFacilities(biaoji);
+        houseModel.setHouseAddress(houseAddress);
+        houseModel.setHouseArea(mianji);
+        houseModel.setHouseDoor(huxing);
+        houseModel.setHousePeopleNum(PeopleNum);
+        houseModel.setHouseDay(HouseDay);
+        houseModel.setPriceInfo(PriceInfo);
+        houseModel.setContent(Content);
+        houseModel.setEndTime(mHuiheTimeLong);
 
 
-
-        OtherServiceModel otherServiceModel = new OtherServiceModel();
-        otherServiceModel.setContent(content);
-        otherServiceModel.setStartTime(mHuiheTimeLong);
-        String contents = ParseJsonUtils.getjsonStr(otherServiceModel);
-
-
-
-        String name = mStartAddress.getName() + mStartAddress.getAddress();
-        String door_info = mStartAddress.getDoor_info();
+        String contents = ParseJsonUtils.getjsonStr(houseModel);
 
         showWaitDialog();
         UserInfoModel.UserInfoBean userInfo = MaiLiApplication.getInstance().getUserInfo();
@@ -277,17 +401,17 @@ public class ComputerActivity extends BaseOrderActivity implements View.OnClickL
                 mType + "",
                 mHuiheTimeLong + "",
                 "",
-                mStartAddress.getProvince(),
-                mStartAddress.getCity(),
-                mStartAddress.getDistrict(),
-                mStartAddress.getPoint().getLongitude() + "",
-                mStartAddress.getPoint().getLatitude() + "",
-                name,
-                door_info,
+                MaiLiApplication.getInstance().getUserPlace().getProvince(),
+                MaiLiApplication.getInstance().getUserPlace().getCity(),
+                MaiLiApplication.getInstance().getUserPlace().getArea(),
+                "",
+                "",
+                "",
+                "",
                 "",
                 contents,
-                String.valueOf(mPrice + mAddPrice),
-                String.valueOf(mPrice + mAddPrice),
+                String.valueOf((mPrice + mAddPrice)),
+                String.valueOf((mPrice + mAddPrice)),
                 "1",
                 null,
                 null,
@@ -301,7 +425,6 @@ public class ComputerActivity extends BaseOrderActivity implements View.OnClickL
                 mMoneyType + "",
                 mCashCouponId
         );
-
     }
 
     @Override
@@ -356,11 +479,11 @@ public class ComputerActivity extends BaseOrderActivity implements View.OnClickL
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void getAddress(AddressModel addressModel) {
-        mStartAddress = addressModel;
+      /*  mStartAddress = addressModel;
         String name = addressModel.getName();
         String door_info = addressModel.getDoor_info();
         mBinding.tvFromAdd.setText(name + door_info);
-        getTotalPrice(false);
+        getTotalPrice(false);*/
     }
 
     @Override
@@ -439,3 +562,4 @@ public class ComputerActivity extends BaseOrderActivity implements View.OnClickL
         checkData();
     }
 }
+

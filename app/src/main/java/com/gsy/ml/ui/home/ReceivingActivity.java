@@ -160,7 +160,7 @@ public class ReceivingActivity extends BaseActivity implements View.OnClickListe
 
                 tv_location.setText(dataBean.getStartArea());
                 tv_money.setText(dataBean.getWorkCost() + "");
-                tv_grade.setText(dataBean.getWorkLevel() + "兼职");
+                tv_grade.setText(dataBean.getWorkLevel() +"");
                 tv_time.setText(Utils.getTimeStyle2(dataBean.getSendTime()));
 
 

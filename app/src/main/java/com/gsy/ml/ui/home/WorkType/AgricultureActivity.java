@@ -18,6 +18,7 @@ import com.gsy.ml.model.common.HttpErrorModel;
 import com.gsy.ml.model.common.HttpSuccessModel;
 import com.gsy.ml.model.main.PriceModel;
 import com.gsy.ml.model.main.UserInfoModel;
+import com.gsy.ml.model.person.VoucherModel;
 import com.gsy.ml.model.person.WEXModel;
 import com.gsy.ml.model.workType.AgricultureModel;
 import com.gsy.ml.model.workType.MedicinalModel;
@@ -492,5 +493,30 @@ public class AgricultureActivity extends BaseOrderActivity implements View.OnCli
             checkData();
         }
     }
+    /**
+     * 卡卷
+     */
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void UpdateNotice(VoucherModel.DataBean dataBean) {
+        if (dataBean != null) {
+            if (!TextUtils.isEmpty(dataBean.getId())) {
+                mKaPrice = dataBean.getFaceValue();
+                mCashCouponId = dataBean.getId();
+                mDenomination = dataBean.getThreshold();
+
+                mBinding.tvKajuan.setTextColor(getResources().getColor(R.color.colorffc000));
+                mBinding.tvKajuan.setText("¥\t-" + dataBean.getFaceValue());
+                mBinding.tvPrice.setText("¥" + (mPrice + mAddPrice - dataBean.getFaceValue()));
+            } else {
+                mKaPrice = 0;
+                mCashCouponId = "";
+                mDenomination = 0;
+                mBinding.tvKajuan.setTextColor(getResources().getColor(R.color.colortextnomal));
+                mBinding.tvKajuan.setText("未使用卡卷");
+                mBinding.tvPrice.setText("¥" + (mPrice + mAddPrice));
+            }
+        }
+    }
+
 }
 

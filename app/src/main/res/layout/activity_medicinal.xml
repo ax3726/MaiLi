@@ -92,6 +92,11 @@
 
                     </RadioGroup>
                 </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/colorf2f2f2" />
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -119,6 +124,11 @@
                         android:textColorHint="@color/colorE7E7E7"
                         android:textSize="@dimen/PX24" />
                 </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/colorf2f2f2" />
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -146,6 +156,11 @@
                         android:textColorHint="@color/colorE7E7E7"
                         android:textSize="@dimen/PX24" />
                 </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/colorf2f2f2" />
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -173,6 +188,11 @@
                         android:textColorHint="@color/colorE7E7E7"
                         android:textSize="@dimen/PX24" />
                 </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/colorf2f2f2" />
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -202,6 +222,10 @@
                 </LinearLayout>
 
 
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/colorf2f2f2" />
                 <LinearLayout
                     android:id="@+id/lly_pre_time"
                     android:layout_width="match_parent"

@@ -99,14 +99,14 @@
                             <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content">
-
+                                <!--  android:digits="1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM"-->
                                 <EditText
                                     android:id="@+id/et_pwd"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="@dimen/PX50"
                                     android:background="@drawable/shape_border_et"
-                                    android:digits="1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM"
+
                                     android:gravity="center_vertical"
                                     android:hint="密码"
                                     android:inputType="textPassword"
@@ -118,6 +118,7 @@
                                     android:textSize="@dimen/PX32" />
 
                                 <TextView
+                                    android:visibility="gone"
                                     android:id="@+id/tv_mark"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"

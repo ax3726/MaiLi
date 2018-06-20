@@ -173,11 +173,11 @@ public class LoginActivity extends BaseActivity implements ILoadPVListener, View
             Toast.makeText(aty, "密码不能为空！！", Toast.LENGTH_SHORT).show();
             return;
         }
-        if (password.length() < 6 || password.length() > 16) {
+     /*   if (password.length() < 6 || password.length() > 16) {
             DemoUtils.nope(loginLayoutBinding.etPassword).start();
             Toast.makeText(aty, "请输入6-16位密码，由中英文组成!", Toast.LENGTH_SHORT).show();
             return;
-        }
+        }*/
 
         showWaitDialog("正在登录中");
         login.LoginIn(phone, MD5.MD5Pwd(phone, password));
