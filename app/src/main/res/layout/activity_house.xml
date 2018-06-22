@@ -419,7 +419,7 @@
                         android:orientation="horizontal">
 
 
-                        <RadioButton
+                        <CheckBox
                             android:id="@+id/rb_5"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
@@ -436,7 +436,7 @@
                             android:textColor="@color/color_lable"
                             android:textSize="@dimen/PX24" />
 
-                        <RadioButton
+                        <CheckBox
                             android:id="@+id/rb_6"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
@@ -453,7 +453,7 @@
                             android:textColor="@color/color_lable"
                             android:textSize="@dimen/PX24" />
 
-                        <RadioButton
+                        <CheckBox
                             android:id="@+id/rb_7"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
@@ -469,7 +469,7 @@
                             android:textColor="@color/color_lable"
                             android:textSize="@dimen/PX24" />
 
-                        <RadioButton
+                        <CheckBox
                             android:id="@+id/rb_8"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
@@ -507,7 +507,7 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
-                        <RadioButton
+                        <CheckBox
                             android:id="@+id/rb_9"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
@@ -524,7 +524,7 @@
                             android:textColor="@color/color_lable"
                             android:textSize="@dimen/PX24" />
 
-                        <RadioButton
+                        <CheckBox
                             android:id="@+id/rb_10"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
@@ -541,7 +541,7 @@
                             android:textColor="@color/color_lable"
                             android:textSize="@dimen/PX24" />
 
-                        <RadioButton
+                        <CheckBox
                             android:id="@+id/rb_11"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
@@ -558,7 +558,7 @@
                             android:textColor="@color/color_lable"
                             android:textSize="@dimen/PX24" />
 
-                        <RadioButton
+                        <CheckBox
                             android:id="@+id/rb_12"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
@@ -575,7 +575,7 @@
                             android:textColor="@color/color_lable"
                             android:textSize="@dimen/PX24" />
 
-                        <RadioButton
+                        <CheckBox
                             android:id="@+id/rb_13"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"

@@ -117,7 +117,7 @@ public class MedicinalActivity extends BaseOrderActivity implements View.OnClick
         super.initData();
         mType = getIntent().getIntExtra("type", 32);
         mBinding = (ActivityMedicinalBinding) vdb;
-        initChooseTimeData1();
+        initChooseTimeData2();
         initListener();
         initView();
 

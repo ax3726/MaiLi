@@ -26,6 +26,7 @@ import com.gsy.ml.prestener.person.SelectOrderPresenter;
 import com.gsy.ml.ui.common.BaseFragment;
 import com.gsy.ml.ui.common.EmptyState;
 import com.gsy.ml.ui.common.StateModel;
+import com.gsy.ml.ui.home.PartTime1Activity;
 import com.gsy.ml.ui.home.PartTimeActivity;
 import com.gsy.ml.ui.home.PartTimeJobActivity;
 import com.gsy.ml.ui.message.ChatActivity;
@@ -210,10 +211,19 @@ public class OrderReceivingFragment extends BaseFragment implements ILoadPVListe
                     lly_item.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            startActivity(new Intent(aty, PartTimeActivity.class)
-                                    .putExtra("order", dataBean.getOrder())
-                                    .putExtra("isShowAdd", true)
-                                    .putExtra("isShowPhone", false));
+                            if (DemoUtils.TypeToNoAddress(Integer.valueOf(dataBean.getWorkType())) && Integer.valueOf(dataBean.getWorkType()) != 24) {
+                                startActivity(new Intent(aty, PartTime1Activity.class)
+                                        .putExtra("order", dataBean.getOrder())
+                                        .putExtra("isShowAdd", true)
+                                        .putExtra("isShowPhone", false));
+
+                            } else {
+                                startActivity(new Intent(aty, PartTimeActivity.class)
+                                        .putExtra("order", dataBean.getOrder())
+                                        .putExtra("isShowAdd", true)
+                                        .putExtra("isShowPhone", false));
+                            }
+
                         }
                     });
 

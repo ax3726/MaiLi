@@ -12,6 +12,7 @@ import android.os.Build;
 import android.os.PowerManager;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.TextView;
 
 import com.amap.api.maps.AMapUtils;
 import com.amap.api.maps.model.LatLng;
@@ -548,6 +549,92 @@ public class DemoUtils {
         return false;
     }
 
+    public static String TypeToNoAddressTitle(int type, String content) {
+        try {
+            switch (type) {
+                case 32://茶叶交易
+                case 34://花卉苗木
+                case 35://林业产品
+                case 41://中药材交易
+                    MedicinalModel modle3 = ParseJsonUtils.getBean((String) content, MedicinalModel.class);
+                    String origin2 = checkEmpty(modle3.getOrigin()) ? "" : modle3.getOrigin();
+                    String productName2 = checkEmpty(modle3.getProductName()) ? "" : modle3.getProductName();
+                    return origin2 + "\t" + productName2;
+                case 33://果蔬粮油
+                case 37://农用物资
+                case 38://禽畜水产
+                case 40://文化艺术
+                    AgricultureModel modle2 = ParseJsonUtils.getBean((String) content, AgricultureModel.class);
+                    String origin1 = checkEmpty(modle2.getOrigin()) ? "" : modle2.getOrigin();
+                    String productName1 = checkEmpty(modle2.getProductName()) ? "" : modle2.getProductName();
+                    return origin1 + "\t" + productName1;
+                case 36://名宿
+                    HouseModel modle = ParseJsonUtils.getBean((String) content, HouseModel.class);
+                    String productType = checkEmpty(modle.getHouseAddress()) ? "" : modle.getHouseAddress();
+                    String productName = checkEmpty(modle.getHouseType()) ? "" : modle.getHouseType();
+                    return productType + "\t" + productName;
+                case 39://土地承租
+                    LandTenantModel modle1 = ParseJsonUtils.getBean((String) content, LandTenantModel.class);
+                    String origin = checkEmpty(modle1.getLandAddress()) ? "" : modle1.getLandAddress();
+                    String landType = checkEmpty(modle1.getLandType()) ? "" : modle1.getLandType();
+                    return origin + "\t" + landType;
+
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "";
+    }
+    public static String TypeToNoAddressTitle1(int type, String content, TextView tv_type) {
+        try {
+            switch (type) {
+                case 32://茶叶交易
+                case 34://花卉苗木
+                case 35://林业产品
+                case 41://中药材交易
+                    MedicinalModel modle3 = ParseJsonUtils.getBean((String) content, MedicinalModel.class);
+                    String mudi = checkEmpty(modle3.getReleasePurpose()) ? "" :  modle3.getReleasePurpose() ;
+                    tv_type.setText(mudi);
+
+                    String origin2 = checkEmpty(modle3.getOrigin()) ? "" : modle3.getOrigin();
+                    String productName2 = checkEmpty(modle3.getProductName()) ? "" : modle3.getProductName();
+                    return origin2 + "\t" + productName2;
+                case 33://果蔬粮油
+                case 37://农用物资
+                case 38://禽畜水产
+                case 40://文化艺术
+                    AgricultureModel modle2 = ParseJsonUtils.getBean((String) content, AgricultureModel.class);
+                    String mudi1 = checkEmpty(modle2.getReleasePurpose()) ? "" :  modle2.getReleasePurpose() ;
+                    tv_type.setText(mudi1);
+
+                    String origin1 = checkEmpty(modle2.getOrigin()) ? "" : modle2.getOrigin();
+                    String productName1 = checkEmpty(modle2.getProductName()) ? "" : modle2.getProductName();
+                    return origin1 + "\t" + productName1;
+                case 36://名宿
+                    HouseModel modle = ParseJsonUtils.getBean((String) content, HouseModel.class);
+                    String mudi2 = checkEmpty(modle.getReleasePurpose()) ? "" :  modle.getReleasePurpose() ;
+                    tv_type.setText(mudi2);
+
+                    String productType = checkEmpty(modle.getHouseAddress()) ? "" : modle.getHouseAddress();
+                    String productName = checkEmpty(modle.getHouseType()) ? "" : modle.getHouseType();
+                    return productType + "\t" + productName;
+                case 39://土地承租
+                    LandTenantModel modle1 = ParseJsonUtils.getBean((String) content, LandTenantModel.class);
+                    String mudi3 = checkEmpty(modle1.getReleasePurpose()) ? "" :  modle1.getReleasePurpose() ;
+                    tv_type.setText(mudi3);
+
+                    String origin = checkEmpty(modle1.getLandAddress()) ? "" : modle1.getLandAddress();
+                    String landType = checkEmpty(modle1.getLandType()) ? "" : modle1.getLandType();
+                    return origin + "\t" + landType;
+
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "";
+    }
+
+
     public static int TypeToMuchPeopleOrder(int type) {
         switch (type) {
             case 1:
@@ -887,16 +974,16 @@ public class DemoUtils {
             case 40://文化艺术
                 try {
                     AgricultureModel modle = ParseJsonUtils.getBean((String) content, AgricultureModel.class);
-                    String mudi = checkEmpty(modle.getReleasePurpose()) ? "" : getTitle("发布目的") + modle.getReleasePurpose() + "<br/>";
+                  //  String mudi = checkEmpty(modle.getReleasePurpose()) ? "" : getTitle("发布目的") + modle.getReleasePurpose() + "<br/>";
                     String productType = checkEmpty(modle.getProductType()) ? "" : getTitle("产品类别") + modle.getProductType() + "<br/>";
-                    String productName = checkEmpty(modle.getProductName()) ? "" : getTitle("产品名称") + modle.getProductName() + "<br/>";
-                    String origin = checkEmpty(modle.getOrigin()) ? "" : getTitle("产地") + modle.getOrigin() + "<br/>";
+                  //  String productName = checkEmpty(modle.getProductName()) ? "" : getTitle("产品名称") + modle.getProductName() + "<br/>";
+                   // String origin = checkEmpty(modle.getOrigin()) ? "" : getTitle("产地") + modle.getOrigin() + "<br/>";
                     String productNum = checkEmpty(modle.getProductNum()) ? "" : getTitle("产品数量") + modle.getProductNum() + "<br/>";
                     String priceInfo = checkEmpty(modle.getPriceInfo()) ? "" : getTitle("价格说明") + modle.getPriceInfo() + "<br/>";
                     String con = checkEmpty(modle.getContent()) ? "" : getTitle("其他描述及特殊要求") + modle.getContent();
                     long timelong = modle.getEndTime();
                     String time = getTitle("信息有效时间") + Utils.getDateToString(timelong, "yyyy年MM月dd日HH:mm");
-                    return new String[]{mudi + productType + productName + origin + productNum + priceInfo + con, time};
+                    return new String[]{ productType  + productNum + priceInfo + con, time};
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -905,16 +992,16 @@ public class DemoUtils {
             case 39://土地承租
                 try {
                     LandTenantModel modle = ParseJsonUtils.getBean((String) content, LandTenantModel.class);
-                    String mudi = checkEmpty(modle.getReleasePurpose()) ? "" : getTitle("发布目的") + modle.getReleasePurpose() + "<br/>";
-                    String productType = checkEmpty(modle.getLandType()) ? "" : getTitle("土地类型") + modle.getLandType() + "<br/>";
+                  //  String mudi = checkEmpty(modle.getReleasePurpose()) ? "" : getTitle("发布目的") + modle.getReleasePurpose() + "<br/>";
+                  //  String productType = checkEmpty(modle.getLandType()) ? "" : getTitle("土地类型") + modle.getLandType() + "<br/>";
                     String productName = checkEmpty(modle.getOtherTag()) ? "" : getTitle("其它标记") + modle.getOtherTag() + "<br/>";
-                    String origin = checkEmpty(modle.getLandAddress()) ? "" : getTitle("土地所在地") + modle.getLandAddress() + "<br/>";
+                  //  String origin = checkEmpty(modle.getLandAddress()) ? "" : getTitle("土地所在地") + modle.getLandAddress() + "<br/>";
                     String productNum = checkEmpty(modle.getLandArea()) ? "" : getTitle("面积") + modle.getLandArea() + "<br/>";
                     String priceInfo = checkEmpty(modle.getPriceInfo()) ? "" : getTitle("价格说明") + modle.getPriceInfo() + "<br/>";
                     String con = checkEmpty(modle.getContent()) ? "" : getTitle("其他描述及特殊要求") + modle.getContent();
                     long timelong = modle.getEndTime();
                     String time = getTitle("信息有效时间") + Utils.getDateToString(timelong, "yyyy年MM月dd日HH:mm");
-                    return new String[]{mudi + productType + productName + origin + productNum + priceInfo + con, time};
+                    return new String[]{productNum + priceInfo + productName  + con, time};
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -923,8 +1010,8 @@ public class DemoUtils {
             case 36://民宿
                 try {
                     HouseModel modle = ParseJsonUtils.getBean((String) content, HouseModel.class);
-                    String mudi = checkEmpty(modle.getReleasePurpose()) ? "" : getTitle("发布目的") + modle.getReleasePurpose() + "<br/>";
-                    String productType = checkEmpty(modle.getHouseAddress()) ? "" : getTitle("房源所在地") + modle.getHouseAddress() + "<br/>";
+                   // String mudi = checkEmpty(modle.getReleasePurpose()) ? "" : getTitle("发布目的") + modle.getReleasePurpose() + "<br/>";
+                   // String productType = checkEmpty(modle.getHouseAddress()) ? "" : getTitle("房源所在地") + modle.getHouseAddress() + "<br/>";
                     String priceInfo = checkEmpty(modle.getPriceInfo()) ? "" : getTitle("价格说明") + modle.getPriceInfo() + "<br/>";
                     String productName = checkEmpty(modle.getHouseType()) ? "" : getTitle("房源类型") + modle.getHouseType() + "<br/>";
                     String origin = checkEmpty(modle.getHouseArea()) ? "" : getTitle("房源面积") + modle.getHouseArea() + "<br/>";
@@ -935,7 +1022,7 @@ public class DemoUtils {
                     String con = checkEmpty(modle.getContent()) ? "" : getTitle("其他描述及特殊要求") + modle.getContent();
                     long timelong = modle.getEndTime();
                     String time = getTitle("信息有效时间") + Utils.getDateToString(timelong, "yyyy年MM月dd日HH:mm");
-                    return new String[]{mudi + productType + priceInfo + productName + origin+huxing + productNum +houseDay+ facilities + con, time};
+                    return new String[]{ productName+priceInfo  + huxing   + productNum + houseDay + facilities + con, time};
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

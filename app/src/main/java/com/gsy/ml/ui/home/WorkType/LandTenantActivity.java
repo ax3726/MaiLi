@@ -90,7 +90,7 @@ public class LandTenantActivity extends BaseOrderActivity implements View.OnClic
         mType = getIntent().getIntExtra("type", 39);
         mBinding = (ActivityLandTenantBinding) vdb;
 
-        initChooseTimeData1();
+        initChooseTimeData2();
         initListener();
         initView();
 

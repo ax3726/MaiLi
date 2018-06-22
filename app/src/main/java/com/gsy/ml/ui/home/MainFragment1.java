@@ -222,7 +222,7 @@ public class MainFragment1 extends BaseFragment implements View.OnClickListener,
         });
     }
 
-    private void  selectAdv() {
+    private void selectAdv() {
         mSelectAdvPresenter.selectAdv();//查询广告
     }
 
@@ -273,6 +273,7 @@ public class MainFragment1 extends BaseFragment implements View.OnClickListener,
                     }
                 }
             }
+
             @Override
             public void onScrollScale(float alpha) {
                 Log.e("msg", "alpha:" + alpha);
@@ -326,15 +327,21 @@ public class MainFragment1 extends BaseFragment implements View.OnClickListener,
                 img_type.setImageResource(DemoUtils.TypeToImage(Integer.valueOf(dataBean.getWorkType())));
                 tv_title.getPaint().setFakeBoldText(true);//字体加粗
                 if (DemoUtils.TypeToNoAddress(Integer.valueOf(dataBean.getWorkType()))) {
-                    tv_distance.setText("");
-                    tv_title.setText(DemoUtils.TypeToOccupation(Integer.valueOf(dataBean.getWorkType()))+"\t" + DemoUtils.TypeToContent2(Integer.valueOf(dataBean.getWorkType()), dataBean.getWorkContent()));
+                    if (Integer.valueOf(dataBean.getWorkType()) == 24) {
+                        tv_distance.setText("");
+                        tv_title.setText(DemoUtils.TypeToOccupation(Integer.valueOf(dataBean.getWorkType())) + "\t"
+                                + DemoUtils.TypeToContent2(Integer.valueOf(dataBean.getWorkType()), dataBean.getWorkContent()));
+                    } else {
+                        tv_distance.setText("");
+                        tv_title.setText(DemoUtils.TypeToNoAddressTitle(Integer.valueOf(dataBean.getWorkType()), dataBean.getWorkContent()));
+                    }
                 } else {
                     tv_title.setText(dataBean.getStartPlace() + DemoUtils.TypeToOccupation(Integer.valueOf(dataBean.getWorkType())));
                     tv_distance.setText(DemoUtils.countDistance1(dataBean.getJuli()));
                 }
                 tv_location.setText(dataBean.getStartArea());
                 tv_money.setText(dataBean.getWorkCost() + "");
-                tv_grade.setText(dataBean.getWorkLevel() +"");
+                tv_grade.setText(dataBean.getWorkLevel() + "");
                 tv_time.setText(Utils.getTimeStyle2(dataBean.getSendTime()));
 
 
@@ -350,9 +357,15 @@ public class MainFragment1 extends BaseFragment implements View.OnClickListener,
                                     .putExtra("isShowAdd", true)
                                     .putExtra("isShowPhone", false));
                         } else {
-                            startActivity(new Intent(aty, PartTimeActivity.class)
-                                    .putExtra("order", dataBean.getOrder())
-                            );
+                            if (DemoUtils.TypeToNoAddress(Integer.valueOf(dataBean.getWorkType())) && Integer.valueOf(dataBean.getWorkType()) != 24) {
+                                startActivity(new Intent(aty, PartTime1Activity.class)
+                                        .putExtra("order", dataBean.getOrder())
+                                );
+                            } else {
+                                startActivity(new Intent(aty, PartTimeActivity.class)
+                                        .putExtra("order", dataBean.getOrder())
+                                );
+                            }
                         }
                     }
                 });
@@ -407,7 +420,7 @@ public class MainFragment1 extends BaseFragment implements View.OnClickListener,
 
         view4 = new ViewPager1();
         Bundle bundle3 = new Bundle();
-        bundle3.putInt("page",3);
+        bundle3.putInt("page", 3);
         view4.setArguments(bundle3);
 
         fragments.add(view1);

@@ -89,7 +89,7 @@ public class HouseActivity extends BaseOrderActivity implements View.OnClickList
         mType = getIntent().getIntExtra("type", 36);
         mBinding = (ActivityHouseBinding) vdb;
 
-        initChooseTimeData1();
+        initChooseTimeData2();
         initListener();
         initView();
 

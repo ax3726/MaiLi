@@ -151,8 +151,15 @@ public class ReceivingActivity extends BaseActivity implements View.OnClickListe
                 img_type.setImageResource(DemoUtils.TypeToImage(Integer.valueOf(dataBean.getWorkType())));
                 tv_title.getPaint().setFakeBoldText(true);//字体加粗
                 if (DemoUtils.TypeToNoAddress(Integer.valueOf(dataBean.getWorkType()))) {
-                    tv_distance.setText("");
-                    tv_title.setText(DemoUtils.TypeToOccupation(Integer.valueOf(dataBean.getWorkType()))+"\t" + DemoUtils.TypeToContent2(Integer.valueOf(dataBean.getWorkType()), dataBean.getWorkContent()));
+                    if (Integer.valueOf(dataBean.getWorkType()) == 24) {
+                        tv_distance.setText("");
+                        tv_title.setText(DemoUtils.TypeToOccupation(Integer.valueOf(dataBean.getWorkType())) + "\t"
+                                + DemoUtils.TypeToContent2(Integer.valueOf(dataBean.getWorkType()), dataBean.getWorkContent()));
+                    } else {
+                        tv_distance.setText("");
+                        tv_title.setText(DemoUtils.TypeToNoAddressTitle(Integer.valueOf(dataBean.getWorkType()), dataBean.getWorkContent()));
+                    }
+
                 } else {
                     tv_title.setText(dataBean.getStartPlace() + DemoUtils.TypeToOccupation(Integer.valueOf(dataBean.getWorkType())));
                     tv_distance.setText(DemoUtils.countDistance1(dataBean.getJuli()));
@@ -186,9 +193,16 @@ public class ReceivingActivity extends BaseActivity implements View.OnClickListe
                                     .putExtra("isShowAdd", true)
                                     .putExtra("isShowPhone", false));
                         } else {
-                            startActivity(new Intent(aty, PartTimeActivity.class)
-                                    .putExtra("order", dataBean.getOrder())
-                            );
+                            if (DemoUtils.TypeToNoAddress(Integer.valueOf(dataBean.getWorkType())) && Integer.valueOf(dataBean.getWorkType()) != 24) {
+                                startActivity(new Intent(aty, PartTime1Activity.class)
+                                        .putExtra("order", dataBean.getOrder())
+                                );
+                            } else {
+                                startActivity(new Intent(aty, PartTimeActivity.class)
+                                        .putExtra("order", dataBean.getOrder())
+                                );
+                            }
+
                         }
                     }
                 });

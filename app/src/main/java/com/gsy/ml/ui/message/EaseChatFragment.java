@@ -43,6 +43,7 @@ import com.gsy.ml.prestener.home.PartTimePresenter;
 import com.gsy.ml.prestener.message.EaseChatPrestener;
 import com.gsy.ml.ui.common.BaseFragment;
 import com.gsy.ml.ui.common.WebViewActivity;
+import com.gsy.ml.ui.home.PartTime1Activity;
 import com.gsy.ml.ui.home.PartTimeActivity;
 import com.gsy.ml.ui.person.CheckActivity;
 import com.gsy.ml.ui.person.OrderBillingActivity;
@@ -321,9 +322,17 @@ public class EaseChatFragment extends BaseFragment implements EMMessageListener,
             mBinding.llyOrder.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    startActivity(new Intent(aty, PartTimeActivity.class)
-                            .putExtra("order", mOrderContent.getOrder())
-                    );
+                    if (DemoUtils.TypeToNoAddress(Integer.valueOf(mOrderContent.getWorkType())) && Integer.valueOf(mOrderContent.getWorkType()) != 24) {
+                        startActivity(new Intent(aty, PartTime1Activity.class)
+                                .putExtra("order", mOrderContent.getOrder())
+                        );
+                    } else {
+                        startActivity(new Intent(aty, PartTimeActivity.class)
+                                .putExtra("order", mOrderContent.getOrder())
+                        );
+                    }
+
+
                 }
             });
         }

@@ -160,7 +160,7 @@ public class AgricultureActivity extends BaseOrderActivity implements View.OnCli
         super.initData();
         mType = getIntent().getIntExtra("type", 32);
         mBinding = (ActivityAgricultureBinding) vdb;
-        initChooseTimeData1();
+        initChooseTimeData2();
         initListener();
         initView();
 

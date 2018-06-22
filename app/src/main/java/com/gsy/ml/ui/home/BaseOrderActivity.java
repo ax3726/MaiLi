@@ -139,6 +139,19 @@ public class BaseOrderActivity extends BaseActivity {
         data1.add(getDay(6));
         mHuiheTime.setData1(data1);
     }
+    public void initChooseTimeData2() {
+        mHuiheTime = new ChooseDatePopupWindow(aty, 3);
+        mHuiheTime.setTitle("请选择预约工作时间");
+        mHuiheTime.setTime(true);
+        List<String> data1 = new ArrayList<>();
+        data1.add("今天");
+        data1.add("明天");
+        for (int i=2;i<30;i++) {
+            data1.add(getDay(i));
+        }
+
+        mHuiheTime.setData1(data1);
+    }
 
     public long getTime1(String item1, String item2, String item3) {
         Calendar c = Calendar.getInstance();//首先要获取日历对象
