@@ -961,7 +961,7 @@ public class DemoUtils {
                     String priceInfo = checkEmpty(modle.getPriceInfo()) ? "" : getTitle("价格说明") + modle.getPriceInfo() + "<br/>";
                     String con = checkEmpty(modle.getContent()) ? "" : getTitle("其他描述及特殊要求") + modle.getContent();
                     long timelong = modle.getEndTime();
-                    String time = getTitle("信息有效时间") + Utils.getDateToString(timelong, "yyyy年MM月dd日HH:mm");
+                    String time =  Utils.getDateToString(timelong, "yyyy年MM月dd日HH:mm");
                     return new String[]{mudi + productName + origin + productNum + priceInfo + con, time};
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -982,7 +982,7 @@ public class DemoUtils {
                     String priceInfo = checkEmpty(modle.getPriceInfo()) ? "" : getTitle("价格说明") + modle.getPriceInfo() + "<br/>";
                     String con = checkEmpty(modle.getContent()) ? "" : getTitle("其他描述及特殊要求") + modle.getContent();
                     long timelong = modle.getEndTime();
-                    String time = getTitle("信息有效时间") + Utils.getDateToString(timelong, "yyyy年MM月dd日HH:mm");
+                    String time = Utils.getDateToString(timelong, "yyyy年MM月dd日HH:mm");
                     return new String[]{ productType  + productNum + priceInfo + con, time};
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -1000,7 +1000,7 @@ public class DemoUtils {
                     String priceInfo = checkEmpty(modle.getPriceInfo()) ? "" : getTitle("价格说明") + modle.getPriceInfo() + "<br/>";
                     String con = checkEmpty(modle.getContent()) ? "" : getTitle("其他描述及特殊要求") + modle.getContent();
                     long timelong = modle.getEndTime();
-                    String time = getTitle("信息有效时间") + Utils.getDateToString(timelong, "yyyy年MM月dd日HH:mm");
+                    String time =  Utils.getDateToString(timelong, "yyyy年MM月dd日HH:mm");
                     return new String[]{productNum + priceInfo + productName  + con, time};
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -1021,8 +1021,8 @@ public class DemoUtils {
                     String facilities = checkEmpty(modle.getFacilities()) ? "" : getTitle("配套设施") + modle.getFacilities() + "<br/>";
                     String con = checkEmpty(modle.getContent()) ? "" : getTitle("其他描述及特殊要求") + modle.getContent();
                     long timelong = modle.getEndTime();
-                    String time = getTitle("信息有效时间") + Utils.getDateToString(timelong, "yyyy年MM月dd日HH:mm");
-                    return new String[]{ productName+priceInfo  + huxing   + productNum + houseDay + facilities + con, time};
+                    String time = Utils.getDateToString(timelong, "yyyy年MM月dd日HH:mm");
+                    return new String[]{ origin+priceInfo  + huxing   + productNum + houseDay + facilities + con, time};
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
