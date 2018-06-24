@@ -123,8 +123,8 @@ public class WheelView extends ScrollView {
                 if (initialY - newY == 0) { // stopped
                     final int remainder = initialY % itemHeight;
                     final int divided = initialY / itemHeight;
-//                    Log.d(TAG, "initialY: " + initialY);
-//                    Log.d(TAG, "remainder: " + remainder + ", divided: " + divided);
+                   Log.e("lm", "initialY: " + initialY);
+                    Log.e("lm", "remainder: " + remainder + ", divided: " + divided);
                     if (remainder == 0) {
                         selectedIndex = divided + offset;
 
@@ -194,6 +194,7 @@ public class WheelView extends ScrollView {
         tv.setTextSize(TypedValue.COMPLEX_UNIT_PX, getResources().getDimensionPixelSize(R.dimen.PX28));
         tv.setText(item);
         tv.setGravity(Gravity.CENTER);
+
         int padding = dip2px(12);
         tv.setPadding(padding, padding, padding, padding);
         if (0 == itemHeight) {

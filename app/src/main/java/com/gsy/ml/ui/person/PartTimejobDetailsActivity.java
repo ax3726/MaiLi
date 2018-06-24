@@ -201,6 +201,7 @@ public class PartTimejobDetailsActivity extends BaseActivity implements ILoadPVL
                 finish();
                 break;
             case R.id.tv_modification:
+
                 mModificationOrderDialog.show();
                 break;
             case R.id.img_right:
@@ -314,8 +315,26 @@ public class PartTimejobDetailsActivity extends BaseActivity implements ILoadPVL
         String[] con = DemoUtils.TypeToContent(Integer.parseInt(sendOrders.getWorkType()), sendOrders.getWorkContent());
         mBinding.tvContent.setText(Html.fromHtml(con[0]));//工作内容
         mBinding.tvTimes.setText(Html.fromHtml(con[1]));//工作时间
+        if (sendOrders.getOrderStatus() == 0) {
+            if (DemoUtils.TypeToNoAddress(Integer.valueOf(sendOrders.getWorkType())) && Integer.valueOf(sendOrders.getWorkType()) != 24) {
+                mBinding.tvType.setVisibility(View.VISIBLE);
+                mBinding.tvMoneys.setVisibility(View.GONE);
+                mBinding.tvModification.setVisibility(View.GONE);
 
-        mBinding.tvModification.setVisibility(sendOrders.getOrderStatus() == 0 ? View.VISIBLE : View.GONE);
+                mBinding.tvTitle.setText(DemoUtils.TypeToNoAddressTitle1(Integer.valueOf(sendOrders.getWorkType()), sendOrders.getWorkContent(),mBinding.tvType));
+
+            } else {
+                mBinding.tvModification.setVisibility(View.VISIBLE);
+            }
+
+        } else {
+            mBinding.tvModification.setVisibility(View.GONE);
+        }
+
+
+
+
+       // mBinding.tvModification.setVisibility(sendOrders.getOrderStatus() == 0 ? View.VISIBLE : View.GONE);
         if (mType == 2 && (sendOrders.getOrderStatus() == 0 || sendOrders.getOrderStatus() == 4)) {//订单发单中
             mBinding.rlyChat.setVisibility(View.VISIBLE);
             mBinding.tvChatNum.setText("已沟通\n(" + model.getData().getTotal() + ")人");

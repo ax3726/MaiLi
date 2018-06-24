@@ -324,6 +324,8 @@ public class MainFragment1 extends BaseFragment implements View.OnClickListener,
                 TextView tv_time = holder.getView(R.id.tv_time);    // 时间
                 ImageView img_type = holder.getView(R.id.img_type);
                 ImageView img_yuyue = holder.getView(R.id.img_yuyue);
+                TextView tv_hint = holder.getView(R.id.tv_hint);
+                TextView tv_danwei = holder.getView(R.id.tv_danwei);
                 img_type.setImageResource(DemoUtils.TypeToImage(Integer.valueOf(dataBean.getWorkType())));
                 tv_title.getPaint().setFakeBoldText(true);//字体加粗
                 if (DemoUtils.TypeToNoAddress(Integer.valueOf(dataBean.getWorkType()))) {
@@ -331,11 +333,24 @@ public class MainFragment1 extends BaseFragment implements View.OnClickListener,
                         tv_distance.setText("");
                         tv_title.setText(DemoUtils.TypeToOccupation(Integer.valueOf(dataBean.getWorkType())) + "\t"
                                 + DemoUtils.TypeToContent2(Integer.valueOf(dataBean.getWorkType()), dataBean.getWorkContent()));
+
+                        tv_money.setVisibility(View.VISIBLE);
+                        tv_danwei.setVisibility(View.VISIBLE);
+                        tv_hint.setVisibility(View.GONE);
                     } else {
+
+                        tv_money.setVisibility(View.GONE);
+                        tv_danwei.setVisibility(View.GONE);
+
+                        tv_hint.setVisibility(View.VISIBLE);
+
                         tv_distance.setText("");
-                        tv_title.setText(DemoUtils.TypeToNoAddressTitle(Integer.valueOf(dataBean.getWorkType()), dataBean.getWorkContent()));
+                        tv_title.setText(DemoUtils.TypeToNoAddressTitle1(Integer.valueOf(dataBean.getWorkType()), dataBean.getWorkContent(),tv_hint));
                     }
                 } else {
+                    tv_money.setVisibility(View.VISIBLE);
+                    tv_danwei.setVisibility(View.VISIBLE);
+                    tv_hint.setVisibility(View.GONE);
                     tv_title.setText(dataBean.getStartPlace() + DemoUtils.TypeToOccupation(Integer.valueOf(dataBean.getWorkType())));
                     tv_distance.setText(DemoUtils.countDistance1(dataBean.getJuli()));
                 }

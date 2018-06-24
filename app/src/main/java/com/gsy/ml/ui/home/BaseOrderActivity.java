@@ -12,6 +12,7 @@ import com.gsy.ml.ui.utils.DemoUtils;
 import com.gsy.ml.ui.views.ChooseDatePopupWindow;
 import com.gsy.ml.ui.views.DownOrderDialog;
 import com.gsy.ml.ui.views.PayPwdPopupWindow;
+import com.jzxiang.pickerview.TimePickerDialog;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -39,7 +40,7 @@ public class BaseOrderActivity extends BaseActivity {
     public ChooseDatePopupWindow mHuiheTime; //回合时间
     public String mCashCouponId = "";//卡卷ID
     public PayPwdPopupWindow mPayPwdPopupWindow;//验证密码
-
+    public TimePickerDialog mTimePickerDialog;//时间控件
     public long getTime(String item1, String item2, String item3) {
         Calendar c = Calendar.getInstance();//首先要获取日历对象
         int mYear = c.get(Calendar.YEAR); // 获取当前年份
@@ -139,6 +140,7 @@ public class BaseOrderActivity extends BaseActivity {
         data1.add(getDay(6));
         mHuiheTime.setData1(data1);
     }
+
     public void initChooseTimeData2() {
         mHuiheTime = new ChooseDatePopupWindow(aty, 3);
         mHuiheTime.setTitle("请选择预约工作时间");
@@ -146,12 +148,13 @@ public class BaseOrderActivity extends BaseActivity {
         List<String> data1 = new ArrayList<>();
         data1.add("今天");
         data1.add("明天");
-        for (int i=2;i<30;i++) {
+        for (int i = 2; i < 30; i++) {
             data1.add(getDay(i));
         }
 
         mHuiheTime.setData1(data1);
     }
+
 
     public long getTime1(String item1, String item2, String item3) {
         Calendar c = Calendar.getInstance();//首先要获取日历对象
@@ -192,6 +195,37 @@ public class BaseOrderActivity extends BaseActivity {
             c.add(Calendar.DATE, 6);//把日期往后增加一天.整数往后推,负数往前移动
             int mMonth = c.get(Calendar.MONTH) + 1;// 获取当前月份
             return Utils.getStringToDate(mYear + "年" + mMonth + "月" + c.get(Calendar.DAY_OF_MONTH) + "日" + item2 + ":" + item3, "yyyy年MM月dd日HH:mm");
+        }
+        return 0;
+    }
+
+    public long getTime3(String item1, String item2, String item3) {
+        Calendar c = Calendar.getInstance();//首先要获取日历对象
+        int mYear = c.get(Calendar.YEAR); // 获取当前年份
+
+        int mDay = c.get(Calendar.DAY_OF_MONTH);// 获取当日期
+        if (item1.equals("今天")) {
+            int mMonth = c.get(Calendar.MONTH) + 1;// 获取当前月份
+            long stringToDate = Utils.getStringToDate(mYear + "年" + mMonth + "月" + mDay + "日" + item2 + ":" + item3, "yyyy年MM月dd日HH:mm");
+            long curtime = System.currentTimeMillis();
+            if (curtime > stringToDate) {
+                Toast.makeText(MaiLiApplication.getInstance(), "预约时间不能小于当前时间!", Toast.LENGTH_SHORT).show();
+                return 0;
+            } else {
+                return stringToDate;
+            }
+        } else if (item1.equals("明天")) {
+            c.add(Calendar.DATE, 1);//把日期往后增加一天.整数往后推,负数往前移动
+            int mMonth = c.get(Calendar.MONTH) + 1;// 获取当前月份
+            return Utils.getStringToDate(mYear + "年" + mMonth + "月" + c.get(Calendar.DAY_OF_MONTH) + "日" + item2 + ":" + item3, "yyyy年MM月dd日HH:mm");
+        } else {
+            for (int i = 2; i < 100; i++) {
+                if (item1.equals(getDay(i))) {
+                    c.add(Calendar.DATE, i);//把日期往后增加一天.整数往后推,负数往前移动
+                    int mMonth = c.get(Calendar.MONTH) + 1;// 获取当前月份
+                    return Utils.getStringToDate(mYear + "年" + mMonth + "月" + c.get(Calendar.DAY_OF_MONTH) + "日" + item2 + ":" + item3, "yyyy年MM月dd日HH:mm");
+                }
+            }
         }
         return 0;
     }

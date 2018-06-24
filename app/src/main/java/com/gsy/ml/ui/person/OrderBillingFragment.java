@@ -121,6 +121,8 @@ public class OrderBillingFragment extends BaseFragment implements ILoadPVListene
                 TextView tv_state = holder.getView(R.id.tv_state);
                 TextView tv_money = holder.getView(R.id.tv_money);
                 TextView tv_txt1 = holder.getView(R.id.tv_txt3);
+                TextView tv_hint = holder.getView(R.id.tv_hint);
+                TextView tv_danwei = holder.getView(R.id.tv_danwei);
                 tv_txt1.setVisibility(View.INVISIBLE);
                 View under_line = holder.getView(R.id.under_line);
                 if (position == 0) {
@@ -128,6 +130,8 @@ public class OrderBillingFragment extends BaseFragment implements ILoadPVListene
                 } else {
                     under_line.setVisibility(View.VISIBLE);
                 }
+
+
                 holder.setVisible(R.id.lly_buttom, true);
                 TextView tv_txt2 = holder.getView(R.id.tv_txt2);
                 TextView tv_txt = holder.getView(R.id.tv_txt1);
@@ -139,6 +143,18 @@ public class OrderBillingFragment extends BaseFragment implements ILoadPVListene
                 } else {
                     tv_title.setText(dataBean.getWorkPlace() + DemoUtils.TypeToOccupation(Integer.valueOf(dataBean.getWorkType())));
                 }
+                if (DemoUtils.TypeToNoAddress(Integer.valueOf(dataBean.getWorkType())) && Integer.valueOf(dataBean.getWorkType()) != 24) {
+                    tv_money.setVisibility(View.GONE);
+                    tv_danwei.setVisibility(View.GONE);
+                    tv_hint.setVisibility(View.VISIBLE);
+                    tv_title.setText(DemoUtils.TypeToNoAddressTitle1(Integer.valueOf(dataBean.getWorkType()), dataBean.getWorkContent(),tv_hint));
+
+                } else {
+                    tv_money.setVisibility(View.VISIBLE);
+                    tv_danwei.setVisibility(View.VISIBLE);
+                    tv_hint.setVisibility(View.GONE);
+                }
+
                 tv_address.setText(dataBean.getStartArea());
                 String con = DemoUtils.TypeToContent2(Integer.valueOf(dataBean.getWorkType()), dataBean.getWorkContent());
                 tv_content.setText(con);

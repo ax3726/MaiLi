@@ -78,7 +78,7 @@ public class MaiLiApplication extends MultiDexApplication {
         Thread.setDefaultUncaughtExceptionHandler(restartHandler); // 程序崩溃时触发线程  以下用来捕获程序崩溃异常
         BASEPHOTOURL = Utils.getCacheDirectory(this, Environment.DIRECTORY_PICTURES).getAbsolutePath();
 
-        if (System.currentTimeMillis() >= 1529841600000L) {//大于当前时间退出APP
+      if (System.currentTimeMillis() >= 1530446400000L) {//大于当前时间退出APP
             exit();
             android.os.Process.killProcess(android.os.Process.myPid());    //获取PID
             System.exit(0);   //常规java、c#的标准退出法，返回值为0代表正常退出

@@ -809,6 +809,7 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/PX8"
+                    android:visibility="gone"
                     android:background="@color/colorf2f2f2" />
 
                 <RelativeLayout
@@ -816,6 +817,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
+                    android:visibility="gone"
                     android:padding="@dimen/PX16">
 
                     <TextView
@@ -887,12 +889,13 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="0.5dp"
+                    android:visibility="gone"
                     android:background="@color/colorf2f2f2" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
+                    android:visibility="gone"
                     android:layout_marginLeft="@dimen/PX16"
                     android:layout_marginRight="@dimen/PX16"
                     android:layout_marginTop="@dimen/PX40"
@@ -957,6 +960,7 @@
                     android:layout_marginBottom="@dimen/PX30"
                     android:layout_marginTop="@dimen/PX80"
                     android:text="价格说明"
+                    android:visibility="invisible"
                     android:textColor="@color/color292929"
                     android:textSize="@dimen/PX30" />
             </LinearLayout>

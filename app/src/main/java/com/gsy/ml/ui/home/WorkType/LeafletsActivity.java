@@ -38,6 +38,9 @@ import com.gsy.ml.ui.views.ChooseDatePopupWindow;
 import com.gsy.ml.ui.views.DownOrderDialog;
 import com.gsy.ml.ui.views.InformationDialog;
 import com.gsy.ml.ui.views.PayPwdPopupWindow;
+import com.jzxiang.pickerview.TimePickerDialog;
+import com.jzxiang.pickerview.data.Type;
+import com.jzxiang.pickerview.listener.OnDateSetListener;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -126,6 +129,29 @@ public class LeafletsActivity extends BaseOrderActivity implements View.OnClickL
         super.initData();
         mType = getIntent().getIntExtra("type", 8);
         mBinding = (ActivityLeafltsLayoutBinding) vdb;
+        mTimePickerDialog = new TimePickerDialog.Builder()
+                .setType(Type.ALL)
+                .setTitleStringId("预约工作时间")
+                .setThemeColor(getResources().getColor(R.color.colorTheme))
+                .setCallBack(new OnDateSetListener() {
+                    @Override
+                    public void onDateSet(TimePickerDialog timePickerDialog, long time) {
+                        long curtime = System.currentTimeMillis();
+                        if (time >=curtime ) {//
+
+                            long monthtime = curtime + 1000L * 60L * 60L * 24L * 7L;
+                            if (time < monthtime) {
+                                mBinding.tvHuiheTime.setText(Utils.getDateToString(time, "MM月dd日HH:mm"));
+                                mHuiheTimeLong = time;
+                            } else {
+                                showToast("不能选择大于一个星期的时间!");
+                            }
+                        } else {
+                            showToast("不能小于当前时间!");
+                        }
+                    }
+                })
+                .build();
         mBinding.rgTime.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
@@ -251,7 +277,8 @@ public class LeafletsActivity extends BaseOrderActivity implements View.OnClickL
                 startActivity(new Intent(aty, EditAddressActivity.class));
                 break;
             case R.id.lly_pre_time: //选择时间
-                mHuiheTime.showPopupWindow(mBinding.getRoot());
+                mTimePickerDialog.show(getSupportFragmentManager(), "all");
+             //   mHuiheTime.showPopupWindow(mBinding.getRoot());
                 break;
             case R.id.btn_ok: //确定
                 if (MaiLiApplication.getInstance().getUserInfo().getCheckStatus() == 0) {//没有实名认证

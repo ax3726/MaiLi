@@ -2,15 +2,12 @@ package com.gsy.ml.ui.home.WorkType;
 
 import android.app.Dialog;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Toast;
 
 import com.gsy.ml.R;
 import com.gsy.ml.common.MaiLiApplication;
-import com.gsy.ml.databinding.ActivityComputerLayoutBinding;
 import com.gsy.ml.databinding.ActivityLandTenantBinding;
 import com.gsy.ml.model.EventMessage.UpdateNotice;
 import com.gsy.ml.model.common.AddressModel;
@@ -21,7 +18,6 @@ import com.gsy.ml.model.main.UserInfoModel;
 import com.gsy.ml.model.person.VoucherModel;
 import com.gsy.ml.model.person.WEXModel;
 import com.gsy.ml.model.workType.LandTenantModel;
-import com.gsy.ml.model.workType.OtherServiceModel;
 import com.gsy.ml.prestener.common.ILoadPVListener;
 import com.gsy.ml.prestener.home.SendOrdersPresenter;
 import com.gsy.ml.prestener.home.TotalPricePresenter;
@@ -38,7 +34,9 @@ import com.gsy.ml.ui.views.ChooseDatePopupWindow;
 import com.gsy.ml.ui.views.DownOrderDialog;
 import com.gsy.ml.ui.views.InformationDialog;
 import com.gsy.ml.ui.views.PayPwdPopupWindow;
-import com.iflytek.cloud.thirdparty.B;
+import com.jzxiang.pickerview.TimePickerDialog;
+import com.jzxiang.pickerview.data.Type;
+import com.jzxiang.pickerview.listener.OnDateSetListener;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -90,9 +88,31 @@ public class LandTenantActivity extends BaseOrderActivity implements View.OnClic
         mType = getIntent().getIntExtra("type", 39);
         mBinding = (ActivityLandTenantBinding) vdb;
 
-        initChooseTimeData2();
+        mTimePickerDialog = new TimePickerDialog.Builder()
+                .setType(Type.ALL)
+                .setTitleStringId("信息有效期")
+                .setThemeColor(getResources().getColor(R.color.colorTheme))
+                .setCallBack(new OnDateSetListener() {
+                    @Override
+                    public void onDateSet(TimePickerDialog timePickerDialog, long time) {
+                        long curtime = System.currentTimeMillis();
+                        if (time >=curtime ) {//
+
+                            long monthtime = curtime + 1000L * 60L * 60L * 24L * 30L;
+                            if (time < monthtime) {
+                                mBinding.tvHuiheTime.setText(Utils.getDateToString(time, "MM月dd日HH:mm"));
+                                mHuiheTimeLong = time;
+                            } else {
+                                showToast("不能选择大于一个月的时间!");
+                            }
+                        } else {
+                            showToast("不能小于当前时间!");
+                        }
+                    }
+                })
+                .build();
         initListener();
-        initView();
+      //  initView();
 
         mPricePopupWindow = new ChooseDatePopupWindow(aty, 1);
         mPricePopupWindow.setTitle("请选择要加价的价格");
@@ -115,7 +135,7 @@ public class LandTenantActivity extends BaseOrderActivity implements View.OnClic
                 mBinding.tvAddPrice.setText("加价" + mAddPrice + "元");
             }
         });
-        getTotalPrice(false);
+       // getTotalPrice(false);
     }
 
     private void initListener() {
@@ -134,7 +154,7 @@ public class LandTenantActivity extends BaseOrderActivity implements View.OnClic
         mHuiheTime.setIOccupationListener(new ChooseDatePopupWindow.IOccupationListener() {
             @Override
             public void selectItem(int position1, String item1, int position2, String item2, int position3, String item3) {
-                long time = getTime1(item1, item2, item3);
+                long time = getTime3(item1, item2, item3);
                 if (time != 0) {
                     mBinding.tvHuiheTime.setText(Utils.getDateToString(time, "MM月dd日HH:mm"));
                     mHuiheTimeLong = time;
@@ -168,7 +188,9 @@ public class LandTenantActivity extends BaseOrderActivity implements View.OnClic
                 startActivity(new Intent(aty, EditAddressActivity.class));
                 break;
             case R.id.lly_pre_time: //选择时间
-                mHuiheTime.showPopupWindow(mBinding.getRoot());
+                mTimePickerDialog.show(getSupportFragmentManager(), "all");
+
+           //     mHuiheTime.showPopupWindow(mBinding.getRoot());
                 break;
             case R.id.tv_add_price:  //加价
                 mPricePopupWindow.showPopupWindow(mBinding.getRoot());
@@ -236,11 +258,11 @@ public class LandTenantActivity extends BaseOrderActivity implements View.OnClic
             Toast.makeText(MaiLiApplication.getInstance(), "请输入价格说明!", Toast.LENGTH_SHORT).show();
             return;
         }
-        if (mPrice == 0) {
+    /*    if (mPrice == 0) {
             DemoUtils.nope(mBinding.tvReTotal).start();
             Toast.makeText(MaiLiApplication.getInstance(), "价格没出来？试试点击右下角的重新计算!", Toast.LENGTH_SHORT).show();
             return;
-        }
+        }*/
         //   checkOrder();
         checkData();
     }
@@ -324,11 +346,11 @@ public class LandTenantActivity extends BaseOrderActivity implements View.OnClic
             Toast.makeText(MaiLiApplication.getInstance(), "请输入价格说明!", Toast.LENGTH_SHORT).show();
             return;
         }
-        if (mPrice == 0) {
+      /*  if (mPrice == 0) {
             DemoUtils.nope(mBinding.tvReTotal).start();
             Toast.makeText(MaiLiApplication.getInstance(), "价格没出来？试试点击右下角的重新计算!", Toast.LENGTH_SHORT).show();
             return;
-        }
+        }*/
         LandTenantModel landTenantModel = new LandTenantModel();
         landTenantModel.setReleasePurpose(mudi);
         landTenantModel.setLandType(landType);
@@ -408,12 +430,12 @@ public class LandTenantActivity extends BaseOrderActivity implements View.OnClic
                 }
             }
         } else if (object instanceof PriceModel) {
-            PriceModel info = (PriceModel) object;
+          /*  PriceModel info = (PriceModel) object;
             mBinding.rlyTotalError.setVisibility(View.GONE);
             mBinding.llyPrice.setVisibility(View.VISIBLE);
             mBinding.rlyKajuan.setVisibility(View.GONE);
             mPrice = info.getData();
-            mBinding.tvPrice.setText("￥" + (mPrice + mAddPrice - mKaPrice));
+            mBinding.tvPrice.setText("￥" + (mPrice + mAddPrice - mKaPrice));*/
         } else if (object instanceof WEXModel) {//微信
             WEXModel info = (WEXModel) object;
             PayHelper.getInstance().WexPay(info);//微信支付

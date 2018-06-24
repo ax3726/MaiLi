@@ -135,6 +135,8 @@ public class OrderReceivingFragment extends BaseFragment implements ILoadPVListe
                 TextView tv_money = holder.getView(R.id.tv_money);
                 TextView tv_txt1 = holder.getView(R.id.tv_txt3);
                 TextView tv_txt2 = holder.getView(R.id.tv_txt2);
+                TextView tv_hint = holder.getView(R.id.tv_hint);
+                TextView tv_danwei = holder.getView(R.id.tv_danwei);
 
                 if (position == 0) {
                     under_line.setVisibility(View.GONE);
@@ -148,6 +150,17 @@ public class OrderReceivingFragment extends BaseFragment implements ILoadPVListe
                     tv_title.setText(DemoUtils.TypeToOccupation(Integer.valueOf(dataBean.getWorkType())));
                 } else {
                     tv_title.setText(dataBean.getWorkPlace() + DemoUtils.TypeToOccupation(Integer.valueOf(dataBean.getWorkType())));
+                }
+                if (DemoUtils.TypeToNoAddress(Integer.valueOf(dataBean.getWorkType())) && Integer.valueOf(dataBean.getWorkType()) != 24) {
+                    tv_money.setVisibility(View.GONE);
+                    tv_danwei.setVisibility(View.GONE);
+                    tv_hint.setVisibility(View.VISIBLE);
+                    tv_title.setText(DemoUtils.TypeToNoAddressTitle1(Integer.valueOf(dataBean.getWorkType()), dataBean.getWorkContent(),tv_hint));
+
+                } else {
+                    tv_money.setVisibility(View.VISIBLE);
+                    tv_danwei.setVisibility(View.VISIBLE);
+                    tv_hint.setVisibility(View.GONE);
                 }
                 tv_address.setText(dataBean.getStartArea());
                 String con = DemoUtils.TypeToContent2(Integer.valueOf(dataBean.getWorkType()), dataBean.getWorkContent());
