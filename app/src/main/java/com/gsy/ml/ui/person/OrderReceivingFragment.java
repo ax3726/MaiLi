@@ -356,12 +356,22 @@ public class OrderReceivingFragment extends BaseFragment implements ILoadPVListe
                                         .putExtra("isShowPhone", dataBean.getOrderStatus() == 0)
                                 );
                             } else {
-                                startActivity(new Intent(aty, PartTimejobDetailsActivity.class)
-                                        .putExtra("order", dataBean.getOrder())
-                                        .putExtra("type", 1)
-                                        .putExtra("isShowAdd", dataBean.getOrderStatus() == 0)
-                                        .putExtra("isShowPhone", dataBean.getOrderStatus() == 0)
-                                );
+                                if (DemoUtils.TypeToNoAddress(Integer.valueOf(dataBean.getWorkType())) && Integer.valueOf(dataBean.getWorkType()) != 24) {
+                                    startActivity(new Intent(aty, PartTimejobDetails1Activity.class)
+                                            .putExtra("order", dataBean.getOrder())
+                                            .putExtra("type", 1)
+                                            .putExtra("isShowAdd", dataBean.getOrderStatus() == 0)
+                                            .putExtra("isShowPhone", dataBean.getOrderStatus() == 0)
+                                    );
+                                } else {
+                                    startActivity(new Intent(aty, PartTimejobDetailsActivity.class)
+                                            .putExtra("order", dataBean.getOrder())
+                                            .putExtra("type", 1)
+                                            .putExtra("isShowAdd", dataBean.getOrderStatus() == 0)
+                                            .putExtra("isShowPhone", dataBean.getOrderStatus() == 0)
+                                    );
+                                }
+
                             }
 
 

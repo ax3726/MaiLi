@@ -380,12 +380,23 @@ public class OrderBillingFragment extends BaseFragment implements ILoadPVListene
                                     .putExtra("isShowPhone", false)
                             );
                         } else {
-                            startActivity(new Intent(aty, PartTimejobDetailsActivity.class)
-                                    .putExtra("order", dataBean.getOrder())
-                                    .putExtra("type", 2)
-                                    .putExtra("isShowAdd", true)
-                                    .putExtra("isShowPhone", false)
-                            );
+                            if (DemoUtils.TypeToNoAddress(Integer.valueOf(dataBean.getWorkType())) && Integer.valueOf(dataBean.getWorkType()) != 24) {
+
+                                startActivity(new Intent(aty, PartTimejobDetails1Activity.class)
+                                        .putExtra("order", dataBean.getOrder())
+                                        .putExtra("type", 2)
+                                        .putExtra("isShowAdd", true)
+                                        .putExtra("isShowPhone", false)
+                                );
+                            } else {
+
+                                startActivity(new Intent(aty, PartTimejobDetailsActivity.class)
+                                        .putExtra("order", dataBean.getOrder())
+                                        .putExtra("type", 2)
+                                        .putExtra("isShowAdd", true)
+                                        .putExtra("isShowPhone", false)
+                                );
+                            }
                         }
 
 
