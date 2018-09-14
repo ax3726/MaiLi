@@ -102,7 +102,6 @@ public class WelcomeActivity extends BaseActivity implements ILoadPVListener {
 
     //**登陆环信
     private void loginIn(final String huanxin, final String pwd) {
-
         EMClient.getInstance().login(huanxin, pwd, new EMCallBack() {
 
             @Override

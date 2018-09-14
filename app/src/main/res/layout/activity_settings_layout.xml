@@ -181,7 +181,7 @@
                         android:layout_alignBottom="@+id/textView5"
                         android:layout_centerHorizontal="true"
                         android:autoLink="phone"
-                        android:text="0571-5670-6883"
+                        android:text="0571-8577-0496"
                         android:textColor="@color/colorFF911B"
                         android:textColorLink="@color/colorFF911B"
                         android:textSize="@dimen/PX24" />

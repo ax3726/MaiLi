@@ -26,6 +26,7 @@ import com.gsy.ml.ui.utils.MD5;
 import com.gsy.ml.ui.utils.SoftKeyboardStateHelper;
 import com.hyphenate.EMCallBack;
 import com.hyphenate.chat.EMClient;
+import com.hyphenate.exceptions.HyphenateException;
 
 import ml.gsy.com.library.utils.CacheUtils;
 import ml.gsy.com.library.utils.SharedPreferencesUtils;
@@ -208,7 +209,8 @@ public class LoginActivity extends BaseActivity implements ILoadPVListener, View
 
     //**登陆环信
     private void loginIn(final String huanxin, final String pwd) {
-
+        String phone = loginLayoutBinding.etPhone.getText().toString().trim();
+        mPresenter.getUserInfo(phone);
         EMClient.getInstance().login(huanxin, pwd, new EMCallBack() {
 
             @Override
@@ -226,6 +228,7 @@ public class LoginActivity extends BaseActivity implements ILoadPVListener, View
             public void onError(int code, final String error) {
 
                 if (code == 200) {//用户已登录
+
                     EMClient.getInstance().logout(true, new EMCallBack() {//退出登录
 
                         @Override
@@ -251,7 +254,21 @@ public class LoginActivity extends BaseActivity implements ILoadPVListener, View
                             });
                         }
                     });
-                } else {
+                }else if(code==204){
+                    try {
+                        EMClient.getInstance().createAccount(huanxin, pwd);//同步方法
+                        loginIn(huanxin, pwd);
+                    } catch (HyphenateException e) {
+                        e.printStackTrace();
+                        hideWaitDialog();
+                        runOnUiThread(new Runnable() {
+                            public void run() {
+                                Toast.makeText(getApplicationContext(), "创建用户失败!", Toast.LENGTH_LONG).show();
+                            }
+                        });
+                    }
+                }
+                else {
                     hideWaitDialog();
                     runOnUiThread(new Runnable() {
                         public void run() {
